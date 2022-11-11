@@ -1,0 +1,3 @@
+# Log file for DNS server/resolver
+19:10:2022.11:20:50:020 ST 127.0.0.1 53 20000 shy
+19:10:2022.11:20:50:210 EV @ conf-file-read /var/dns/SP.config

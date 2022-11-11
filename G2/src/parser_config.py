@@ -2,6 +2,7 @@
 class Parser_Config:
     
     def __init__(self):
+        linhas = []
         dir_log = ""
         dir_bd = ""
         ip_SS = []
@@ -13,7 +14,8 @@ class Parser_Config:
         with open(diretoria, "r") as f:    #config   
             for line in f: 
                 linha = line.split(" ")
-                if(linha[0]!='#'):
+                if(linha[0]!='#' or linha[0] != "\n"):
+                    self.linhas.append(linha)
                     if(linha[1] == "DB"):
                         self.dir_bd = linha[2]
                     elif(linha[1] == "SP"):
@@ -30,4 +32,5 @@ class Parser_Config:
                         self.ip_SP = linha[2]
                     elif(linha[1] == "LG"):
                         self.dir_log = linha[2]
-        f.close()                  
+        f.close()       
+        

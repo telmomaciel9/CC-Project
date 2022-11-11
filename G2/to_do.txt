@@ -1,0 +1,8 @@
+escrever para os ficheiros logs
+dar parse dos ficheiros db
+topologia 
+relatorio
+queries
+transferencia de zona
+funcionamente do cl
+sistema de cache

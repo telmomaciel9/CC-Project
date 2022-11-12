@@ -1,19 +1,23 @@
 import socket
+from message import Message
+class Cliente_UDP:
 
-msgFromClient = "Hello UDP Server"
-bytesToSend = str.encode(msgFromClient)
+    m = Message()
+    m.parse_message_condense("/home/rogan/Desktop/CC/trabalho/CC/G2/entrada/query.txt")
 
-serverAddressPort = ("127.0.0.1", 20001)
-bufferSize = 1024
+    bytesToSend = str.encode(str(m))
 
-# Create a UDP socket at client side
-UDPClientSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
+    serverAddressPort = ("127.0.0.1", 20001)
+    bufferSize = 1024
 
-# Send to server using created UDP socket
-UDPClientSocket.sendto(bytesToSend, serverAddressPort)
+    # Create a UDP socket at client side
+    UDPClientSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
 
-msgFromServer = UDPClientSocket.recvfrom(bufferSize)
+    # Send to server using created UDP socket
+    UDPClientSocket.sendto(bytesToSend, serverAddressPort)
 
-msg = "Message from Server {}".format(msgFromServer[0])
+    msgFromServer = UDPClientSocket.recvfrom(bufferSize)
 
-print(msg)
+    msg = "Message from Server {}".format(msgFromServer[0])
+
+    print(msg)

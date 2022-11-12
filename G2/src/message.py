@@ -1,3 +1,5 @@
+#classe que da parse da mensgem
+
 import re
 
 class Message:
@@ -8,28 +10,29 @@ class Message:
         num_values = ""
         num_authorities = ""
         num_extra_value = ""
-        query_info = ""
+        query_info_name = ""
+        query_info_type = ""
         responde_value = []
         authoriries_vales = []
         extra_values = []
         
-    def parse_message_extended (self, diretoria):
-        with open("/home/rogan/Desktop/CC/trabalho/CC/G2/entrada/query.txt", "r") as f:
+    def parse_message_condense (self, diretoria):
+        with open(diretoria, "r") as f:
             for line in f: 
-                linha = re.split("; |, | |\*|\n",line)
+                linha = re.split(";|,| ",line)
                 if(linha[0]!='#'):
-                    if(linha[0] == "MESSAGE-ID"):
-                        self.message_id = linha[2]
-                    elif(linha[3] == "FLAGS"):
-                        self.flags = linha[5]
-                    elif(linha[6] == "RESPONSE-CODE"):
-                        self.response_code = linha[8]
-                    elif(linha[0] == "N-VALUES"):
-                        self.num_values=linha[2]
-                    elif(linha[3] == "N'AUTHORITIES"):
-                        self.num_authorities = linha[5]
-                    elif(linha[5] == "N-EXTRA-VALUES"):
-                        self.num_extra_value = linha[7]
-                                                     
+                    self.message_id = linha[0]
+                    self.flags = linha[1]
+                    self.response_code = linha[2]
+                    self.num_values = linha[3]
+                    self.num_authorities = linha[4]
+                    self.num_extra_value = linha[5]
+                    self.query_info_name = linha[6]
+                    self.query_info_type = linha[7]                       
         f.close() 
+    
+    def __str__(self):
+        out = ""
+        out += "MESSAGE-ID  = " + self.message_id + "\nFLAGS = " + self.flags + "\nRESPONSE-CODE = " + self.response_code + "\nN-VALUES = " + self.num_values + "\nN-EXTRA-VALUES = " + self.num_extra_value + "\nQUERY-INFO_NAME = " + self.query_info_name+ "\nQUERY-INFO_TYPE = " + self.query_info_type
+        return out
         

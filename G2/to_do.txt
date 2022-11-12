@@ -1,9 +1,11 @@
-escrever para os ficheiros logs
-dar parse dos ficheiros db
+EM PROGRESSO:
+escrever para os ficheiros logs - em progresso
+dar parse dos ficheiros db - em progresso
+queries - em progresso
+
+POR FAZER
 topologia 
 relatorio
-queries
 transferencia de zona
 funcionamente do cl
 sistema de cache
-def escreve_log(diretoria="/home/rogan/Desktop/CC/trabalho/CC/G2/entrada/log.txt"):

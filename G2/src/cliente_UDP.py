@@ -3,9 +3,9 @@ from message import Message
 class Cliente_UDP:
 
     m = Message()
-    m.parse_message_condense("/home/rogan/Desktop/CC/trabalho/CC/G2/entrada/query.txt")
+    
 
-    bytesToSend = str.encode(str(m))
+    bytesToSend = str.encode(m.le_linha("/home/rogan/Desktop/CC/trabalho/CC/G2/entrada/query.txt"))
 
     serverAddressPort = ("127.0.0.1", 20001)
     bufferSize = 1024
@@ -18,6 +18,8 @@ class Cliente_UDP:
 
     msgFromServer = UDPClientSocket.recvfrom(bufferSize)
 
-    msg = "Message from Server {}".format(msgFromServer[0])
+    msg = "Message from Server-{}:  ".format(msgFromServer[0])
 
     print(msg)
+    
+    UDPClientSocket.close()

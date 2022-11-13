@@ -2,13 +2,13 @@
 class Parser_Config:
     
     def __init__(self):
-        linhas = []
-        dir_log = ""
-        dir_bd = ""
-        ip_SS = []
-        ip_SP = ""
-        ip_DD = []
-        dir_ST = ""
+        self.linhas = []
+        self.dir_log = ""
+        self.dir_bd = ""
+        self.ip_SS = []
+        self.ip_SP = ""
+        self.ip_DD = []
+        self.dir_ST = ""
         
     def parse_Config(self, diretoria):
         with open(diretoria, "r") as f:    #config   

@@ -2,10 +2,12 @@ EM PROGRESSO:
 escrever para os ficheiros logs - em progresso
 dar parse dos ficheiros db - em progresso
 queries - em progresso
+transferencia de zona - em progresso
+
+
 
 POR FAZER
 topologia 
 relatorio
-transferencia de zona
 funcionamente do cl
 sistema de cache

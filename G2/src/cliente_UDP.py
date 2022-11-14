@@ -1,8 +1,8 @@
 import socket
-from message import Message
+from trabalho.CC.G2.src.query import Query
 class Cliente_UDP:
 
-    m = Message()
+    m = Query()
     
 
     bytesToSend = str.encode(m.le_linha("/home/rogan/Desktop/CC/trabalho/CC/G2/entrada/query.txt"))

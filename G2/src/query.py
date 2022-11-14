@@ -2,7 +2,7 @@
 
 import re
 
-class Message:
+class Query:
     def __init__(self):
         self.message_id = ""
         self.flags = ""

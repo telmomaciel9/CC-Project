@@ -1,9 +1,15 @@
 EM PROGRESSO:
-escrever para os ficheiros logs - em progresso
-dar parse dos ficheiros db - em progresso
-queries - em progresso
-transferencia de zona - em progresso
+- Escrever para os ficheiros logs
+    -» falta escrever os ficheiros na estrutura dada no exemplo
 
+- Dar parse dos ficheiros BD
+    -» falta a parte dos ns
+
+- Queries 
+    -» falta o servidor responder à query
+
+- Transferencia de zona 
+    -» so temos a comunicação tcp
 
 
 POR FAZER

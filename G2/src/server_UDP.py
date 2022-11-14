@@ -1,8 +1,8 @@
 import socket
-from message import Message
+from trabalho.CC.G2.src.query import Query
 class Server_UDP:
     bufferSize = 1024
-    m = Message()
+    m = Query()
     
     msgFromServer = "Hello UDP Client"
     bytesToSend = str.encode(msgFromServer)

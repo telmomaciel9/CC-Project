@@ -12,7 +12,7 @@ serv = Server_UDP()
 cliente = Cliente_UDP ()
 serv.conectar()
 cliente.enviar_mensagem(m)
-"""
+
 
 from cache import Cache
 
@@ -29,3 +29,10 @@ print(c)
 
 print(c.verifica_valid(1,"t1","1"))
 print(c.verifica_valid(1,"t2","1"))
+"""
+
+from myapp import MYAPP
+
+app = MYAPP()
+app.parseCommandLine()
+print(app)

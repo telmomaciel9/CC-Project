@@ -11,9 +11,14 @@ EM PROGRESSO:
 - Transferencia de zona 
     -» so temos a comunicação tcp
 
+- Sistema de cache 
+    -» falta os utlimos pontos
+
+- Funcionamento do cl
+    -» So temos o parse do command line
+
 
 POR FAZER
 topologia 
 relatorio
-funcionamente do cl
-sistema de cache
+

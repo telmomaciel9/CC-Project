@@ -1,5 +1,5 @@
 import socket
-from trabalho.CC.G2.src.query import Query
+from query import Query
 class Server_UDP:
     bufferSize = 1024
     m = Query()

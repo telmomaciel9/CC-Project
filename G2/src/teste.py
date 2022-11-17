@@ -13,7 +13,7 @@ cliente = Cliente_UDP ()
 serv.conectar()
 cliente.enviar_mensagem(m)
 
-
+ """
 from cache import Cache
 
 c = Cache(3)
@@ -29,10 +29,18 @@ print(c)
 
 print(c.verifica_valid(1,"t1","1"))
 print(c.verifica_valid(1,"t2","1"))
-"""
 
+""""
 from myapp import MYAPP
 
 app = MYAPP()
 app.parseCommandLine()
 print(app)
+
+
+import datetime
+
+date = datetime.datetime.now()
+data_formatada = str(date.day) + ":" + str(date.month) + ":" + str(date.year) + "." + str(date.hour) + ":" + str(date.minute) + ":" + str(date.second) + ":" + str(round(date.microsecond,2))
+print(data_formatada)
+"""

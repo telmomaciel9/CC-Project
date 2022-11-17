@@ -1,16 +1,18 @@
+#Ficheiro que se destina a implementar a cache
+
 import datetime
 
 from entrada import Entrada
 
 class Cache:
-    def __init__(self,n): #n é o num de linhas max
+    def __init__(self): #n é o num de linhas max
         self.mat = [[0 for _ in range(9)] for _ in range(n)]
         #cada lista pequena correstponde a uma coluna   
         #[    0,    1,     2,   3,     4,      5,         6,     7,      8]    
         # [Name, Type, Value, TTL, Order, Origin, TimeStamp, Index, Status]
         #                            (FILE, SP, OTHERS)     (1...N) (FREE, VALID)
         i=0
-        while i<n:
+        while i<65535:
             self.mat [i][7] = i+1
             self.mat [i][8] = "FREE"
             i=i+1

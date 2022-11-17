@@ -1,6 +1,7 @@
 EM PROGRESSO:
 - Escrever para os ficheiros logs
     -» falta escrever os ficheiros na estrutura dada no exemplo
+        -» formatacão da data esta feita
 
 - Dar parse dos ficheiros BD
     -» falta a parte dos ns

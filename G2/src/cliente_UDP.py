@@ -1,5 +1,8 @@
+#Ficheiro que 
+
 import socket
-from trabalho.CC.G2.src.query import Query
+from query import Query
+
 class Cliente_UDP:
 
     m = Query()

@@ -1,6 +1,6 @@
 #utilizo este ficheiro mais para guardar potencial codigo, 
 
-from writer import Writer
+from trabalho.CC.G2.src.logs import Writer
 
 w = Writer()
 w.escreve_log("/home/rogan/Desktop/CC/trabalho/CC/G2/entrada/log.txt")

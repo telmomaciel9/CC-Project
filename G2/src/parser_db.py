@@ -28,5 +28,3 @@ class Parser_BD:
                     if(not(linha[0].__contains__("@")) and len(linha)<=4):
                         c.reg_atualiza_cache(linha[0], linha[1], linha[2], self.ttl, "","FILE","VALD")
             print(c)
-                        
-                    

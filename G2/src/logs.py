@@ -1,6 +1,6 @@
 import datetime
 
-class Writer:
+class LOGS:
      def escreve_log(self,diretoria):
           with open(diretoria, "a") as f:
                date = datetime.datetime.now()

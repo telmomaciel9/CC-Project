@@ -1,18 +1,19 @@
 #Ficheiro que se destina a implementar a cache
 
 import datetime
-
+from tabulate import tabulate
 from entrada import Entrada
 
 class Cache:
     def __init__(self): #n é o num de linhas max
+        n = 40
         self.mat = [[0 for _ in range(9)] for _ in range(n)]
         #cada lista pequena correstponde a uma coluna   
         #[    0,    1,     2,   3,     4,      5,         6,     7,      8]    
         # [Name, Type, Value, TTL, Order, Origin, TimeStamp, Index, Status]
         #                            (FILE, SP, OTHERS)     (1...N) (FREE, VALID)
         i=0
-        while i<65535:
+        while i<n:
             self.mat [i][7] = i+1
             self.mat [i][8] = "FREE"
             i=i+1
@@ -29,7 +30,7 @@ class Cache:
                 list[8]= "FREE"
             
                 
-    def reg_atualiza_cache(self, name, type, value, ttl, order,origin, status):
+    def reg_atualiza_cache(self, name, tipo, value, ttl, order,origin, status):
         
         current_time = datetime.datetime.now()
         time_stamp = current_time.timestamp()
@@ -39,7 +40,7 @@ class Cache:
                 if(list[8]=="FREE"):
                     novaPos = list[7]-1
                     self.mat[novaPos][0]=name
-                    self.mat[novaPos][1]=type
+                    self.mat[novaPos][1]=tipo
                     self.mat[novaPos][2]=value
                     self.mat[novaPos][3]=ttl
                     self.mat[novaPos][4]=order
@@ -64,10 +65,8 @@ class Cache:
                 self.mat.append([name, type, value, ttl, order, origin,time_stamp, len(self.mat)+1, "FREE"])
 
 
+    
     def __str__(self):
-        out = ""
-        for list in self.mat:
-            for i in range(len(list)):
-                out = out + str(list[i]) + " , "
-            out = out + "\n"
-        return out            
+        header = ["Name", "Type", "Value", "TTL", "Order", "Origin", "TimeStamp", "Index", "Status"]
+        
+        return (tabulate(self.mat, headers = header, tablefmt = "grid"))

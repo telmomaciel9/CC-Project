@@ -5,6 +5,7 @@ EM PROGRESSO:
 
 - Dar parse dos ficheiros BD
     -» falta a parte dos ns
+    ja esta na cache 
 
 - Queries 
     -» falta o servidor responder à query
@@ -23,3 +24,12 @@ POR FAZER
 topologia 
 relatorio
 
+
+
+duvs
+ficheiro St
+se as linhas do config metemos na cache
+como é suposto passar o subdominio para a cache?
+as ultimas linhas, como é suposto?
+transferencia de zona, para saber se o sp é mais recente que o ss porque aqueles dois valores?
+pedir para explicar de forma resumida o Funcionamento cl

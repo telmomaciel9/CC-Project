@@ -1,5 +1,5 @@
 #utilizo este ficheiro mais para guardar potencial codigo, 
-
+'''
 from trabalho.CC.G2.src.logs import Writer
 
 w = Writer()
@@ -195,3 +195,28 @@ if(linha[0]!='#' or linha[0]!="\n"):
             text = text[:length]
         elif len(text) < length:
             text = (text + " "*length)[:length]
+'''
+
+import socket
+import threading
+
+    
+def main():
+    client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client.connect(("127.0.0.1", 20001))
+    print(f"[CONNECTED] Cliente connected")
+    
+    connected = True
+    while connected:
+        msg = input("> ")
+        
+        client.send(msg.encode('utf-8'))
+        if msg == "!DISCONNECT":
+            connected = False
+        else:
+            msg = client.recv(1024).decode('utf-8')
+            print(f"[SERVER] {msg}")
+        
+        
+if __name__ == "__main__":
+    main()

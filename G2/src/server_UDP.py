@@ -16,12 +16,11 @@ class Server_UDP:
     def origina_resposta(self, mensagem):
         out = mensagem + "\n"
         for list in self.serverCache.mat:
-            if list[1] == self.query.query_info_type:
-                out += str(list) +'\n'
-            
+            if(list[1] == self.query.query_info_type or list[1] == "NS"):
+                for i in range(5):            
+                    out = out + str(list[i]) + " "
+                out = out + "\n"
         return out
-    
-    
              
     def inicia_comunicacao(self):    
         bufferSize = 1024

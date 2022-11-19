@@ -68,5 +68,4 @@ class Cache:
     
     def __str__(self):
         header = ["Name", "Type", "Value", "TTL", "Order", "Origin", "TimeStamp", "Index", "Status"]
-        
         return (tabulate(self.mat, headers = header, tablefmt = "grid"))

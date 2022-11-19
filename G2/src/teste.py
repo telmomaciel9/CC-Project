@@ -51,3 +51,14 @@ class Teste:
     bd.parse_db("/home/rogan/Desktop/CC/trabalho/CC/G2/entrada/modeloDB.txt")
  
  """
+ 
+from query import Query 
+from cache import import Cache
+q = Query()
+c = Cache()
+
+
+
+q.parse_message_condense("3874,Q+R,0,0,0,0;example.com.,MX;")
+
+print(int(q.message_id))

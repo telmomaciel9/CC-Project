@@ -6,8 +6,7 @@ from query import Query
 class Cliente_UDP:
 
     m = Query()
-    
-
+        
     bytesToSend = str.encode(m.le_linha("/home/rogan/Desktop/CC/trabalho/CC/G2/entrada/query.txt"))
 
     serverAddressPort = ("127.0.0.1", 20001)
@@ -21,8 +20,6 @@ class Cliente_UDP:
 
     msgFromServer = UDPClientSocket.recvfrom(bufferSize)
 
-    msg = "Message from Server-{}:  ".format(msgFromServer[0])
-
-    print(msg)
+    print(msgFromServer[0])
     
     UDPClientSocket.close()

@@ -21,11 +21,11 @@ class Cache:
 
     def verifica_valid (self, index, name, type):
         i=index-1
-        r=0
+        r=index-1
         for list in self.mat:
             if(list[7]>=i):
-                if(list[0]==name and list[1]==type):
-                    r = i+1
+                if(list[0]==name and list[1]==type and list[8]=="VALID"):
+                    return r
             if(list[5]=="OTHERS" and (list[6]>list[3])):
                 list[8]= "FREE"
             

@@ -1,5 +1,5 @@
 #classe que da parse da mensgem
-
+from cache import Cache
 import re
 
 class Query:
@@ -27,12 +27,15 @@ class Query:
             self.num_authorities = linha[4]
             self.num_extra_value = linha[5]
             self.query_info_name = linha[6]
-            self.query_info_type = linha[7]                       
+            self.query_info_type = linha[7] 
+            
          
     
     def le_linha (self, diretoria):
         with open(diretoria, "r") as f:                                    
             return f.readline()
+            
+    
 
     def __str__(self):
         out = ""

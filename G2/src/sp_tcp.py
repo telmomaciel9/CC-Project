@@ -1,6 +1,8 @@
 import socket
 
 class SP_TCP:
+
+    
     
     sp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     sp.bind(("127.0.0.1",9999))

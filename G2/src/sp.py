@@ -7,11 +7,6 @@ import socket
 
 
 class SP:
-    #Variaveis uteis para os socket
-    mode = 'utf-8'
-    porta = 20001
-    ip = "127.0.0.1"
-    address = (ip, porta)
     
     def __init__(self):
         self.srvCache = Cache()
@@ -20,87 +15,78 @@ class SP:
         self.srvST_list = ""
         
     #Faz parse da base de dados para a cache do sp    
-    def regista_svrCache(self):
+    def regista_srvCache(self):
         self.srvBD.parse_db(self.srvCache)
         
     #Função auxiliar da função cliente    
-    def handle_cliente(self,conn, addr):
-        print(f"[NEW CONNECTION] {addr} connected.")
-    
+    def handle_client(self,conn,addr):
+        print(f"[NEW CONNETION] {addr} CONNECTED.")
+     
         connected = True
         while connected:
-            msg = conn.recv(1024).decode(mode)
-            
+            msg = conn.recv(1024).decode('utf-8')
             if msg == "!DISCONNECT":
                 connected = False
-                
-            print(f"[{addr}] {msg}")
-            msg = f"Msg received: {msg}"
-            conn.send(msg.encode(mode))
             
+            print(f"[{addr}] {msg}")
+            msg = f"MESSAGE RECEIVED: {msg}"
+            conn.send(msg.encode('utf-8'))
         conn.close()
-    
-    #Função que permite a multithreading dos clientes - UDP
+     
     def cliente(self):
         print("[SERVER UDP MODE] - STARTING...")
-        serverUDP = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        
-        serverUDP.bind(address)
-        
-        serverUDP.listen()
-        print(f"[SERVER UDP MODE] - LISTENING...")
-        
-        while True:
-            conn, addr = serverUDP.accept()
-            thread = threading.Thread(target = handle_cliente, args=(conn, addr))
-            thread.start()
-            print(f"[ACTIVE CONNECTIONS] {threading.active_count() - 1}")
-    
-    
-     #Função auxiliar da função cliente    
-    def handle_ss(self,conn, addr):
-        print(f"[NEW CONNECTION] {addr} connected.")
-    
-        connected = True
-        while connected:
-            msg = conn.recv(1024).decode(mode)
-            
-            if msg == "!DISCONNECT":
-                connected = False
-                
-            print(f"[{addr}] {msg}")
-            msg = f"Msg received: {msg}"
-            conn.send(msg.encode(mode))
-            
-        conn.close()
-    
-    #Função para a transferencia de zona - TCP
-    def ss(self):
-    
-        print("[SERVER TCP MODE] - STARTING...")
         serverTCP = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         
-        serverTCP.bind(address)
+        serverTCP.bind((socket.gethostbyname(socket.gethostname()),20001))
         
         serverTCP.listen()
-        print(f"[SERVER TCP MODE] - LISTENING...")
+        print("[SERVER UDP MODE] - LISTENING...")
+        
+        while True:
+            conn, addr = serverTCP.accept()
+            thread = threading.Thread(target=self.handle_client, args=(conn,addr))
+            thread.start()
+            print(f"[ACTIVE CONNECTIONS] {threading.active_count()-1}")
+            
+    def handle_ss(self,conn,addr):
+        print(f"[NEW CONNETION] {addr} CONNECTED.")
+     
+        connected = True
+        while connected:
+            msg = conn.recv(1024).decode('utf-8')
+            if msg == "!DISCONNECT":
+                connected = False
+            
+            print(f"[{addr}] {msg}")
+            msg = f"MESSAGE RECEIVED: {msg}"
+            conn.send(msg.encode('utf-8'))
+        conn.close()
+     
+    def ss(self):
+        print("[SERVER TCP MODE] - STARTING...")
+        serverUDP = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        
+        serverUDP.bind((socket.gethostbyname(socket.gethostname()),20001))
+        
+        serverUDP.listen()
+        print("[SERVER TCP MODE] - LISTENING...")
         
         while True:
             conn, addr = serverUDP.accept()
-            thread = threading.Thread(target = handle_ss, args=(conn, addr))
+            thread = threading.Thread(target=self.handle_ss, args=(conn,addr))
             thread.start()
-            print(f"[ACTIVE CONNECTIONS] {threading.active_count() - 1}")
+            print(f"[ACTIVE CONNECTIONS] {threading.active_count()-1}")        
+
+
         
-    def main(): 
-        s = SP()
-        t2 = threading.Thread(target = s.cliente)
-        t3 = threading.Thread(target= s.ss)
+if __name__ == "__main__":
+    srv = SP()
+    srv.regista_srvCache()
+    t1 = threading.Thread(target = srv.cliente)
+    t2 = threading.Thread(target = srv.ss)
         
-        t2.start()
-        t3.start()
-        
-    if __name__ == "__main__":
-        main()
+    t1.run()
+    t2.run()
 
 
     

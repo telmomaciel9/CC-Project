@@ -203,7 +203,7 @@ import threading
     
 def main():
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    client.connect(("127.0.0.1", 20001))
+    client.connect((socket.gethostbyname(socket.gethostname()), 20001))
     print(f"[CONNECTED] Cliente connected")
     
     connected = True

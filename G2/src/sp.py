@@ -1,7 +1,7 @@
 from cache import Cache
 from parser_db import Parser_BD
 from parser_config import Parser_Config
-from server_UDP import Server_UDP
+from query import Query
 import threading
 import socket
 
@@ -13,10 +13,20 @@ class SP:
         self.srvBD = Parser_BD("/home/rogan/Desktop/CC/trabalho/CC/G2/entrada/modeloDB.txt")
         self.srvConfig = Parser_Config()
         self.srvST_list = ""
+        self.query = Query()
         
     #Faz parse da base de dados para a cache do sp    
     def regista_srvCache(self):
         self.srvBD.parse_db(self.srvCache)
+        
+    def origina_resposta(self, mensagem):
+        out = mensagem + "\n"
+        for list in self.serverCache.mat:
+            if(list[1] == self.query.query_info_type or list[1] == "NS"):
+                for i in range(5):            
+                    out = out + str(list[i]) + " "
+                out = out + "\n"
+        return out
         
     #Função auxiliar da função cliente    
     def handle_client(self,conn,addr):
@@ -25,12 +35,14 @@ class SP:
         connected = True
         while connected:
             msg = conn.recv(1024).decode('utf-8')
+            self.query.parse_message_condense(msg)
             if msg == "!DISCONNECT":
                 connected = False
             
             print(f"[{addr}] {msg}")
-            msg = f"MESSAGE RECEIVED: {msg}"
+            msg = self.origina_resposta(msg)
             conn.send(msg.encode('utf-8'))
+            
         conn.close()
      
     def cliente(self):
@@ -76,7 +88,6 @@ class SP:
             thread = threading.Thread(target=self.handle_ss, args=(conn,addr))
             thread.start()
             print(f"[ACTIVE CONNECTIONS] {threading.active_count()-1}")        
-
 
         
 if __name__ == "__main__":

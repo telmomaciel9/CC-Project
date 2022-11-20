@@ -2,24 +2,31 @@
 
 import socket
 from query import Query
+import threading
 
 class Cliente_UDP:
 
-    m = Query()
-        
-    bytesToSend = str.encode(m.le_linha("/home/rogan/Desktop/CC/trabalho/CC/G2/entrada/query.txt"))
+    #m = Query()
+    #bytesToSend = str.encode(m.le_linha("/home/rogan/Desktop/CC/trabalho/CC/G2/entrada/query.txt"))
 
-    serverAddressPort = ("127.0.0.1", 20001)
-    bufferSize = 1024
-
-    # Create a UDP socket at client side
-    UDPClientSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
-
-    # Send to server using created UDP socket
-    UDPClientSocket.sendto(bytesToSend, serverAddressPort)
-
-    msgFromServer = UDPClientSocket.recvfrom(bufferSize)
-
-    print(msgFromServer[0])
+    #serverAddressPort = ((socket.gethostbyname(socket.gethostname()), 20001))
+    client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client.connect((socket.gethostbyname(socket.gethostname()), 20001))
+    print(f"[CONNECTED] Cliente connected")
     
-    UDPClientSocket.close()
+    connected = True
+    while connected:
+        msg = input("> ")
+        
+        client.send(msg.encode('utf-8'))
+        if msg == "!DISCONNECT":
+            connected = False
+        else:
+            msg = client.recv(1024).decode('utf-8')
+            print(f"[SERVER] {msg}")
+
+    
+    
+    
+
+    

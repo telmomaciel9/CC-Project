@@ -6,7 +6,7 @@ from entrada import Entrada
 
 class Cache:
     def __init__(self): #n é o num de linhas max
-        n = 40
+        n = 28
         self.mat = [[0 for _ in range(9)] for _ in range(n)]
         #cada lista pequena correstponde a uma coluna   
         #[    0,    1,     2,   3,     4,      5,         6,     7,      8]    
@@ -71,22 +71,29 @@ class Cache:
         linha = mensagem.split(" ")
         if(linha[0]!='#'):
             if(linha[0]=="@" and linha[1]=="DEFAULT"):
-                dominio = linha[2]
+                dominio = linha[2].replace("\n", "")
             if(linha[0]=="TTL" and linha[1]=="DEFAULT"):
-                ttl = linha[2]
+                ttl = linha[2].replace("\n","")
             if((linha[0]=="@" or linha[0].__contains__("@")) and len(linha)<=4):
                 string = linha[0].replace("@", dominio)
-                self.reg_atualiza_cache(string, linha[1], linha[2], ttl, " - ","SP","VALID")
+                self.reg_atualiza_cache(string, linha[1], linha[2], ttl, "","SP","VALID")
             if((linha[0]=="@" or linha[0].__contains__("@")) and len(linha)>4):
                 string = linha[0].replace("@", dominio)
-                self.reg_atualiza_cache(string, linha[1], linha[2], ttl, linha[4],"SP","VALID")
+                self.reg_atualiza_cache(string, linha[1], linha[2], ttl, linha[4].replace("\n",""),"SP","VALID")
             if(not(linha[0].__contains__("@")) and len(linha)>4):
-                self.reg_atualiza_cache(linha[0], linha[1], linha[2], ttl, linha[4],"SP","VALID")
+                self.reg_atualiza_cache(linha[0], linha[1], linha[2], ttl, linha[4].replace("\n",""),"SP","VALID")
             #if(not(linha[0].__contains__("@")) and len(linha)<=4):
             #    self.reg_atualiza_cache(linha[0], linha[1], linha[2], ttl, " - ","SP","VALID") 
                 
 
     
+    #def __str__(self):
+    #    header = ["Name", "Type", "Value", "TTL", "Order", "Origin", "TimeStamp", "Index", "Status"]
+    #    return (tabulate(self.mat, headers = header, tablefmt = "grid"))
     def __str__(self):
-        header = ["Name", "Type", "Value", "TTL", "Order", "Origin", "TimeStamp", "Index", "Status"]
-        return (tabulate(self.mat, headers = header, tablefmt = "grid"))
+        out = ""
+        for list in self.mat:
+            #for i in range(len(list)):
+            #    out+=str(list[i]) + " "
+            out+=str(list)+"\n"
+        return out

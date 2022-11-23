@@ -25,7 +25,7 @@ class SS_TCP:
             #recebe a mensagem do sp (a dizer o numero de linhas)
             msg = ss.recv(1024).decode('utf-8')
             nLinhas = int(msg)
-            print(f"[SS] - RECIVED THIS MESSAGE:\n -> {msg}")
+            print(f"[SS] - RECEIVED THIS MESSAGE:\n -> {msg}")
             if nLinhas < 65535 :
             #envia mensagem ao sp a dizer que aceita
                 msg = "ACCEPT"
@@ -34,14 +34,15 @@ class SS_TCP:
                 #recebe as linhas da bd
                 fullMsg = ""
                 flag = True
-                while flag:
+                for i in range(nLinhas):
                     msg = ss.recv(1024).decode('utf-8')
-                    fullMsg += msg
-                    if not (msg.encode('utf-8')) :
-                        flag = False
+                    print(i)
+                    print(f"[SS] - RECEIVED THIS MESSAGE:\n -> {msg}")
+                    #if not (msg.encode('utf-8')) :
+                    #    flag = False
+                    
                         
-                with open("ficheiroGrandeR", "a") as f:
-                    f.write(fullMsg)
+                
                     
                 #print(msg)
 

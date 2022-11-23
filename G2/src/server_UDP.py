@@ -24,19 +24,19 @@ class ServerTeste:
         for list in self.srvCache.mat:
             if((str(list[1]) == str(self.query.query_info_type)) and (str(list[0]) == str(self.query.query_info_name))):
                 for i in range(5):            
-                    rval += str(list[i]) + " "
+                    rval = rval + str(list[i]) + " "
                 rval = rval + "\n"
             #authoritiesvalues
             if(str(list[0]) == self.query.query_info_name and str(list[1]) == "NS"):
                 for i in range(5):            
                     aval = aval + str(list[i]) + " "
                 aval = aval + "\n"
-            if((str(list[1]) == "A" and "NS".lower() in list) or (str(list[1]) == "A" and self.query.query_info_type.lower() in list)):
+            if((str(list[1]) == "A" and "NS".lower() in list[0]) or (str(list[1]) == "A" and self.query.query_info_type.lower() in list[0])):
                 for i in range(5):            
                     eval = eval + str(list[i]) + " "
                 eval = eval + "\n"
             
-        return mensagem+rval+aval+eval
+        return mensagem+"\n"+rval+aval+eval
      
     def cliente(self):
         print("[SERVER UDP MODE] - STARTING...")
@@ -88,10 +88,13 @@ class ServerTeste:
         msg = conn.recv(1024).decode('utf-8')
         print(f"[SP] - Message receive:\n -> {msg}")
         #mandar linhas para o ss
+        #mandar linhas para o ss
         if msg == "ACCEPT":
-            file  = open("/home/rogan/Desktop/CC/trabalho/CC/G2/entrada/ficheiroGrande", "r")
-            data = file.read()
-            conn.send(data.encode('utf-8'))
+            for i in range(len(self.srvBD.linhas)):
+                print(i+1)
+                msg = self.srvBD.linhas[i]
+                print(f"[SP] - SENDING MESSAGE:\n -> {msg}")
+                conn.send(bytes(msg,'utf-8'))
                 
         msg = conn.recv(1024).decode('utf-8')
         print(f"[SP] - Message receive:\n -> {msg}")    
@@ -101,6 +104,7 @@ class ServerTeste:
 if __name__ == "__main__":
     srv = ServerTeste()
     print(srv.srvConfig.dominio)
+    print(srv.srvCache)
     t1 = threading.Thread(target = srv.cliente)
     t2 = threading.Thread(target = srv.ss)
         

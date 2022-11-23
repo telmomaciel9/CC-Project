@@ -11,28 +11,38 @@ class SP:
     def __init__(self):
         self.srvCache = Cache()
         self.srvBD = Parser_BD("/home/rogan/Desktop/CC/trabalho/CC/G2/entrada/modeloDB.txt")
-        self.srvConfig = Parser_Config()
+        self.srvConfig = Parser_Config("/home/rogan/Desktop/CC/trabalho/CC/G2/entrada/configDomA.txt")
         self.srvST_list = ""
         self.query = Query()
         self.srvBD.parse_db(self.srvCache)
-        self.srvConfig.parse_Config("/home/rogan/Desktop/CC/trabalho/CC/G2/entrada/configDomA.txt")
-    #
+        self.srvConfig.parse_Config()
         
     def origina_resposta(self, mensagem):
-        out = mensagem + "\n"
+        rval = ""
+        aval = ""
+        eval = ""
         for list in self.srvCache.mat:
-            if(list[1] == self.query.query_info_type or list[1] == "NS"):
+            if((str(list[1]) == str(self.query.query_info_type)) and (str(list[0]) == str(self.query.query_info_name))):
                 for i in range(5):            
-                    out = out + str(list[i]) + " "
-                out = out + "\n"
-        return out
-        
+                    rval = rval + str(list[i]) + " "
+                rval = rval + "\n"
+            #authoritiesvalues
+            if(str(list[0]) == self.query.query_info_name and str(list[1]) == "NS"):
+                for i in range(5):            
+                    aval = aval + str(list[i]) + " "
+                aval = aval + "\n"
+            if((str(list[1]) == "A" and "NS".lower() in list[0]) or (str(list[1]) == "A" and self.query.query_info_type.lower() in list[0])):
+                for i in range(5):            
+                    eval = eval + str(list[i]) + " "
+                eval = eval + "\n"
+            
+        return mensagem+"\n"+rval+aval+eval
      
     def cliente(self):
         print("[SERVER UDP MODE] - STARTING...")
         serverUDP = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
         
-        serverUDP.bind(("127.0.0.1",20001))
+        serverUDP.bind((socket.gethostbyname(socket.gethostname()),20001))
             
         print("[SERVER UDP MODE] - LISTENING...")
         
@@ -40,12 +50,13 @@ class SP:
             (msg,add) = serverUDP.recvfrom(1024)
             self.query.parse_message_condense(msg.decode('utf-8'))
             
-            clientMsg = "Message from Client-{}:  ".format(msg.decode('utf-8'))
+            clientMsg = "Message from Client:\n -> {}  ".format(msg.decode('utf-8'))
             
             msgFromServer = (self.origina_resposta(msg.decode('utf-8')))
             bytesToSend = str.encode(msgFromServer)
             
-            clientIP  = "Client IP Address:{}".format(add)
+            
+            clientIP  = "Client IP Address: {}".format(add)
             
             
             print(clientMsg)
@@ -53,6 +64,7 @@ class SP:
     
             # Sending a reply to client
             serverUDP.sendto(bytesToSend, add)
+            
             
             
     def handle_ss(self,conn,addr):

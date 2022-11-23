@@ -23,7 +23,7 @@ class Cliente_UDP:
             connected = False
         else:
             msg = client.recv(1024).decode('utf-8')
-            print(f"[SERVER] {msg}")
+            print(f"[MESSAGE RECEIVED FROM SERVER]\n{msg}")
 
     
     

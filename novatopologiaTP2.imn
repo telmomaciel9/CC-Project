@@ -173,8 +173,8 @@ node n5 {
 	!
     }
     canvas c1
-    iconcoords {134.0 105.0}
-    labelcoords {134.0 137.0}
+    iconcoords {115.0 98.0}
+    labelcoords {115.0 130.0}
     interface-peer {eth0 n7}
 }
 
@@ -182,7 +182,7 @@ node n6 {
     type router
     model host
     network-config {
-	hostname SP
+	hostname SPa
 	!
 	interface eth0
 	 ip address 10.0.6.10/24
@@ -239,7 +239,7 @@ node n10 {
     type router
     model host
     network-config {
-	hostname SS1
+	hostname SS1a
 	!
 	interface eth0
 	 ip address 10.0.7.10/24
@@ -256,7 +256,7 @@ node n13 {
     type router
     model host
     network-config {
-	hostname SS2
+	hostname SS2a
 	!
 	interface eth0
 	 ip address 10.0.8.10/24
@@ -273,7 +273,7 @@ node n17 {
     type router
     model host
     network-config {
-	hostname SP
+	hostname SPb
 	!
 	interface eth0
 	 ip address 10.0.9.10/24
@@ -281,8 +281,8 @@ node n17 {
 	!
     }
     canvas c1
-    iconcoords {892.0 106.0}
-    labelcoords {892.0 138.0}
+    iconcoords {900.0 151.0}
+    labelcoords {900.0 183.0}
     interface-peer {eth0 n18}
 }
 
@@ -297,6 +297,7 @@ node n18 {
     labelcoords {784.0 205.0}
     interface-peer {e1 n17}
     interface-peer {e0 n12}
+    interface-peer {e2 n15}
 }
 
 node n19 {
@@ -329,7 +330,7 @@ node n21 {
     type router
     model host
     network-config {
-	hostname SS1
+	hostname SS1b
 	!
 	interface eth0
 	 ip address 10.0.10.10/24
@@ -346,7 +347,7 @@ node n24 {
     type router
     model host
     network-config {
-	hostname SS2
+	hostname SS2b
 	!
 	interface eth0
 	 ip address 10.0.11.10/24
@@ -397,7 +398,7 @@ node n30 {
     type router
     model host
     network-config {
-	hostname SP
+	hostname SPa2
 	!
 	interface eth0
 	 ip address 10.0.14.10/24
@@ -453,7 +454,7 @@ node n34 {
     type router
     model host
     network-config {
-	hostname SS1
+	hostname SS1a2
 	!
 	interface eth0
 	 ip address 10.0.15.10/24
@@ -470,7 +471,7 @@ node n37 {
     type router
     model host
     network-config {
-	hostname SS2
+	hostname SS2a2
 	!
 	interface eth0
 	 ip address 10.0.16.10/24
@@ -487,7 +488,7 @@ node n41 {
     type router
     model host
     network-config {
-	hostname SP
+	hostname SPb2
 	!
 	interface eth0
 	 ip address 10.0.17.10/24
@@ -544,7 +545,7 @@ node n45 {
     type router
     model host
     network-config {
-	hostname SS1
+	hostname SS1b2
 	!
 	interface eth0
 	 ip address 10.0.18.10/24
@@ -578,7 +579,7 @@ node n48 {
     type router
     model host
     network-config {
-	hostname SS2
+	hostname SS2b2
 	!
 	interface eth0
 	 ip address 10.0.19.10/24
@@ -722,6 +723,23 @@ node n14 {
     interface-peer {eth3 n1}
     interface-peer {eth4 n12}
     interface-peer {eth5 n11}
+}
+
+node n15 {
+    type router
+    model PC
+    network-config {
+	hostname Cliente2
+	!
+	interface eth0
+	 ip address 10.0.9.20/24
+	 ipv6 address 2001:9::20/64
+	!
+    }
+    canvas c1
+    iconcoords {820.0 71.0}
+    labelcoords {820.0 103.0}
+    interface-peer {eth0 n18}
 }
 
 link l1 {
@@ -929,6 +947,11 @@ link l36 {
     bandwidth 0
 }
 
+link l37 {
+    nodes {n18 n15}
+    bandwidth 0
+}
+
 annotation a1 {
     iconcoords {242 167 674 513}
     type oval
@@ -1032,7 +1055,7 @@ annotation a8 {
     label {Dominio B}
     labelcolor black
     fontfamily {Arial}
-    fontsize 12
+    fontsize {12}
     effects {bold}
     canvas c1
 }
@@ -1043,7 +1066,7 @@ annotation a9 {
     label {Dominio A}
     labelcolor black
     fontfamily {Arial}
-    fontsize 12
+    fontsize {12}
     effects {bold}
     canvas c1
 }
@@ -1068,7 +1091,7 @@ annotation a12 {
     label {Subdominio de A}
     labelcolor black
     fontfamily {Arial}
-    fontsize 12
+    fontsize {12}
     effects {bold}
     canvas c1
 }
@@ -1086,7 +1109,7 @@ annotation a14 {
     label {Subdominio de B}
     labelcolor black
     fontfamily {Arial}
-    fontsize 12
+    fontsize {12}
     effects {bold}
     canvas c1
 }
@@ -1097,7 +1120,7 @@ annotation a15 {
     label {Dominio .reverse}
     labelcolor black
     fontfamily {Arial}
-    fontsize 12
+    fontsize {12}
     effects {bold}
     canvas c1
 }
@@ -1108,7 +1131,7 @@ annotation a16 {
     label {Dominio root}
     labelcolor black
     fontfamily {Arial}
-    fontsize 12
+    fontsize {12}
     effects {bold}
     canvas c1
 }

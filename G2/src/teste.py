@@ -50,8 +50,6 @@ class Teste:
     bd = Parser_BD()
     bd.parse_db("/home/rogan/Desktop/CC/trabalho/CC/G2/entrada/modeloDB.txt")
  
- """
- 
 import socket
 import threading
  
@@ -122,3 +120,9 @@ def main():
     
 if __name__ == "__main__":
     main()
+"""
+with open("ficheiroGrande", "a") as f:
+    for i in range(1400):
+        f.write("ola\n")
+               
+               

@@ -14,51 +14,46 @@ class SP:
         self.srvConfig = Parser_Config()
         self.srvST_list = ""
         self.query = Query()
-        
-    #Faz parse da base de dados para a cache do sp    
-    def regista_srvCache(self):
         self.srvBD.parse_db(self.srvCache)
+        self.srvConfig.parse_Config("/home/rogan/Desktop/CC/trabalho/CC/G2/entrada/configDomA.txt")
+    #
         
     def origina_resposta(self, mensagem):
         out = mensagem + "\n"
-        for list in self.serverCache.mat:
+        for list in self.srvCache.mat:
             if(list[1] == self.query.query_info_type or list[1] == "NS"):
                 for i in range(5):            
                     out = out + str(list[i]) + " "
                 out = out + "\n"
         return out
         
-    #Função auxiliar da função cliente    
-    def handle_client(self,conn,addr):
-        print(f"[NEW CONNETION] {addr} CONNECTED.")
-     
-        connected = True
-        while connected:
-            msg = conn.recv(1024).decode('utf-8')
-            self.query.parse_message_condense(msg)
-            if msg == "!DISCONNECT":
-                connected = False
-            
-            print(f"[{addr}] {msg}")
-            msg = self.origina_resposta(msg)
-            conn.send(msg.encode('utf-8'))
-            
-        conn.close()
      
     def cliente(self):
         print("[SERVER UDP MODE] - STARTING...")
-        serverTCP = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        serverUDP = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
         
-        serverTCP.bind((socket.gethostbyname(socket.gethostname()),20001))
-        
-        serverTCP.listen()
+        serverUDP.bind(("127.0.0.1",20001))
+            
         print("[SERVER UDP MODE] - LISTENING...")
         
         while True:
-            conn, addr = serverTCP.accept()
-            thread = threading.Thread(target=self.handle_client, args=(conn,addr))
-            thread.start()
-            print(f"[ACTIVE CONNECTIONS] {threading.active_count()-1}")
+            (msg,add) = serverUDP.recvfrom(1024)
+            self.query.parse_message_condense(msg.decode('utf-8'))
+            
+            clientMsg = "Message from Client-{}:  ".format(msg.decode('utf-8'))
+            
+            msgFromServer = (self.origina_resposta(msg.decode('utf-8')))
+            bytesToSend = str.encode(msgFromServer)
+            
+            clientIP  = "Client IP Address:{}".format(add)
+            
+            
+            print(clientMsg)
+            print(clientIP)
+    
+            # Sending a reply to client
+            serverUDP.sendto(bytesToSend, add)
+            
             
     def handle_ss(self,conn,addr):
         print(f"[NEW CONNETION] {addr} CONNECTED.")
@@ -76,15 +71,15 @@ class SP:
      
     def ss(self):
         print("[SERVER TCP MODE] - STARTING...")
-        serverUDP = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        serverTCP = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         
-        serverUDP.bind((socket.gethostbyname(socket.gethostname()),20001))
+        serverTCP.bind(("127.0.0.1",20001))
         
-        serverUDP.listen()
+        serverTCP.listen()
         print("[SERVER TCP MODE] - LISTENING...")
         
         while True:
-            conn, addr = serverUDP.accept()
+            conn, addr = serverTCP.accept()
             thread = threading.Thread(target=self.handle_ss, args=(conn,addr))
             thread.start()
             print(f"[ACTIVE CONNECTIONS] {threading.active_count()-1}")        
@@ -92,12 +87,11 @@ class SP:
         
 if __name__ == "__main__":
     srv = SP()
-    srv.regista_srvCache()
     t1 = threading.Thread(target = srv.cliente)
     t2 = threading.Thread(target = srv.ss)
         
-    t1.run()
-    t2.run()
+    t1.start()
+    t2.start()
 
 
     

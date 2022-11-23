@@ -220,3 +220,17 @@ def main():
         
 if __name__ == "__main__":
     main()
+    
+    
+#mandar linhas para o ss
+if msg == "ACCEPT":
+            for i in range(len(self.srvBD.linhas)):
+                print(i+1)
+                msg = self.srvBD.linhas[i]
+                print(f"[SP] - SENDING MESSAGE:\n -> {msg}")
+                conn.send(bytes(msg,'utf-8'))
+            
+if msg == "ACCEPT":
+            file  = open(self.srvBD.diretoria, "r")
+            data = file.read()
+            conn.send(data.encode('utf-8'))

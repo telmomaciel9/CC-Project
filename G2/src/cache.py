@@ -28,7 +28,8 @@ class Cache:
                     return r
             if(list[5]=="OTHERS" and (list[6]>list[3])):
                 list[8]= "FREE"
-            
+                
+      
                 
     def reg_atualiza_cache(self, name, tipo, value, ttl, order,origin, status):
         
@@ -64,6 +65,26 @@ class Cache:
             if(flag2):
                 self.mat.append([name, type, value, ttl, order, origin,time_stamp, len(self.mat)+1, "FREE"])
 
+    def reg_cache(self, mensagem):
+        dominio= ""
+        ttl = ""
+        linha = mensagem.split(" ")
+        if(linha[0]!='#'):
+            if(linha[0]=="@" and linha[1]=="DEFAULT"):
+                dominio = linha[2]
+            if(linha[0]=="TTL" and linha[1]=="DEFAULT"):
+                ttl = linha[2]
+            if((linha[0]=="@" or linha[0].__contains__("@")) and len(linha)<=4):
+                string = linha[0].replace("@", dominio)
+                self.reg_atualiza_cache(string, linha[1], linha[2], ttl, " - ","SP","VALID")
+            if((linha[0]=="@" or linha[0].__contains__("@")) and len(linha)>4):
+                string = linha[0].replace("@", dominio)
+                self.reg_atualiza_cache(string, linha[1], linha[2], ttl, linha[4],"SP","VALID")
+            if(not(linha[0].__contains__("@")) and len(linha)>4):
+                self.reg_atualiza_cache(linha[0], linha[1], linha[2], ttl, linha[4],"SP","VALID")
+            #if(not(linha[0].__contains__("@")) and len(linha)<=4):
+            #    self.reg_atualiza_cache(linha[0], linha[1], linha[2], ttl, " - ","SP","VALID") 
+                
 
     
     def __str__(self):

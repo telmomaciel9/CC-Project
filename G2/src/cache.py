@@ -30,9 +30,8 @@ class Cache:
                 list[8]= "FREE"
                 
       
-                
-    def reg_atualiza_cache(self, name, tipo, value, ttl, order,origin, status):
-        
+    #função pedida no enunciado      
+    def reg_atualiza_cache(self, name, tipo, value, ttl, order,origin, status): 
         current_time = datetime.datetime.now()
         time_stamp = current_time.timestamp()
         
@@ -65,6 +64,8 @@ class Cache:
             if(flag2):
                 self.mat.append([name, type, value, ttl, order, origin,time_stamp, len(self.mat)+1, "FREE"])
 
+    #função que regista na cache quando recebe uma linha (era para usar quando o ss recebe uma linha so, mas nao vai ser usada)
+    """
     def reg_cache(self, mensagem):
         dominio= ""
         ttl = ""
@@ -84,16 +85,39 @@ class Cache:
                 self.reg_atualiza_cache(linha[0], linha[1], linha[2], ttl, linha[4].replace("\n",""),"SP","VALID")
             #if(not(linha[0].__contains__("@")) and len(linha)<=4):
             #    self.reg_atualiza_cache(linha[0], linha[1], linha[2], ttl, " - ","SP","VALID") 
-                
-
+    """
+    
+    #recebe uma lista de strings e regista para a cache
+    def reg_cache3(self,lista):
+        dominio = ""
+        ttl = ""
+        #print(lista)
+        for frase in lista:
+            palavra=frase.split(" ")    
+            if(palavra[0]=="@" and palavra[1]=="DEFAULT"):
+                dominio = palavra[2].replace("\n","")
+            if(palavra[0]=="TTL" and palavra[1]=="DEFAULT"):
+                ttl = palavra[2].replace("\n","")
+            if((palavra[0]=="@" or palavra[0].__contains__("@")) and len(palavra)<=4):
+                string = palavra[0].replace("@", dominio)
+                self.reg_atualiza_cache(string, palavra[1].replace("\n",""), palavra[2].replace("\n",""), ttl, "","FILE","VALID")
+            if((palavra[0]=="@" or palavra[0].__contains__("@")) and len(palavra)>4):
+                string = palavra[0].replace("@", dominio)
+                self.reg_atualiza_cache(string, palavra[1].replace("\n",""), palavra[2].replace("\n",""), ttl, palavra[4].replace("\n",""),"FILE","VALID")
+            if(not(palavra[0].__contains__("@")) and len(palavra)>4):
+                self.reg_atualiza_cache(palavra[0], palavra[1].replace("\n",""), palavra[2].replace("\n",""), ttl, palavra[4].replace("\n",""),"FILE","VALID")
+            if(not(palavra[0].__contains__("@")) and len(palavra)<=4):
+                self.reg_atualiza_cache(palavra[0].replace("\n",""), palavra[1].replace("\n",""), palavra[2].replace("\n",""), ttl, "","FILE","VALID")
+            
+    
+    def __str__(self):
+        header = ["Name", "Type", "Value", "TTL", "Order", "Origin", "TimeStamp", "Index", "Status"]
+        return (tabulate(self.mat, headers = header, tablefmt = "grid"))
     
     #def __str__(self):
-    #    header = ["Name", "Type", "Value", "TTL", "Order", "Origin", "TimeStamp", "Index", "Status"]
-    #    return (tabulate(self.mat, headers = header, tablefmt = "grid"))
-    def __str__(self):
-        out = ""
-        for list in self.mat:
-            #for i in range(len(list)):
-            #    out+=str(list[i]) + " "
-            out+=str(list)+"\n"
-        return out
+    #    out = ""
+    #    for list in self.mat:
+    #        #for i in range(len(list)):
+    #        #    out+=str(list[i]) + " "
+    #        out+=str(list)+"\n"
+    #    return out

@@ -1,8 +1,8 @@
-# Configuration file for primary server for lospeneiros.teldu
-lospeneiros.teldu DB /var/dns/example-com.db #mudar
-lospeneiros.teldu SS 10.0.10.10
-lospeneiros.teldu SS 10.0.11.10
-lospeneiros.teldu DD 10.0.10.12
-lospeneiros.teldu LG /var/dns/example-com.log #mudar
-all LG /var/dns/all.log #mudar
-root ST /var/dns/rootservers.db #mudar
+# Configuration file for primary server for 
+elefalante.dumac DB /var/dns/example-com.db
+elefalante.dumac SS 10.0.10.10
+elefalante.dumac SS 10.0.11.10
+elefalante.dumac DD 10.0.10.12
+elefalante.dumac LG /var/dns/example-com.log
+all LG /var/dns/all.log
+root ST /var/dns/rootservers.db

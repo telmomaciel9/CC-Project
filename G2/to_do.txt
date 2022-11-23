@@ -1,20 +1,21 @@
+FEITO:
+    - Dar parse dos ficheiros BD
+    
+    - Parse dos ficheiros config
+        -» falta escrever para lá
+        
+    - Queries 
+    
 EM PROGRESSO:
 - Escrever para os ficheiros logs
     -» falta escrever os ficheiros na estrutura dada no exemplo
         -» formatacão da data esta feita
-
-- Dar parse dos ficheiros BD
-    -» falta a parte dos ns
-    ja esta na cache 
-
-- Queries 
-    -» falta o servidor responder à query
-
+        
 - Transferencia de zona 
-    -» so temos a comunicação tcp
+    -» so temos a comunicação tcp, a enviar as linhas, mas estamos a ter provlemas com o buf no receiv, e falta aquelas condiçoes da pica
 
 - Sistema de cache 
-    -» falta os utlimos pontos
+    -» falta os utlimos pontos - em principio ja esta
 
 - Funcionamento do cl
     -» So temos o parse do command line
@@ -33,3 +34,4 @@ como é suposto passar o subdominio para a cache?
 as ultimas linhas, como é suposto?
 transferencia de zona, para saber se o sp é mais recente que o ss porque aqueles dois valores?
 pedir para explicar de forma resumida o Funcionamento cl
+(socket.gethostbyname(socket.gethostname())

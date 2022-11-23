@@ -6,7 +6,7 @@ import threading
 import socket
 
 
-class SP:
+class ServerTeste:
     
     def __init__(self):
         self.srvCache = Cache()
@@ -64,46 +64,52 @@ class SP:
     
             # Sending a reply to client
             serverUDP.sendto(bytesToSend, add)
-            
-            
-            
-    def handle_ss(self,conn,addr):
-        print(f"[NEW CONNETION] {addr} CONNECTED.")
-     
-        connected = True
-        while connected:
-            msg = conn.recv(1024).decode('utf-8')
-            if msg == "!DISCONNECT":
-                connected = False
-            
-            print(f"[{addr}] {msg}")
-            msg = f"MESSAGE RECEIVED: {msg}"
-            conn.send(msg.encode('utf-8'))
-        conn.close()
+             
      
     def ss(self):
         print("[SERVER TCP MODE] - STARTING...")
         serverTCP = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         
-        serverTCP.bind(("127.0.0.1",20001))
+        serverTCP.bind((socket.gethostbyname(socket.gethostname()),20001))
         
-        serverTCP.listen()
+        serverTCP.listen(10)
         print("[SERVER TCP MODE] - LISTENING...")
         
-        while True:
-            conn, addr = serverTCP.accept()
-            thread = threading.Thread(target=self.handle_ss, args=(conn,addr))
-            thread.start()
-            print(f"[ACTIVE CONNECTIONS] {threading.active_count()-1}")        
+        conn, addr = serverTCP.accept()
+        print(f"[NEW CONNETION] {addr} CONNECTED.")
+     
+        
+        msg = conn.recv(1024).decode('utf-8')
+        print(f"[SP] - Message receive:\n -> {msg}")
+        if msg == self.srvConfig.dominio:
+            msg = str(len(self.srvBD.linhas))
+            #msg = str(1400)
+            conn.send(msg.encode('utf-8'))
+            
+        msg = conn.recv(1024).decode('utf-8')
+        print(f"[SP] - Message receive:\n -> {msg}")
+        #mandar linhas para o ss
+        if msg == "ACCEPT":
+            for i in range(len(self.srvBD.linhas)):
+                print(i+1)
+                msg = self.srvBD.linhas[i]
+                print(f"[SP] - SENDING MESSAGE:\n -> {msg}")
+                conn.send(bytes(msg,'utf-8'))
+        
+        msg = conn.recv(1024).decode('utf-8')
+        print(f"[SP] - Message receive:\n -> {msg}")    
+        conn.close()       
 
         
 if __name__ == "__main__":
-    srv = SP()
+    srv = ServerTeste()
+    print(srv.srvConfig.dominio)
+    print(srv.srvCache)
     t1 = threading.Thread(target = srv.cliente)
     t2 = threading.Thread(target = srv.ss)
         
     t1.start()
-    t2.start()
+    t2.run()
 
 
     

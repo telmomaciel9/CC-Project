@@ -26,30 +26,24 @@ class SS_TCP:
             msg = ss.recv(1024).decode('utf-8')
             nLinhas = int(msg)
             print(f"[SS] - RECEIVED THIS MESSAGE:\n -> {msg}")
+            ficheiro = []
             if nLinhas < 65535 :
             #envia mensagem ao sp a dizer que aceita
                 msg = "ACCEPT"
                 print(f"[SS] - SENDING THIS MESSAGE:\n -> {msg}")
                 ss.send(msg.encode('utf-8'))
-                #recebe as linhas da bd
-                fullMsg = ""
-                flag = True
-                for i in range(nLinhas):
-                    msg = ss.recv(1024).decode('utf-8')
-                    print(i)
-                    print(f"[SS] - RECEIVED THIS MESSAGE:\n -> {msg}")
-                    #if not (msg.encode('utf-8')) :
-                    #    flag = False
-                    
-                        
                 
+                flag = True
+                while flag:
+                    msg = ss.recv(1024).decode('utf-8')
+                    lista_div = msg.split('\n')
+                    for palavra in lista_div:
+                        if palavra != "" and not("#" in palavra):
+                            ficheiro.append(palavra)
                     
-                #print(msg)
-
-                #print(fullMsg)    
-                #self.ssCache.reg_cache(msg)
-                #print(f"[SS] - RECIVED THIS MESSAGE:\n -> {msg}")
-            print("ola")
+                    if(len(ficheiro)==nLinhas):
+                        flag= False
+            self.ssCache.reg_cache3(ficheiro)
             
             msg = "DISCONNECT"
             print(f"[SS] - SENDING THIS MESSAGE:\n -> {msg}")

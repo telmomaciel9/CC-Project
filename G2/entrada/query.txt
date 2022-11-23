@@ -1,1 +1,17 @@
 3874,Q+R,0,0,0,0;example.com.,MX;
+
+
+#response values
+            if(list[1] == self.query.query_info_type and list[0] == self.query.query_info_name):
+                for i in range(5):            
+                    rval =+ str(list[i]) + " "
+                rval = rval
+            #authoritiesvalues
+            if(list[0] == self.query.query_info_name and list[1] == "NS"):
+                for i in range(5):            
+                    aval = aval + str(list[i]) + " "
+                aval = aval + "\n"
+            if((list[1] == "A" and list.__contains__("NS".lower())) or(list[1] == "A" and list.__contains__(self.query.query_info_type.lower()))):
+                for i in range(5):            
+                    eval = eval + str(list[i]) + " "
+                eval = eval + "\n"

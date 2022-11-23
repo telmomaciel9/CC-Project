@@ -83,11 +83,11 @@ class ServerTeste:
         print(f"[SP] - Message receive:\n -> {msg}")
         if msg == self.srvConfig.dominio:
             msg = str(len(self.srvBD.linhas))
+            #msg = str(1400)
             conn.send(msg.encode('utf-8'))
             
         msg = conn.recv(1024).decode('utf-8')
         print(f"[SP] - Message receive:\n -> {msg}")
-        #mandar linhas para o ss
         #mandar linhas para o ss
         if msg == "ACCEPT":
             for i in range(len(self.srvBD.linhas)):
@@ -95,7 +95,7 @@ class ServerTeste:
                 msg = self.srvBD.linhas[i]
                 print(f"[SP] - SENDING MESSAGE:\n -> {msg}")
                 conn.send(bytes(msg,'utf-8'))
-                
+        
         msg = conn.recv(1024).decode('utf-8')
         print(f"[SP] - Message receive:\n -> {msg}")    
         conn.close()       

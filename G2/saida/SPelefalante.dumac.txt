@@ -1,0 +1,4 @@
+24:11:2022.5:9:56:468 EV 127.0.0.1 conf-file-read  -  /CC/G2/entrada/configDomA.txt24:11:2022.5:9:56:468 EV 127.0.0.1 logs-file - /home/rogan/Desktop/CC/trabalho/CC/G2/saida/SPelefalante.dumac.txt24:11:2022.5:9:56:468 EV 127.0.0.1 database-file-read  - CC/G2/entrada/modeloDB.txt24:11:2022.5:10:0:309 ZT ('127.0.0.1', 39914) SP - 70924:11:2022.5:10:55:497 EV 127.0.0.1 conf-file-read  -  /CC/G2/entrada/configDomA.txt
+24:11:2022.5:10:55:497 EV 127.0.0.1 logs-file - /home/rogan/Desktop/CC/trabalho/CC/G2/saida/SPelefalante.dumac.txt
+24:11:2022.5:10:55:497 EV 127.0.0.1 database-file-read  - CC/G2/entrada/modeloDB.txt
+24:11:2022.5:10:57:190 ZT ('127.0.0.1', 39916) SP - 709

@@ -120,9 +120,14 @@ def main():
     
 if __name__ == "__main__":
     main()
-"""
+
 with open("ficheiroGrande", "a") as f:
     for i in range(1400):
         f.write("ola\n")
                
+"""
                
+import datetime
+date = datetime.datetime.now()
+data_formatada = str(date.day) + ":" + str(date.month) + ":" + str(date.year) + "." + str(date.hour) + ":" + str(date.minute) + ":" + str(date.second) + ":" + str(date.microsecond)[:-3]
+print(data_formatada)               

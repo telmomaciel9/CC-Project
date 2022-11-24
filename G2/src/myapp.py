@@ -1,4 +1,5 @@
 import sys
+from cliente_UDP import Cliente_UDP
 
 class MYAPP:
     def __init__(self):

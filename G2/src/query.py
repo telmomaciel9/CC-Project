@@ -1,5 +1,5 @@
 #classe que da parse da mensgem
-from cache import Cache
+
 import re
 
 class Query:
@@ -29,7 +29,25 @@ class Query:
             self.query_info_name = linha[6]
             self.query_info_type = linha[7] 
             
-         
+    def origina_resposta(self,cache, query, mensagem):
+        rval = ""
+        aval = ""
+        eval = ""
+        for list in cache.mat:
+            if((str(list[1]) == str(query.query_info_type)) and (str(list[0]) == str(query.query_info_name))):
+                for i in range(5):            
+                    rval = rval + str(list[i]) + " "
+                rval = rval + "\n"
+            #authoritiesvalues
+            if(str(list[0]) == query.query_info_name and str(list[1]) == "NS"):
+                for i in range(5):            
+                    aval = aval + str(list[i]) + " "
+                aval = aval + "\n"
+            if((str(list[1]) == "A" and "NS".lower() in list[0]) or (str(list[1]) == "A" and query.query_info_type.lower() in list[0])):
+                for i in range(5):            
+                    eval = eval + str(list[i]) + " "
+                eval = eval + "\n"         
+        return mensagem+"\n"+rval+aval+eval    
     
     def le_linha (self, diretoria):
         with open(diretoria, "r") as f:                                    

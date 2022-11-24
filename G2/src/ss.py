@@ -12,7 +12,7 @@ class SS_TCP:
         
     def conecta(self):
         ss = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        ss.connect((socket.gethostbyname(socket.gethostname()), 20001))
+        ss.connect(("127.0.0.1", 20001))
         print(f"[SS] - SERVER CONNECTED")
         
         conecta = True

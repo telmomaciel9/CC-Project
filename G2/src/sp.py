@@ -24,9 +24,10 @@ class SP:
         if(len(sys.argv)==4):
             self.debug = sys.argv[3]
         
-        self.logs = Logs()
+        
         self.srvConfig = Parser_Config(self.dirConfig)
         self.srvConfig.parse_Config()
+        self.logs = Logs(self.srvConfig.dir_log)
         self.srvCache = Cache()
         self.srvBD = Parser_BD(self.srvConfig.dir_bd)
         self.srvBD.parse_db(self.srvCache)

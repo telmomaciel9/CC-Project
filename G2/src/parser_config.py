@@ -5,7 +5,8 @@ class Parser_Config:
         self.diretoria = diretoria
         self.dominio = ""
         self.linhas = []
-        self.dir_log = ""
+        self.dir_logLocal = ""
+        self.dir_logAll = ""
         self.dir_bd = ""
         self.ip_SS = []
         self.ip_SP = ""
@@ -34,8 +35,10 @@ class Parser_Config:
                         self.ip_ST = linha[2]
                     if(linha[1] == "SP"):
                         self.ip_SP = linha[2]
-                    if(linha[1] == "LG"):
-                        self.dir_log = linha[2]
+                    if(linha[1] == "LG" and linha[0]=="all"):
+                        self.dir_logAll = linha[2]
+                    if(linha[1] == "LG" and linha[0]!="all"):
+                        self.dir_logLocal = linha[2]
                         
     def __str__(self):
         #print(self.linhas)

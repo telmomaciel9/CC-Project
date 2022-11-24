@@ -8,6 +8,7 @@ import threading
 import socket
 import os
 import sys
+import time
 
 
 class SP:
@@ -24,13 +25,15 @@ class SP:
         if(len(sys.argv)==4):
             self.debug = sys.argv[3]
         
-        
         self.srvConfig = Parser_Config(self.dirConfig)
         self.srvConfig.parse_Config()
-        self.logs = Logs(self.srvConfig.dir_log)
+        self.logs = Logs(self.srvConfig.dir_logLocal,self.srvConfig.dir_logAll, self.debug)
+        self.logs.EV("conf-file-read", self.dirConfig)
+        self.logs.EV("log-file-create", self.srvConfig.dir_logLocal)
         self.srvCache = Cache()
         self.srvBD = Parser_BD(self.srvConfig.dir_bd)
         self.srvBD.parse_db(self.srvCache)
+        self.logs.EV("database-file-read", self.srvConfig.dir_bd)
         self.srvST_list = Parser_ST(self.srvConfig.dir_ST)
         self.query = Query()
         
@@ -47,6 +50,7 @@ class SP:
         while True:
             (msg,add) = serverUDP.recvfrom(1024)
             self.query.parse_message_condense(msg.decode('utf-8'))
+            self.logs.QR_QE(True, str(add), self.query.query_info_name + " " + self.query.query_info_type)
             
             clientMsg = "Message from Client:\n -> {}  ".format(msg.decode('utf-8'))
             
@@ -59,6 +63,7 @@ class SP:
     
             # Sending a reply to client
             serverUDP.sendto(bytesToSend, add)
+            self.logs.RP_RR(True,str(add),  self.query.query_info_name + " " + self.query.query_info_type)
              
      
     def ss(self):
@@ -73,14 +78,13 @@ class SP:
         while True:
             conn, addr = serverTCP.accept()
             print(f"[NEW CONNETION] {addr} CONNECTED.")
-         
-            
             msg = conn.recv(1024).decode('utf-8')
             print(f"[SP] - Message receive:\n -> {msg}")
+            self.logs.QR_QE(True, addr)
             if msg == self.srvConfig.dominio:
                 msg = str(len(self.srvBD.linhas))
                 conn.send(msg.encode('utf-8'))
-                
+                self.logs.RP_RR(False, str(addr))
             msg = conn.recv(1024).decode('utf-8')
             print(f"[SP] - Message receive:\n -> {msg}")
             
@@ -88,19 +92,21 @@ class SP:
             bytesSent = 0
             if msg == "ACCEPT":
                 
+                start = time.time()
                 for i in range(len(self.srvBD.linhas)):
                     print(i+1)
                     msg = self.srvBD.linhas[i]
                     print(f"[SP] - SENDING MESSAGE:\n -> {msg}")
                     conn.send(bytes(msg,'utf-8'))
                     bytesSent+=len(msg)
-                    
+                end =time.time()
+                self.logs.ZT(str(addr),"SP", str(float(end-start)),str(bytesSent))     
             msg = conn.recv(1024).decode('utf-8')
             print(f"[SP] - Message receive:\n -> {msg}")
             if(msg.upper() == "DISCONNECT"):
                False
             conn.close()       
-
+        self.logs.EV("end-of-connection")
         
 if __name__ == "__main__":
     srv = SP()

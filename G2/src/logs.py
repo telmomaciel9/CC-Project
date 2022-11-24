@@ -3,113 +3,98 @@ import re
 class Logs:
     # O modo é se estamos a correr um servidor em modo debug ou shy
     # No modo debug, todos os logs também são mandados para o standard output
-     def __init__(self, fileLogs = '', fileLogsAll = '', modo = ''):
+     def __init__(self, fileLogsLocal = '', fileLogsAll = '', modo = ''):
           primeiraLinha = "# Log File for DNS server/resolver\n"
-          self.fileLogs = fileLogs
+          self.fileLogsLocal = fileLogsLocal
           self.fileLogsAll = fileLogsAll
-          with open(self.fileLogs, "a") as fLocal:
+          with open(self.fileLogsLocal, "a") as fLocal:
                fLocal.write(primeiraLinha)
-          with open(self.fileLogs, "a") as fAll:
+          with open(self.fileLogsAll, "a") as fAll:
                fAll.write(primeiraLinha)
-          self.modo = modo
+          self.modoDebug = modo
+    
+     def formatacao(self):
+        logging.basicConfig(filename = self.fileLogsLocal, filemode="a", level=logging.INFO, format= "%(asctime)s.%(msecs)03d %(message)s", datefmt='%d:%m:%Y.%H:%M:%S')
 
+     def impressora (self,string):
+        logging.info(string)
+        if self.modoDebug =="debug":
+            print(string)
      
-     
-    # recebe == true recebeu, false enviou
+    # recebe == true recebeu query, false enviou que
      def QR_QE(self, recebe, endereco, infoQuery = ''):
-        logging.basicConfig(filename = self.fileLogs, filemode="a", level=logging.INFO, format= "%(asctime)s.%(msecs)03d %(message)s", datefmt='%d:%m:%Y.%H:%M:%S')
+        self.formatacao()
         
         if recebe:
-            string = "QR " + endereco + " " + infoQuery
+            string = "QR " + str(endereco) + " " + infoQuery
         else:
-            string = "QE " + endereco + " " + infoQuery
+            string = "QE " + str(endereco) + " " + infoQuery
         
-        logging.info(string)
-        if self.modo == 'debug':
-            print(string)
-
+        self.impressora(string)
 
      def RP_RR(self, recebe, endereco, infoQuery=''):
-        logging.basicConfig(filename = self.fileLogs, filemode="a", level=logging.INFO, format= "%(asctime)s.%(msecs)03d %(message)s", datefmt='%d:%m:%Y.%H:%M:%S')
+        self.formatacao()
         
         if recebe:
-            string = "RR " + endereco + " " + infoQuery
+            string = "RR " + str(endereco) + " " + infoQuery
         else:
-            string = "RP " + endereco + " " + infoQuery
+            string = "RP " + str(endereco) + " " + infoQuery
 
-        logging.info(string)
-        if self.modo == 'debug':
-            print(string)
+        self.impressora(string)
 
-     def ZT(self, ip, porta, role = '', time = '', totalbytes = ''):
-        logging.basicConfig(filename = self.fileLogs, filemode="a", level=logging.INFO, format= "%(asctime)s.%(msecs)03d %(message)s", datefmt='%d:%m:%Y.%H:%M:%S')
+     def ZT(self, endereco, role = '', time = '', totalbytes = ''):
+        self.formatacao()
         
         if time == '' and totalbytes == '':
-            string = "ZT " + ip + ":" + porta + " " + role
+            string = "ZT " + str(endereco) + " " + role
         else:
-            string = "ZT " + ip + ":" + porta + " " + role + " " + time + " " + totalbytes
+            string = "ZT " + str(endereco) + " " + role + " " + time + " " + totalbytes
 
-        logging.info(string)
-        if self.modo == 'debug':
-            print(string)
+        self.impressora(string)
 
-     def EV(self, eventType, msg=''):
-        logging.basicConfig(filename = self.fileLogs, filemode="a", level=logging.INFO, format= "%(asctime)s.%(msecs)03d %(message)s", datefmt='%d:%m:%Y.%H:%M:%S')
+     def EV(self, acontecimento, msg=''):
+        self.formatacao()
 
         if msg:
-            string = "EV 127.0.0.1 " + eventType + " " + msg 
+            string = "EV 127.0.0.1 " + acontecimento + " " + msg 
         else:
-            string = "EV 127.0.0.1 " + eventType
+            string = "EV 127.0.0.1 " + acontecimento
 
-        logging.info(string)
-        if self.modo == 'debug':
-            print(string)
+        self.impressora(string)
 
      def ER(self, endereco):
-        logging.basicConfig(filename = self.fileLogs, filemode="a", level=logging.INFO, format= "%(asctime)s.%(msecs)03d %(message)s", datefmt='%d:%m:%Y.%H:%M:%S')
-        string = "ER " + endereco   
+        self.formatacao()
+        string = "ER " + str(endereco)   
 
-        logging.info(string)
-        if self.modo == 'debug':
-            print(string)
+        self.impressora(string)
 
      def EZ(self, ip, porta, role):
-        logging.basicConfig(filename = self.fileLogs, filemode="a", level=logging.INFO, format= "%(asctime)s.%(msecs)03d %(message)s", datefmt='%d:%m:%Y.%H:%M:%S')
+        self.formatacao()
 
         string = "EZ " + ip + ":" + porta + " " + role
 
-        logging.info(string)
-        if self.modo == 'debug':
-            print(string)
+        self.impressora(string)
 
      def FL(self, errorType):
-        logging.basicConfig(filename = self.fileLogs, filemode="a", level=logging.INFO, format= "%(asctime)s.%(msecs)03d %(message)s", datefmt='%d:%m:%Y.%H:%M:%S')
+        self.formatacao()
         string = "FL 127.0.0.1 " + errorType
 
-        logging.info(string)
-        if self.modo == 'debug':
-            print(string)
+        self.impressora(string)
 
      def TO(self, timeoutType):
-        logging.basicConfig(filename = self.fileLogs, filemode="a", level=logging.INFO, format= "%(asctime)s.%(msecs)03d %(message)s", datefmt='%d:%m:%Y.%H:%M:%S')
+        self.formatacao()
         string = "TO " + timeoutType
 
-        logging.info(string)
-        if self.modo == 'debug':
-            print(string)
+        self.impressora(string)
 
      def SP(self, reason):
-        logging.basicConfig(filename = self.fileLogs, filemode="a", level=logging.INFO, format= "%(asctime)s.%(msecs)03d %(message)s", datefmt='%d:%m:%Y.%H:%M:%S')
+        self.formatacao()
         string = "SP 127.0.0.1 " + reason
 
-        logging.info(string)
-        if self.modo == 'debug':
-            print(string)
+        self.impressora(string)
 
      def ST(self, port, timeout, mode):
-        logging.basicConfig(filename = self.fileLogs, filemode="a", level=logging.INFO, format= "%(asctime)s.%(msecs)03d %(message)s", datefmt='%d:%m:%Y.%H:%M:%S')
+        self.formatacao()
         string = "ST 127.0.0.1 " + port + " " + timeout + " " + mode
         
-        logging.info(string)
-        if self.modo == 'debug':
-            print(string)
+        self.impressora(string)

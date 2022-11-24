@@ -13,7 +13,7 @@ class Query:
         self.num_extra_value = ""
         self.query_info_name = ""
         self.query_info_type = ""
-        print(self.query_info_type)
+       
 
 
     def parse_message_condense (self, query_str):

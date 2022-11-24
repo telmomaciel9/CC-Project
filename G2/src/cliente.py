@@ -15,8 +15,7 @@ class Cliente_UDP:
         self.query.query_info_type = sys.argv[3]
         if len(sys.argv) == 5:
             self.query.flags=sys.argv[4]
-        print(self.query.query_info_type)
-        print(self.query.query_info_name)
+        
 
     def iniciaCom(self):
     #serverAddressPort = ((socket.gethostbyname(socket.gethostname()), 20001))

@@ -10,7 +10,7 @@ class Cliente_UDP:
         self.query.message_id = random.randint(1,65535)
         aux = sys.argv[1].split(":")
         self.ip = aux[0]
-        self.porta = aux[1]
+        self.porta = int(aux[1])
         self.query.query_info_name = sys.argv[2]
         self.query.query_info_type = sys.argv[3]
         if len(sys.argv) == 5:
@@ -21,7 +21,7 @@ class Cliente_UDP:
     def iniciaCom(self):
     #serverAddressPort = ((socket.gethostbyname(socket.gethostname()), 20001))
         client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        client.connect((self.ip, 20001))
+        client.connect((self.ip, self.porta))
         print(f"[CONNECTED] Cliente connected")
         
         

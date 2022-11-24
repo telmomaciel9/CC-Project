@@ -2,6 +2,7 @@ from cache import Cache
 from parser_db import Parser_BD
 from parser_config import Parser_Config
 from query import Query
+from parser_st import Parser_ST
 from logs import Logs
 import threading
 import socket
@@ -16,25 +17,20 @@ class SP:
         self.dirConfig = sys.argv[1]
         aux = sys.argv[2].split(":")
         self.ip = aux[0]
-        self.porta = aux[1]
+        self.porta = int(aux[1])
         if(len(sys.argv)==5):
             self.timeout = sys.argv[3]
             self.debug = sys.argv[4]
         if(len(sys.argv)==4):
             self.debug = sys.argv[3]
-            
+        
         self.logs = Logs()
         self.srvConfig = Parser_Config(self.dirConfig)
         self.srvConfig.parse_Config()
-        
-        self.logs.escreve_log(self.srvConfig.dir_log, "EV", "127.0.0.1","conf-file-read  - "+self.dirConfig)
-        self.logs.escreve_log(self.srvConfig.dir_log, "EV", "127.0.0.1","logs-file - "+self.srvConfig.dir_log)
-        
         self.srvCache = Cache()
         self.srvBD = Parser_BD(self.srvConfig.dir_bd)
         self.srvBD.parse_db(self.srvCache)
-        self.logs.escreve_log(self.srvConfig.dir_log, "EV", "127.0.0.1","database-file-read  - " + self.srvConfig.dir_bd)
-        self.srvST_list = ""
+        self.srvST_list = Parser_ST(self.srvConfig.dir_ST)
         self.query = Query()
         
         
@@ -50,12 +46,11 @@ class SP:
         while True:
             (msg,add) = serverUDP.recvfrom(1024)
             self.query.parse_message_condense(msg.decode('utf-8'))
-            self.logs.escreve_log(self.dirLogs, "QR", str(add), self.query.message_id + " " + self.query.flags + self.query.query_info_name + " " + self.query.query_info_type)
             
             clientMsg = "Message from Client:\n -> {}  ".format(msg.decode('utf-8'))
             
             bytesToSend = str.encode(self.query.origina_resposta(self.srvCache,self.query,clientMsg))
-            self.logs.escreve_log(self.dirLogs, "RP", str(add), self.query.message_id + " " + self.query.flags + self.query.query_info_name + " " + self.query.query_info_type)
+            
             clientIP  = "Client IP Address: {}".format(add)
             
             print(clientMsg)
@@ -74,40 +69,41 @@ class SP:
         serverTCP.listen(10)
         print("[SERVER TCP MODE] - LISTENING...")
         
-        conn, addr = serverTCP.accept()
-        print(f"[NEW CONNETION] {addr} CONNECTED.")
-     
-        
-        msg = conn.recv(1024).decode('utf-8')
-        print(f"[SP] - Message receive:\n -> {msg}")
-        if msg == self.srvConfig.dominio:
-            msg = str(len(self.srvBD.linhas))
-            conn.send(msg.encode('utf-8'))
+        while True:
+            conn, addr = serverTCP.accept()
+            print(f"[NEW CONNETION] {addr} CONNECTED.")
+         
             
-        msg = conn.recv(1024).decode('utf-8')
-        print(f"[SP] - Message receive:\n -> {msg}")
-        
-        
-        bytesSent = 0
-        if msg == "ACCEPT":
-            
-            for i in range(len(self.srvBD.linhas)):
-                print(i+1)
-                msg = self.srvBD.linhas[i]
-                print(f"[SP] - SENDING MESSAGE:\n -> {msg}")
-                conn.send(bytes(msg,'utf-8'))
-                bytesSent+=len(msg)
+            msg = conn.recv(1024).decode('utf-8')
+            print(f"[SP] - Message receive:\n -> {msg}")
+            if msg == self.srvConfig.dominio:
+                msg = str(len(self.srvBD.linhas))
+                conn.send(msg.encode('utf-8'))
                 
-        msg = conn.recv(1024).decode('utf-8')
-        print(f"[SP] - Message receive:\n -> {msg}")
-        if(msg.upper() == "DISCONNECT"):
-            self.logs.escreve_log(self.dirLogs, "ZT", str(addr), "SP - "+str(bytesSent))
-        conn.close()       
+            msg = conn.recv(1024).decode('utf-8')
+            print(f"[SP] - Message receive:\n -> {msg}")
+            
+            
+            bytesSent = 0
+            if msg == "ACCEPT":
+                
+                for i in range(len(self.srvBD.linhas)):
+                    print(i+1)
+                    msg = self.srvBD.linhas[i]
+                    print(f"[SP] - SENDING MESSAGE:\n -> {msg}")
+                    conn.send(bytes(msg,'utf-8'))
+                    bytesSent+=len(msg)
+                    
+            msg = conn.recv(1024).decode('utf-8')
+            print(f"[SP] - Message receive:\n -> {msg}")
+            if(msg.upper() == "DISCONNECT"):
+               False
+            conn.close()       
 
         
 if __name__ == "__main__":
     srv = SP()
-    print(srv.srvCache)
+    #print(srv.srvCache)
     t1 = threading.Thread(target = srv.cliente)
     t2 = threading.Thread(target = srv.ss)
         

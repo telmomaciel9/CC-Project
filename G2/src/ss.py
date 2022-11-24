@@ -2,22 +2,31 @@ import socket
 from cache import Cache
 from parser_config import Parser_Config
 from logs import Logs
+import sys
 
 class SS:
     
     def __init__(self):
+        self.dirConfig = sys.argv[1]
+        aux = sys.argv[2].split(":")
+        self.ip = aux[0]
+        self.porta = int(aux[1])
+        if(len(sys.argv)==5):
+            self.timeout = sys.argv[3]
+            self.debug = sys.argv[4]
+        if(len(sys.argv)==4):
+            self.debug = sys.argv[3]
+            
         self.logs = Logs()
-        self.ssConfig = Parser_Config("/home/rogan/Desktop/CC/trabalho/CC/G2/entrada/modeloconfig.txt")
-        self.dirLogs= "/home/rogan/Desktop/CC/trabalho/CC/G2/saida/SS - "+self.ssConfig.dominio + ".txt"
-        self.logs.escreve_log(self.dirLogs, "EV", "127.0.0.1","conf-file-read  -  " + self.dirLogs)
-        self.logs.escreve_log(self.dirLogs, "EV", "127.0.0.1","logs-file - "+self.dirLogs)
+        self.ssConfig = Parser_Config(self.dirConfig)
+        
         
         self.ssConfig.parse_Config()
         self.ssCache = Cache()
         
     def conecta(self):
         ss = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        ss.connect(("127.0.0.1", 20001))
+        ss.connect((self.ip, self.porta))
         print(f"[SS] - SERVER CONNECTED")
         
         conecta = True

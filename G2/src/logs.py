@@ -1,54 +1,115 @@
-import datetime
-"""
-QR/QE - foi recebida/enviada uma query do/para o endereço indicado; os dados da entrada
-devem ser os dados relevantes incluídos na query; a sintaxe dos dados de entrada é a mesma que
-é usada no PDU de query no modo debug de comunicação entre os elementos;
-
-RP/RR-foi enviada/recebida uma resposta a uma query para o/do endereço indicado; os dados
-da entrada devem ser os dados relevantes incluídos na resposta à query; a sintaxe dos dados de
-entrada é a mesma que é usada no PDU de resposta às queries no modo debug de comunicação
-entre os elementos;
-
-ZT - foi iniciado e concluído corretamente um processo de transferência de zona; o endereço
-deve indicar o servidor na outra ponta da transferência; os dados da entrada devem indicar qual
-o papel do servidor local na transferência (SP ou SS) e, opcionalmente, a duração em
-milissegundos da transferência e o total de bytes transferidos;
-
-EV - foi detetado um evento/atividade interna no componente; o endereço deve indicar 127.0.0.1
-(ou localhost ou @); os dados da entrada devem incluir informação adicional sobre a atividade
-reportada (por exemplo, ficheiro de configuração/dados/ST lido, criado ficheiro de log, etc.);
-
-ER - foi recebido um PDU do endereço indicado que não foi possível descodificar corretamente;
-opcionalmente, os dados da entrada podem ser usados para indicar informação adicional (como,
-por exemplo, o que foi possível descodificar corretamente e em que parte/byte aconteceu o erro);
-
-EZ - foi detetado um erro num processo de transferência de zona que não foi concluída
-corretamente; o endereço deve indicar o servidor na outra ponta da transferência; os dados da
-entrada devem indicar qual o papel do servidor local na transferência (SP ou SS);
-
-FL - foi detetado um erro no funcionamento interno do componente; o endereço deve indicar
-127.0.0.1; os dados da entrada devem incluir informação adicional sobre a situação de erro (por
-exemplo, um erro na descodificação ou incoerência dos parâmetros de algum ficheiro de
-configuração ou de base de dados);
-
-TO - foi detetado um timeout na interação com o servidor no endereço indicado; os dados da
-entrada devem especificar que tipo de timeout ocorreu (resposta a uma query ou tentativa de
-contato com um SP para saber informações sobre a versão da base de dados ou para iniciar uma
-transferência de zona);
-
-SP - a execução do componente foi parada; o endereço deve indicar 127.0.0.1; os dados da
-entrada devem incluir informação adicional sobre a razão da paragem se for possível obtê-la;
-
-ST - a execução do componente foi iniciada; o endereço deve indicar 127.0.0.1; os dados da
-entrada devem incluir informação sobre a porta de atendimento, sobre o valor do timeout usado
-(em milissegundos) e sobre o modo de funcionamento (modo “shy” ou modo debug).  
-     """
+import logging
+import re
 class Logs:
-     def escreve_log(self,diretoria,tipoEntrada, porta, dados):
-          with open(diretoria, "a") as f:
-               date = datetime.datetime.now()
-               data_formatada = str(date.day) + ":" + str(date.month) + ":" + str(date.year) + "." + str(date.hour) + ":" + str(date.minute) + ":" + str(date.second) + ":" + str(date.microsecond)[:-3]
-               string = data_formatada + " " + tipoEntrada + " " + porta + " " + dados + "\n"
-               f.write(string)
-               
-               
+    # O modo é se estamos a correr um servidor em modo debug ou shy
+    # No modo debug, todos os logs também são mandados para o standard output
+     def __init__(self, fileLogs = '', fileLogsAll = '', modo = ''):
+          primeiraLinha = "# Log File for DNS server/resolver\n"
+          self.fileLogs = fileLogs
+          self.fileLogsAll = fileLogsAll
+          with open(self.fileLogs, "a") as fLocal:
+               fLocal.write(primeiraLinha)
+          with open(self.fileLogs, "a") as fAll:
+               fAll.write(primeiraLinha)
+          self.modo = modo
+
+     
+     
+    # recebe == true recebeu, false enviou
+     def QR_QE(self, recebe, endereco, infoQuery = ''):
+        logging.basicConfig(filename = self.fileLogs, filemode="a", level=logging.INFO, format= "%(asctime)s.%(msecs)03d %(message)s", datefmt='%d:%m:%Y.%H:%M:%S')
+        
+        if recebe:
+            string = "QR " + endereco + " " + infoQuery
+        else:
+            string = "QE " + endereco + " " + infoQuery
+        
+        logging.info(string)
+        if self.modo == 'debug':
+            print(string)
+
+
+     def RP_RR(self, recebe, endereco, infoQuery=''):
+        logging.basicConfig(filename = self.fileLogs, filemode="a", level=logging.INFO, format= "%(asctime)s.%(msecs)03d %(message)s", datefmt='%d:%m:%Y.%H:%M:%S')
+        
+        if recebe:
+            string = "RR " + endereco + " " + infoQuery
+        else:
+            string = "RP " + endereco + " " + infoQuery
+
+        logging.info(string)
+        if self.modo == 'debug':
+            print(string)
+
+     def ZT(self, ip, porta, role = '', time = '', totalbytes = ''):
+        logging.basicConfig(filename = self.fileLogs, filemode="a", level=logging.INFO, format= "%(asctime)s.%(msecs)03d %(message)s", datefmt='%d:%m:%Y.%H:%M:%S')
+        
+        if time == '' and totalbytes == '':
+            string = "ZT " + ip + ":" + porta + " " + role
+        else:
+            string = "ZT " + ip + ":" + porta + " " + role + " " + time + " " + totalbytes
+
+        logging.info(string)
+        if self.modo == 'debug':
+            print(string)
+
+     def EV(self, eventType, msg=''):
+        logging.basicConfig(filename = self.fileLogs, filemode="a", level=logging.INFO, format= "%(asctime)s.%(msecs)03d %(message)s", datefmt='%d:%m:%Y.%H:%M:%S')
+
+        if msg:
+            string = "EV 127.0.0.1 " + eventType + " " + msg 
+        else:
+            string = "EV 127.0.0.1 " + eventType
+
+        logging.info(string)
+        if self.modo == 'debug':
+            print(string)
+
+     def ER(self, endereco):
+        logging.basicConfig(filename = self.fileLogs, filemode="a", level=logging.INFO, format= "%(asctime)s.%(msecs)03d %(message)s", datefmt='%d:%m:%Y.%H:%M:%S')
+        string = "ER " + endereco   
+
+        logging.info(string)
+        if self.modo == 'debug':
+            print(string)
+
+     def EZ(self, ip, porta, role):
+        logging.basicConfig(filename = self.fileLogs, filemode="a", level=logging.INFO, format= "%(asctime)s.%(msecs)03d %(message)s", datefmt='%d:%m:%Y.%H:%M:%S')
+
+        string = "EZ " + ip + ":" + porta + " " + role
+
+        logging.info(string)
+        if self.modo == 'debug':
+            print(string)
+
+     def FL(self, errorType):
+        logging.basicConfig(filename = self.fileLogs, filemode="a", level=logging.INFO, format= "%(asctime)s.%(msecs)03d %(message)s", datefmt='%d:%m:%Y.%H:%M:%S')
+        string = "FL 127.0.0.1 " + errorType
+
+        logging.info(string)
+        if self.modo == 'debug':
+            print(string)
+
+     def TO(self, timeoutType):
+        logging.basicConfig(filename = self.fileLogs, filemode="a", level=logging.INFO, format= "%(asctime)s.%(msecs)03d %(message)s", datefmt='%d:%m:%Y.%H:%M:%S')
+        string = "TO " + timeoutType
+
+        logging.info(string)
+        if self.modo == 'debug':
+            print(string)
+
+     def SP(self, reason):
+        logging.basicConfig(filename = self.fileLogs, filemode="a", level=logging.INFO, format= "%(asctime)s.%(msecs)03d %(message)s", datefmt='%d:%m:%Y.%H:%M:%S')
+        string = "SP 127.0.0.1 " + reason
+
+        logging.info(string)
+        if self.modo == 'debug':
+            print(string)
+
+     def ST(self, port, timeout, mode):
+        logging.basicConfig(filename = self.fileLogs, filemode="a", level=logging.INFO, format= "%(asctime)s.%(msecs)03d %(message)s", datefmt='%d:%m:%Y.%H:%M:%S')
+        string = "ST 127.0.0.1 " + port + " " + timeout + " " + mode
+        
+        logging.info(string)
+        if self.modo == 'debug':
+            print(string)

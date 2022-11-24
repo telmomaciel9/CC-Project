@@ -109,10 +109,11 @@ class Cache:
                 self.reg_atualiza_cache(palavra[0].replace("\n",""), palavra[1].replace("\n",""), palavra[2].replace("\n",""), ttl, "","FILE","VALID")
             
     
-    #def __str__(self):
-    #    header = ["Name", "Type", "Value", "TTL", "Order", "Origin", "TimeStamp", "Index", "Status"]
-    #    return (tabulate(self.mat, headers = header, tablefmt = "grid"))
+    def __str__(self):
+        header = ["Name", "Type", "Value", "TTL", "Order", "Origin", "TimeStamp", "Index", "Status"]
+        return (tabulate(self.mat, headers = header, tablefmt = "grid"))
     
+    """
     def __str__(self):
         out = ""
         for list in self.mat:
@@ -120,3 +121,4 @@ class Cache:
             #    out+=str(list[i]) + " "
             out+=str(list)+"\n"
         return out
+    """

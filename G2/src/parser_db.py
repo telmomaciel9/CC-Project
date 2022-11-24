@@ -1,6 +1,6 @@
 class Parser_BD:
     
-    def __init__(self, diretoria="/home/rogan/Desktop/CC/trabalho/CC/G2/entrada/modeloDB.txt"):
+    def __init__(self, diretoria):
         self.diretoria = diretoria
         self.linhas = []
         self.dominio = ""
@@ -11,8 +11,9 @@ class Parser_BD:
         with open(self.diretoria, "r") as f:     
             for line in f: 
                 linha = line.split(" ")
-                if(linha[0]!='#'):
+                if(linha[0]!='#' and linha[0]!='\n'):
                     self.linhas.append(line)
+        
         cache.reg_cache3(self.linhas)
         
     def __str__ (self):

@@ -1050,12 +1050,12 @@ annotation a7 {
 }
 
 annotation a8 {
-    iconcoords {845.0 39.0}
+    iconcoords {827.0 35.0}
     type text
-    label {Dominio B}
+    label {Dominio dumac}
     labelcolor black
     fontfamily {Arial}
-    fontsize {12}
+    fontsize 12
     effects {bold}
     canvas c1
 }
@@ -1063,10 +1063,10 @@ annotation a8 {
 annotation a9 {
     iconcoords {44.0 52.0}
     type text
-    label {Dominio A}
+    label {Dominio teldu}
     labelcolor black
     fontfamily {Arial}
-    fontsize {12}
+    fontsize 12
     effects {bold}
     canvas c1
 }
@@ -1088,10 +1088,10 @@ annotation a11 {
 annotation a12 {
     iconcoords {36.0 726.0}
     type text
-    label {Subdominio de A}
+    label {Subdominio lospeneiros.teldu}
     labelcolor black
     fontfamily {Arial}
-    fontsize {12}
+    fontsize 12
     effects {bold}
     canvas c1
 }
@@ -1104,12 +1104,12 @@ annotation a13 {
 }
 
 annotation a14 {
-    iconcoords {809.0 720.0}
+    iconcoords {715.0 720.0}
     type text
-    label {Subdominio de B}
+    label {Subdominio elefalante.dumac}
     labelcolor black
     fontfamily {Arial}
-    fontsize {12}
+    fontsize 12
     effects {bold}
     canvas c1
 }

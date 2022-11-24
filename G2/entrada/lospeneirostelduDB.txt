@@ -14,12 +14,9 @@ TTL DEFAULT 86400
 @ NS ns2.lospeneiros.teldu. TTL
 @ NS ns3.lospeneiros.teldu. TTL
 
-Smaller.@ NS sp.smaller.lospeneiros.teldu.
-
 ns1 A 10.0.14.10 TTL
 ns2 A 10.0.15.10 TTL
 ns3 A 10.0.16.10 TTL
-sp.smaller A 193.140.90.11 TTL
 
 sp CNAME ns1 TTL
 ss1 CNAME ns2 TTL

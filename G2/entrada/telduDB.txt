@@ -19,7 +19,7 @@ Smaller.@ NS sp.smaller.teldu.
 ns1 A 10.0.6.10 TTL
 ns2 A 10.0.7.10 TTL
 ns3 A 10.0.8.10 TTL
-sp.smaller A 193.140.90.11 TTL
+sp.smaller A 10.0.14.10 TTL
 
 sp CNAME ns1 TTL
 ss1 CNAME ns2 TTL

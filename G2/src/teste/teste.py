@@ -131,7 +131,7 @@ import datetime
 date = datetime.datetime.now()
 data_formatada = str(date.day) + ":" + str(date.month) + ":" + str(date.year) + "." + str(date.hour) + ":" + str(date.minute) + ":" + str(date.second) + ":" + str(date.microsecond)[:-3]
 print(data_formatada)               
-"""
+
 from query import Query
 import random
 import sys
@@ -153,3 +153,10 @@ if __name__ == "__main__":
     t= Teste()
 
     print(t.query.gera_queryInterna())
+"""
+
+from sp import SP
+
+
+s = SP()
+print (s.srvCache)

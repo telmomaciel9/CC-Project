@@ -9,6 +9,9 @@ class SS:
         self.logs = Logs()
         self.ssConfig = Parser_Config("/home/rogan/Desktop/CC/trabalho/CC/G2/entrada/modeloconfig.txt")
         self.dirLogs= "/home/rogan/Desktop/CC/trabalho/CC/G2/saida/SS - "+self.ssConfig.dominio + ".txt"
+        self.logs.escreve_log(self.dirLogs, "EV", "127.0.0.1","conf-file-read  -  " + self.dirLogs)
+        self.logs.escreve_log(self.dirLogs, "EV", "127.0.0.1","logs-file - "+self.dirLogs)
+        
         self.ssConfig.parse_Config()
         self.ssCache = Cache()
         

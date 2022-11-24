@@ -13,6 +13,7 @@ class Query:
         self.num_extra_value = ""
         self.query_info_name = ""
         self.query_info_type = ""
+        print(self.query_info_type)
 
 
     def parse_message_condense (self, query_str):
@@ -45,7 +46,7 @@ class Query:
                 for i in range(5):            
                     rval = rval + str(list[i]) + " "
                 rval = rval + "\n"
-            #authoritiesvalues
+            
             if(str(list[0]) == query.query_info_name and str(list[1]) == "NS"):
                 for i in range(5):            
                     aval = aval + str(list[i]) + " "
@@ -66,4 +67,3 @@ class Query:
         out = ""
         out += "MESSAGE-ID  = " + self.message_id + "\nFLAGS = " + self.flags + "\nRESPONSE-CODE = " + self.response_code + "\nN-VALUES = " + self.num_values + "\nN-EXTRA-VALUES = " + self.num_extra_value + "\nQUERY-INFO_NAME = " + self.query_info_name+ "\nQUERY-INFO_TYPE = " + self.query_info_type
         return out
-        

@@ -6,21 +6,34 @@ from logs import Logs
 import threading
 import socket
 import os
+import sys
 
 
 class SP:
     
     def __init__(self):
+    
+        self.dirConfig = sys.argv[1]
+        aux = sys.argv[2].split(":")
+        self.ip = aux[0]
+        self.porta = aux[1]
+        if(len(sys.argv)==5):
+            self.timeout = sys.argv[3]
+            self.debug = sys.argv[4]
+        if(len(sys.argv)==4):
+            self.debug = sys.argv[3]
+            
         self.logs = Logs()
-        self.srvConfig = Parser_Config("/home/rogan/Desktop/CC/trabalho/CC/G2/entrada/modeloconfig.txt")
+        self.srvConfig = Parser_Config(self.dirConfig)
         self.srvConfig.parse_Config()
-        self.dirLogs= "/home/rogan/Desktop/CC/trabalho/CC/G2/saida/SP - "+self.srvConfig.dominio + ".txt"
-        self.logs.escreve_log(self.dirLogs, "EV", "127.0.0.1","conf-file-read  -  /CC/G2/entrada/configDomA.txt")
-        self.logs.escreve_log(self.dirLogs, "EV", "127.0.0.1","logs-file - "+self.dirLogs)
+        
+        self.logs.escreve_log(self.srvConfig.dir_log, "EV", "127.0.0.1","conf-file-read  - "+self.dirConfig)
+        self.logs.escreve_log(self.srvConfig.dir_log, "EV", "127.0.0.1","logs-file - "+self.srvConfig.dir_log)
+        
         self.srvCache = Cache()
-        self.srvBD = Parser_BD("/home/rogan/Desktop/CC/trabalho/CC/G2/entrada/modeloDB.txt")
+        self.srvBD = Parser_BD(self.srvConfig.dir_bd)
         self.srvBD.parse_db(self.srvCache)
-        self.logs.escreve_log(self.dirLogs, "EV", "127.0.0.1","database-file-read  - CC/G2/entrada/modeloDB.txt")
+        self.logs.escreve_log(self.srvConfig.dir_log, "EV", "127.0.0.1","database-file-read  - " + self.srvConfig.dir_bd)
         self.srvST_list = ""
         self.query = Query()
         
@@ -30,7 +43,7 @@ class SP:
     def cliente(self):
         print("[SERVER UDP MODE] - STARTING...")
         serverUDP = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
-        serverUDP.bind(("127.0.0.1",20001))
+        serverUDP.bind((self.ip, self.porta))
             
         print("[SERVER UDP MODE] - LISTENING...")
         
@@ -56,7 +69,7 @@ class SP:
         print("[SERVER TCP MODE] - STARTING...")
         serverTCP = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         
-        serverTCP.bind(("127.0.0.1",20001))
+        serverTCP.bind((self.ip,self.porta))
         
         serverTCP.listen(10)
         print("[SERVER TCP MODE] - LISTENING...")
@@ -94,6 +107,7 @@ class SP:
         
 if __name__ == "__main__":
     srv = SP()
+    print(srv.srvCache)
     t1 = threading.Thread(target = srv.cliente)
     t2 = threading.Thread(target = srv.ss)
         

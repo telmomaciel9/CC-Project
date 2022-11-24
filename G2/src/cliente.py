@@ -6,16 +6,17 @@ import random
 
 class Cliente_UDP:
     def __init__(self):
-        self.ip = ""
         self.query = Query()
         self.query.message_id = random.randint(1,65535)
-        self.ip = sys.argv[1]
+        aux = sys.argv[1].split(":")
+        self.ip = aux[0]
+        self.porta = aux[1]
         self.query.query_info_name = sys.argv[2]
         self.query.query_info_type = sys.argv[3]
         if len(sys.argv) == 5:
             self.query.flags=sys.argv[4]
-        
-        
+        print(self.query.query_info_type)
+        print(self.query.query_info_name)
 
     def iniciaCom(self):
     #serverAddressPort = ((socket.gethostbyname(socket.gethostname()), 20001))

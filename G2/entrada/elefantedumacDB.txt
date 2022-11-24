@@ -1,6 +1,4 @@
-# DNS database file for domain elefalante.dumac
-# It also includes a pointer to the primary server
-# of the smaller.elefalante.dumac subdomain
+# DNS database file for subdomain elefalante.dumac
 
 @ DEFAULT elefalante.dumac.
 TTL DEFAULT 86400

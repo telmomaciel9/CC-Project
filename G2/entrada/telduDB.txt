@@ -1,6 +1,4 @@
 # DNS database file for domain teldu
-# It also includes a pointer to the primary server
-# of the smaller.teldu subdomain
 
 @ DEFAULT teldu.
 TTL DEFAULT 86400

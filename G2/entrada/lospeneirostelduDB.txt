@@ -1,6 +1,4 @@
-# DNS database file for domain lospeneiros.teldu
-# It also includes a pointer to the primary server
-# of the smaller.lospeneiros.teldu subdomain
+# DNS database file for subdomain lospeneiros.teldu
 
 @ DEFAULT lospeneiros.teldu.
 TTL DEFAULT 86400

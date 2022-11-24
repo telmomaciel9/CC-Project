@@ -1,6 +1,4 @@
 # DNS database file for domain dumac
-# It also includes a pointer to the primary server
-# of the smaller.dumac subdomain
 
 @ DEFAULT dumac.
 TTL DEFAULT 86400

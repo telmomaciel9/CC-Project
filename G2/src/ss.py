@@ -17,6 +17,7 @@ class SS:
         if(len(sys.argv)==4):
             self.debug = sys.argv[3]
         self.ssConfig = Parser_Config(self.dirConfig)    
+        self.ssConfig.parse_Config()
         self.logs = Logs(self.ssConfig.dir_log)
         
         

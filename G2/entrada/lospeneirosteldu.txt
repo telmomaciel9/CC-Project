@@ -1,0 +1,7 @@
+# Configuration file for primary server for lospeneiros.teldu
+lospeneiros.teldu DB ../entrada/lospeneirostelduDB.txt
+lospeneiros.teldu SS 10.0.15.10
+lospeneiros.teldu SS 10.0.16.10
+lospeneiros.teldu LG /var/dns/example-com.log
+all LG /var/dns/all.log
+root ST /var/dns/rootservers.db

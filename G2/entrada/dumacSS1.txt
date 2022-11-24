@@ -1,0 +1,6 @@
+# Configuration file for primary server for dumac
+dumac SP 10.0.6.10
+dumac SS 10.0.11.10
+dumac LG /var/dns/example-com.log
+all LG /var/dns/all.log
+root ST /var/dns/rootservers.db

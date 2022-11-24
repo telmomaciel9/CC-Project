@@ -1,8 +1,0 @@
-# Configuration file for primary server for 
-elefalante.dumac DB /var/dns/example-com.db
-elefalante.dumac SS 10.0.10.10
-elefalante.dumac SS 10.0.11.10
-elefalante.dumac DD 10.0.10.12
-elefalante.dumac LG /var/dns/example-com.log
-all LG /var/dns/all.log
-root ST /var/dns/rootservers.db

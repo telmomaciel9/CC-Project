@@ -1,0 +1,28 @@
+# DNS database file for domain dumac
+# It also includes a pointer to the primary server
+# of the smaller.dumac subdomain
+
+@ DEFAULT dumac.
+TTL DEFAULT 86400
+
+@ SOASP ns1.dumac. TTL
+@ SOAADMIN dns\.admin.dumac. TTL
+@ SOASERIAL 0117102022 TTL
+@ SOAREFRESH 14400 TTL
+@ SOARETRY 3600 TTL
+@ SOAEXPIRE 604800 TTL
+
+@ NS ns1.dumac. TTL
+@ NS ns2.dumac. TTL
+@ NS ns3.dumac. TTL
+
+Smaller.@ NS sp.smaller.dumac.
+
+ns1 A 10.0.9.10 TTL
+ns2 A 10.0.10.10 TTL
+ns3 A 10.0.11.10 TTL
+sp.smaller A 193.140.90.11 TTL
+
+sp CNAME ns1 TTL
+ss1 CNAME ns2 TTL
+ss2 CNAME ns3 TTL

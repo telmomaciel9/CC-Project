@@ -8,11 +8,11 @@ import socket
 import os
 
 
-class ServerTeste:
+class SP:
     
     def __init__(self):
         self.logs = Logs()
-        self.srvConfig = Parser_Config("/home/rogan/Desktop/CC/trabalho/CC/G2/entrada/configDomA.txt")
+        self.srvConfig = Parser_Config("/home/rogan/Desktop/CC/trabalho/CC/G2/entrada/modeloconfig.txt")
         self.srvConfig.parse_Config()
         self.dirLogs= "/home/rogan/Desktop/CC/trabalho/CC/G2/saida/SP - "+self.srvConfig.dominio + ".txt"
         self.logs.escreve_log(self.dirLogs, "EV", "127.0.0.1","conf-file-read  -  /CC/G2/entrada/configDomA.txt")
@@ -73,9 +73,11 @@ class ServerTeste:
             
         msg = conn.recv(1024).decode('utf-8')
         print(f"[SP] - Message receive:\n -> {msg}")
-        #mandar linhas para o ss
+        
+        
         bytesSent = 0
         if msg == "ACCEPT":
+            
             for i in range(len(self.srvBD.linhas)):
                 print(i+1)
                 msg = self.srvBD.linhas[i]
@@ -91,7 +93,7 @@ class ServerTeste:
 
         
 if __name__ == "__main__":
-    srv = ServerTeste()
+    srv = SP()
     t1 = threading.Thread(target = srv.cliente)
     t2 = threading.Thread(target = srv.ss)
         

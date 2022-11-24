@@ -3,6 +3,7 @@
 import re
 
 class Query:
+
     def __init__(self):
         self.message_id = ""
         self.flags = ""
@@ -12,11 +13,8 @@ class Query:
         self.num_extra_value = ""
         self.query_info_name = ""
         self.query_info_type = ""
-        self.responde_value = []
-        self.authoriries_vales = []
-        self.extra_values = []
-        
-        
+
+
     def parse_message_condense (self, query_str):
         linha = re.split(";|,| ",query_str)
         if(linha[0]!='#'):
@@ -28,7 +26,16 @@ class Query:
             self.num_extra_value = linha[5]
             self.query_info_name = linha[6]
             self.query_info_type = linha[7] 
-            
+
+    
+    def gera_queryInterna(self):
+        out = ""
+        if self.flags =="":
+            out = str(self.message_id) + ",Q,0,0,0,0," + str(self.query_info_name) + "," + str(self.query_info_type)
+        if self.flags != "":
+            out = str(self.message_id) + ",Q+"+str(self.flags)+ ",0,0,0,0," + str(self.query_info_name) + "," + str(self.query_info_type)
+        return out
+        
     def origina_resposta(self,cache, query, mensagem):
         rval = ""
         aval = ""

@@ -1,14 +1,16 @@
 import socket
 from cache import Cache
 from parser_config import Parser_Config
+from logs import Logs
 
-class SS_TCP:
+class SS:
     
     def __init__(self):
-        self.ssCache = Cache()
-        self.ssConfig = Parser_Config("/home/rogan/Desktop/CC/trabalho/CC/G2/entrada/configDomB.txt")
+        self.logs = Logs()
+        self.ssConfig = Parser_Config("/home/rogan/Desktop/CC/trabalho/CC/G2/entrada/modeloconfig.txt")
+        self.dirLogs= "/home/rogan/Desktop/CC/trabalho/CC/G2/saida/SS - "+self.ssConfig.dominio + ".txt"
         self.ssConfig.parse_Config()
-        
+        self.ssCache = Cache()
         
     def conecta(self):
         ss = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -52,6 +54,6 @@ class SS_TCP:
             conecta = False
             
 if __name__ == "__main__":
-    ss = SS_TCP()
+    ss = SS()
     ss.conecta()
     #print(ss.ssCache)

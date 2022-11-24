@@ -125,9 +125,31 @@ with open("ficheiroGrande", "a") as f:
     for i in range(1400):
         f.write("ola\n")
                
-"""
+
                
 import datetime
 date = datetime.datetime.now()
 data_formatada = str(date.day) + ":" + str(date.month) + ":" + str(date.year) + "." + str(date.hour) + ":" + str(date.minute) + ":" + str(date.second) + ":" + str(date.microsecond)[:-3]
 print(data_formatada)               
+"""
+from query import Query
+import random
+import sys
+
+class Teste:
+
+    def __init__(self):
+        self.ip = ""
+        self.query = Query()
+        self.query.message_id = random.randint(1,65535)
+        self.ip = sys.argv[1]
+        self.query.query_info_name = sys.argv[2]
+        self.query.query_info_type = sys.argv[3]
+        if len(sys.argv) == 5:
+            self.query.flags=sys.argv[4]
+        
+        
+if __name__ == "__main__":
+    t= Teste()
+
+    print(t.query.gera_queryInterna())

@@ -2,7 +2,6 @@
 
 import datetime
 from tabulate import tabulate
-from entrada import Entrada
 
 class Cache:
     def __init__(self): #n é o num de linhas max

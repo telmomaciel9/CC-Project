@@ -2,6 +2,6 @@
 teldu DB ../entrada/telduDB.txt 
 teldu SS 10.0.7.10
 teldu SS 10.0.8.10
-teldu LG /var/dns/example-com.log
-all LG /var/dns/all.log
-root ST /var/dns/rootservers.db
+teldu LG ../saida/teldulog.txt
+all LG ../saida/logs.txt
+root ST ../entrada/listaST.txt

@@ -1,6 +1,6 @@
 # Configuration file for primary server for elefalante.dumac 
 elefalante.dumac SP 10.0.17.10
 elefalante.dumac SS 10.0.19.10
-elefalante.dumac LG /var/dns/example-com.log
-all LG /var/dns/all.log
-root ST /var/dns/rootservers.db
+elefalante.dumac LG ../saida/elefalantedumacSS1log.txt
+all LG ../saida/logs.txt
+root ST ../entrada/listaST.txt

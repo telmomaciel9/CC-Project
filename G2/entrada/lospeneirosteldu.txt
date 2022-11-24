@@ -2,6 +2,6 @@
 lospeneiros.teldu DB ../entrada/lospeneirostelduDB.txt
 lospeneiros.teldu SS 10.0.15.10
 lospeneiros.teldu SS 10.0.16.10
-lospeneiros.teldu LG /var/dns/example-com.log
-all LG /var/dns/all.log
-root ST /var/dns/rootservers.db
+lospeneiros.teldu LG ../saida/lospeneirosteldulog.txt
+all LG ../saida/logs.txt
+root ST ../entrada/listaST.txt

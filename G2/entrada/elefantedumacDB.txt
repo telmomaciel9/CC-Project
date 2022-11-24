@@ -14,12 +14,9 @@ TTL DEFAULT 86400
 @ NS ns2.elefalante.dumac. TTL
 @ NS ns3.elefalante.dumac. TTL
 
-Smaller.@ NS sp.smaller.elefalante.dumac.
-
 ns1 A 10.0.17.10 TTL
 ns2 A 10.0.18.10 TTL
 ns3 A 10.0.19.10 TTL
-sp.smaller A 193.140.90.11 TTL
 
 sp CNAME ns1 TTL
 ss1 CNAME ns2 TTL

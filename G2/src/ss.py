@@ -75,27 +75,28 @@ class SS:
             conecta = False
         self.logs.EV("end-of-connection")
         
+        
     def conecta_cliente(self):
         #print("[SERVER UDP MODE] - STARTING...")
         serverUDP = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
         serverUDP.bind((self.ip, self.porta))
-            
+
         print("[SERVER UDP MODE] - LISTENING...")
-        
+
         while True:
             (msg,add) = serverUDP.recvfrom(1024)
             self.query.parse_message_condense(msg.decode('utf-8'))
             self.logs.QR_QE(True, str(add), self.query.query_info_name + " " + self.query.query_info_type)
-            
+
             clientMsg = "Message from Client:\n -> {}  ".format(msg.decode('utf-8'))
-            
+
             bytesToSend = str.encode(self.query.origina_resposta(self.srvCache,self.query,clientMsg))
-            
+
             clientIP  = "Client IP Address: {}".format(add)
-            
+
             print(clientMsg)
             print(clientIP)
-    
+
             # Sending a reply to client
             serverUDP.sendto(bytesToSend, add)
             self.logs.RP_RR(True,str(add),  self.query.query_info_name + " " + self.query.query_info_type)
@@ -104,8 +105,8 @@ if __name__ == "__main__":
     
     ss = SS()
     #print(srv.srvCache)
-    t1 = threading.Thread(target = srv.conecta_cliente)
-    t2 = threading.Thread(target = srv.conecta_sp)
+    t1 = threading.Thread(target = ss.conecta_sp())
+    t2 = threading.Thread(target = ss.conecta_cliente())
         
-    t1.start()
-    t2.run()
+    t2.start()
+    t1.run()

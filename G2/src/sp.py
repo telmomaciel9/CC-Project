@@ -14,7 +14,6 @@ import time
 class SP:
     
     def __init__(self):
-    
         self.dirConfig = sys.argv[1]
         aux = sys.argv[2].split(":")
         self.ip = aux[0]
@@ -24,7 +23,6 @@ class SP:
             self.debug = sys.argv[4]
         if(len(sys.argv)==4):
             self.debug = sys.argv[3]
-        
         self.srvConfig = Parser_Config(self.dirConfig)
         self.srvConfig.parse_Config()
         self.logs = Logs(self.srvConfig.dir_logLocal,self.srvConfig.dir_logAll, self.debug)
@@ -36,10 +34,7 @@ class SP:
         self.logs.EV("database-file-read", self.srvConfig.dir_bd)
         self.srvST_list = Parser_ST(self.srvConfig.dir_ST)
         self.query = Query()
-        
-        
-        
-     
+
     def cliente(self):
         print("[SERVER UDP MODE] - STARTING...")
         serverUDP = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
@@ -64,8 +59,7 @@ class SP:
             # Sending a reply to client
             serverUDP.sendto(bytesToSend, add)
             self.logs.RP_RR(True,str(add),  self.query.query_info_name + " " + self.query.query_info_type)
-             
-     
+
     def ss(self):
         print("[SERVER TCP MODE] - STARTING...")
         serverTCP = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -111,11 +105,8 @@ class SP:
 if __name__ == "__main__":
     srv = SP()
     #print(srv.srvCache)
-    t1 = threading.Thread(target = srv.cliente)
-    t2 = threading.Thread(target = srv.ss)
+    t1 = threading.Thread(target = srv.cliente())
+    t2 = threading.Thread(target = srv.ss())
         
     t1.start()
     t2.run()
-
-
-    

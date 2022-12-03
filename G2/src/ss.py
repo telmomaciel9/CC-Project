@@ -28,8 +28,9 @@ class SS:
         self.ssCache = Cache()
         
     def conecta_sp(self):
+        print("[SERVER TCP MODE] - STARTING...")
         ss = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        ss.connect((self.ip, self.porta))
+        ss.connect((self.ip , self.porta))
         print(f"[SS] - SERVER CONNECTED")
         
         conecta = True
@@ -48,7 +49,7 @@ class SS:
             ficheiro = []
             start = time.time()
             bytesReceived = 0
-            if nLinhas < 65535 :
+            if nLinhas < 40 :
             #envia mensagem ao sp a dizer que aceita
                 msg = "ACCEPT"
                 print(f"[SS] - SENDING THIS MESSAGE:\n -> {msg}")
@@ -77,9 +78,9 @@ class SS:
         
         
     def conecta_cliente(self):
-        #print("[SERVER UDP MODE] - STARTING...")
+        print("[SERVER UDP MODE] - STARTING...")
         serverUDP = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
-        serverUDP.bind((self.ip, self.porta))
+        serverUDP.bind((self.ip, 2001))
 
         print("[SERVER UDP MODE] - LISTENING...")
 
@@ -104,9 +105,11 @@ class SS:
 if __name__ == "__main__":
     
     ss = SS()
-    #print(srv.srvCache)
-    t1 = threading.Thread(target = ss.conecta_sp())
-    t2 = threading.Thread(target = ss.conecta_cliente())
-        
-    t2.start()
+    
+    t1 = threading.Thread(target = ss.conecta_sp)
+    t2 = threading.Thread(target = ss.conecta_cliente)
     t1.run()
+    t2.start()
+    t2.join()
+    t1.join()
+    print(ss.ssCache)

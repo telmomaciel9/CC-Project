@@ -66,7 +66,7 @@ class SP:
         
         serverTCP.bind((self.ip,self.porta))
         
-        serverTCP.listen(10)
+        serverTCP.listen()
         print("[SERVER TCP MODE] - LISTENING...")
         
         while True:
@@ -76,6 +76,7 @@ class SP:
             print(f"[SP] - Message receive:\n -> {msg}")
             self.logs.QR_QE(True, addr)
             if msg == self.srvConfig.dominio:
+                print("ola")
                 msg = str(len(self.srvBD.linhas))
                 conn.send(msg.encode('utf-8'))
                 self.logs.RP_RR(False, str(addr))
@@ -105,8 +106,9 @@ class SP:
 if __name__ == "__main__":
     srv = SP()
     #print(srv.srvCache)
-    t1 = threading.Thread(target = srv.cliente())
-    t2 = threading.Thread(target = srv.ss())
+    t1 = threading.Thread(target = srv.ss)
+    t2 = threading.Thread(target = srv.cliente)
         
+    
     t1.start()
-    t2.run()
+    t2.start()

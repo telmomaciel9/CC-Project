@@ -26,6 +26,7 @@ class SS:
         self.logs.EV("conf-file-read", self.dirConfig)
         self.logs.EV("log-file-create", self.ssConfig.dir_logLocal)
         self.ssCache = Cache()
+        self.query = Query()
         
     def conecta_sp(self):
         print("[SERVER TCP MODE] - STARTING...")
@@ -91,7 +92,7 @@ class SS:
 
             clientMsg = "Message from Client:\n -> {}  ".format(msg.decode('utf-8'))
 
-            bytesToSend = str.encode(self.query.origina_resposta(self.srvCache,self.query,clientMsg))
+            bytesToSend = str.encode(self.query.origina_resposta(self.ssCache,self.query,clientMsg))
 
             clientIP  = "Client IP Address: {}".format(add)
 
@@ -110,6 +111,5 @@ if __name__ == "__main__":
     t2 = threading.Thread(target = ss.conecta_cliente)
     t1.run()
     t2.start()
-    t2.join()
-    t1.join()
+
     print(ss.ssCache)

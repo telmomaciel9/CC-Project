@@ -5,7 +5,7 @@ import datetime
 
 class Cache:
     def __init__(self): #n é o num de linhas max
-        n = 28
+        n = 10
         self.mat = [[0 for _ in range(9)] for _ in range(n)]
         #cada lista pequena correstponde a uma coluna   
         #[    0,    1,     2,   3,     4,      5,         6,     7,      8]    

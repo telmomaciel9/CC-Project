@@ -1,0 +1,550 @@
+# Log File for DNS server/resolver
+24:11:2022.23:41:07.595 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+24:11:2022.23:41:07.596 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+24:11:2022.23:41:07.596 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+24:11:2022.23:42:00.346 QR ('127.0.0.1', 60718) 
+24:11:2022.23:42:00.346 RP ('127.0.0.1', 60718) 
+24:11:2022.23:42:00.347 ZT ('127.0.0.1', 60718) SP 0.0002193450927734375 418
+24:11:2022.23:44:19.441 QR ('127.0.0.1', 52967) dumac. MX
+24:11:2022.23:44:19.442 RR ('127.0.0.1', 52967) dumac. MX
+24:11:2022.23:46:13.722 QR ('127.0.0.1', 56048) dumac. MX
+24:11:2022.23:46:13.722 RR ('127.0.0.1', 56048) dumac. MX
+# Log File for DNS server/resolver
+24:11:2022.23:50:37.529 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+24:11:2022.23:50:37.529 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+24:11:2022.23:50:37.529 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+24:11:2022.23:50:41.675 QR ('127.0.0.1', 39916) dumac. MX
+24:11:2022.23:50:41.676 RR ('127.0.0.1', 39916) dumac. MX
+24:11:2022.23:51:46.517 QR ('127.0.0.1', 60726) 
+24:11:2022.23:51:46.517 RP ('127.0.0.1', 60726) 
+24:11:2022.23:51:46.517 ZT ('127.0.0.1', 60726) SP 0.0001862049102783203 418
+# Log File for DNS server/resolver
+02:12:2022.18:16:28.537 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.18:16:28.537 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.18:16:28.537 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.18:31:24.775 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.18:31:24.775 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.18:31:24.775 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.18:32:53.406 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.18:32:53.406 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.18:32:53.407 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.18:34:10.748 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.18:34:10.748 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.18:34:10.748 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.18:35:11.915 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.18:35:11.915 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.18:35:11.915 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.18:36:51.262 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.18:36:51.262 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.18:36:51.263 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.18:39:54.382 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.18:39:54.382 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.18:39:54.383 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.18:46:51.995 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.18:46:51.996 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.18:46:51.996 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.18:47:47.803 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.18:47:47.803 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.18:47:47.804 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.18:57:55.480 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.18:57:55.481 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.18:57:55.481 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.18:58:07.298 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.18:58:07.298 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.18:58:07.298 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.18:58:14.128 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.18:58:14.128 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.18:58:14.128 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.20:58:50.100 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.20:58:50.100 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.20:58:50.101 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.20:59:58.004 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.20:59:58.004 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.20:59:58.005 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.21:03:35.565 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.21:03:35.565 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.21:03:35.565 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.21:07:04.714 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.21:07:04.714 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.21:07:04.715 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.21:07:11.337 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.21:07:11.337 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.21:07:11.337 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.21:08:19.368 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.21:08:19.368 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.21:08:19.368 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.21:09:14.233 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.21:09:14.233 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.21:09:14.233 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.21:17:19.121 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.21:17:19.121 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.21:17:19.121 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.21:18:30.747 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.21:18:30.747 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.21:18:30.748 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.21:22:03.779 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.21:22:03.779 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.21:22:03.780 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.21:22:15.542 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.21:22:15.542 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.21:22:15.543 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.21:28:16.140 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.21:28:16.140 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.21:28:16.148 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.21:32:13.463 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.21:32:13.463 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.21:32:13.464 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.21:54:01.421 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.21:54:01.422 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.21:54:01.422 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.21:59:09.637 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.21:59:09.638 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.21:59:09.638 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.22:02:05.625 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.22:02:05.625 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.22:02:05.625 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.23:36:09.448 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.23:36:09.448 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.23:36:09.448 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.23:38:46.891 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.23:38:46.899 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.23:38:46.899 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.23:41:06.578 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.23:41:06.578 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.23:41:06.579 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.23:41:30.328 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.23:41:30.328 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.23:41:30.329 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.23:41:58.503 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.23:41:58.503 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.23:41:58.504 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.23:42:47.222 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.23:42:47.222 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.23:42:47.222 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.23:44:31.598 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.23:44:31.598 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.23:44:31.598 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.23:45:10.441 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.23:45:10.442 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.23:45:10.442 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.23:50:47.066 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.23:50:47.066 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.23:50:47.066 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.23:53:35.460 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.23:53:35.460 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.23:53:35.461 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.23:54:24.457 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.23:54:24.457 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.23:54:24.457 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.23:55:08.547 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.23:55:08.547 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.23:55:08.548 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.23:56:37.302 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.23:56:37.302 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.23:56:37.302 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.23:56:48.954 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.23:56:48.954 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.23:56:48.955 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.23:57:01.673 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.23:57:01.673 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.23:57:01.673 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+02:12:2022.23:57:37.996 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+02:12:2022.23:57:37.996 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+02:12:2022.23:57:37.996 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+03:12:2022.00:00:24.618 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+03:12:2022.00:00:24.618 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+03:12:2022.00:00:24.619 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+03:12:2022.00:00:29.112 QR ('127.0.0.1', 59002) 
+03:12:2022.00:00:58.646 QR ('127.0.0.1', 59006) 
+# Log File for DNS server/resolver
+03:12:2022.00:05:37.539 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+03:12:2022.00:05:37.539 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+03:12:2022.00:05:37.540 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+03:12:2022.00:05:49.289 QR ('127.0.0.1', 35574) 
+# Log File for DNS server/resolver
+03:12:2022.00:06:52.263 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+03:12:2022.00:06:52.263 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+03:12:2022.00:06:52.263 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+03:12:2022.00:06:54.967 QR ('127.0.0.1', 35576) 
+03:12:2022.00:07:04.981 QR ('127.0.0.1', 35578) 
+# Log File for DNS server/resolver
+03:12:2022.00:08:28.544 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+03:12:2022.00:08:28.544 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+03:12:2022.00:08:28.544 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+03:12:2022.00:08:40.009 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+03:12:2022.00:08:40.009 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+03:12:2022.00:08:40.009 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+03:12:2022.00:08:43.423 QR ('127.0.0.1', 35580) 
+03:12:2022.00:09:04.878 QR ('127.0.0.1', 35582) 
+03:12:2022.00:10:57.458 QR ('127.0.0.1', 35584) 
+# Log File for DNS server/resolver
+03:12:2022.00:11:50.352 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+03:12:2022.00:11:50.352 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+03:12:2022.00:11:50.352 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+03:12:2022.00:11:54.023 QR ('127.0.0.1', 35586) 
+03:12:2022.00:12:19.678 QR ('127.0.0.1', 35588) 
+03:12:2022.00:13:03.104 QR ('127.0.0.1', 35590) 
+03:12:2022.00:13:21.547 QR ('127.0.0.1', 35592) 
+# Log File for DNS server/resolver
+03:12:2022.00:14:05.804 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+03:12:2022.00:14:05.804 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+03:12:2022.00:14:05.805 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+03:12:2022.00:14:10.276 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+03:12:2022.00:14:10.276 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+03:12:2022.00:14:10.277 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+03:12:2022.00:14:18.944 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+03:12:2022.00:14:18.944 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+03:12:2022.00:14:18.945 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+03:12:2022.00:14:29.939 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+03:12:2022.00:14:29.939 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+03:12:2022.00:14:29.939 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+03:12:2022.00:15:14.300 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+03:12:2022.00:15:14.300 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+03:12:2022.00:15:14.300 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+03:12:2022.00:16:37.996 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+03:12:2022.00:16:37.996 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+03:12:2022.00:16:37.996 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+03:12:2022.00:17:14.366 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+03:12:2022.00:17:14.366 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+03:12:2022.00:17:14.366 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+03:12:2022.00:17:41.767 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+03:12:2022.00:17:41.767 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+03:12:2022.00:17:41.767 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+03:12:2022.00:17:48.247 QR ('127.0.0.1', 45152) 
+# Log File for DNS server/resolver
+03:12:2022.00:18:34.479 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+03:12:2022.00:18:34.479 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+03:12:2022.00:18:34.479 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+03:12:2022.00:18:38.951 QR ('127.0.0.1', 45154) 
+# Log File for DNS server/resolver
+03:12:2022.00:19:32.466 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+03:12:2022.00:19:32.466 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+03:12:2022.00:19:32.466 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+03:12:2022.00:23:12.143 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+03:12:2022.00:23:12.143 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+03:12:2022.00:23:12.144 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+03:12:2022.00:23:16.142 QR ('127.0.0.1', 45158) 
+03:12:2022.00:23:16.142 RP ('127.0.0.1', 45158) 
+03:12:2022.00:23:16.143 ZT ('127.0.0.1', 45158) SP 0.0002238750457763672 418
+03:12:2022.00:24:04.857 QR ('127.0.0.1', 45160) 
+03:12:2022.00:24:04.857 RP ('127.0.0.1', 45160) 
+03:12:2022.00:24:04.858 ZT ('127.0.0.1', 45160) SP 0.00021195411682128906 418
+# Log File for DNS server/resolver
+03:12:2022.00:25:48.686 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+03:12:2022.00:25:48.686 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+03:12:2022.00:25:48.686 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+03:12:2022.00:26:29.049 QR ('127.0.0.1', 45162) 
+03:12:2022.00:26:29.049 RP ('127.0.0.1', 45162) 
+03:12:2022.00:26:29.050 ZT ('127.0.0.1', 45162) SP 0.0002372264862060547 418
+03:12:2022.00:28:06.638 QR ('127.0.0.1', 60574) dumac. MX
+03:12:2022.00:28:06.638 RR ('127.0.0.1', 60574) dumac. MX
+# Log File for DNS server/resolver
+03:12:2022.00:35:21.892 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+03:12:2022.00:35:21.893 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+03:12:2022.00:35:21.893 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+03:12:2022.00:35:27.831 QR ('127.0.0.1', 45164) 
+03:12:2022.00:35:27.831 RP ('127.0.0.1', 45164) 
+03:12:2022.00:35:27.831 ZT ('127.0.0.1', 45164) SP 0.00023984909057617188 418
+# Log File for DNS server/resolver
+03:12:2022.00:37:05.233 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+03:12:2022.00:37:05.233 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+03:12:2022.00:37:05.233 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+03:12:2022.00:37:59.298 QR ('127.0.0.1', 45166) 
+03:12:2022.00:37:59.298 RP ('127.0.0.1', 45166) 
+03:12:2022.00:37:59.299 ZT ('127.0.0.1', 45166) SP 0.0002532005310058594 418
+03:12:2022.00:38:35.427 QR ('127.0.0.1', 45168) 
+03:12:2022.00:38:35.428 RP ('127.0.0.1', 45168) 
+03:12:2022.00:38:35.428 ZT ('127.0.0.1', 45168) SP 0.00020694732666015625 418
+03:12:2022.00:39:51.166 QR ('127.0.0.1', 45170) 
+03:12:2022.00:39:51.166 RP ('127.0.0.1', 45170) 
+03:12:2022.00:39:51.167 ZT ('127.0.0.1', 45170) SP 0.00025200843811035156 418
+03:12:2022.00:40:35.815 QR ('127.0.0.1', 45172) 
+03:12:2022.00:40:35.815 RP ('127.0.0.1', 45172) 
+03:12:2022.00:40:35.816 ZT ('127.0.0.1', 45172) SP 0.0001881122589111328 418
+# Log File for DNS server/resolver
+03:12:2022.12:21:57.882 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+03:12:2022.12:21:57.882 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+03:12:2022.12:21:57.882 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+03:12:2022.12:23:02.499 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+03:12:2022.12:23:02.499 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+03:12:2022.12:23:02.499 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+03:12:2022.12:23:04.846 QR ('127.0.0.1', 40404) 
+03:12:2022.12:23:04.846 RP ('127.0.0.1', 40404) 
+03:12:2022.12:23:04.846 ZT ('127.0.0.1', 40404) SP 0.0002231597900390625 418
+03:12:2022.12:23:10.370 QR ('127.0.0.1', 45265) dumac. MX
+03:12:2022.12:23:10.370 RR ('127.0.0.1', 45265) dumac. MX
+# Log File for DNS server/resolver
+03:12:2022.12:24:14.587 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+03:12:2022.12:24:14.587 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+03:12:2022.12:24:14.587 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+03:12:2022.12:24:17.214 QR ('127.0.0.1', 40406) 
+03:12:2022.12:24:17.215 RP ('127.0.0.1', 40406) 
+03:12:2022.12:24:17.215 ZT ('127.0.0.1', 40406) SP 0.0002689361572265625 418
+# Log File for DNS server/resolver
+11:12:2022.17:48:25.480 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+11:12:2022.17:48:25.480 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+11:12:2022.17:48:25.480 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+11:12:2022.17:48:59.469 QR ('127.0.0.1', 46312) 
+11:12:2022.17:48:59.469 RP ('127.0.0.1', 46312) 
+11:12:2022.17:48:59.469 ZT ('127.0.0.1', 46312) SP 0.0002617835998535156 713
+# Log File for DNS server/resolver
+13:12:2022.02:16:00.031 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+13:12:2022.02:16:00.032 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+13:12:2022.02:16:00.032 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+13:12:2022.02:16:08.860 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+13:12:2022.02:16:08.860 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+13:12:2022.02:16:08.860 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+13:12:2022.02:31:39.318 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+13:12:2022.02:31:39.318 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+13:12:2022.02:31:39.319 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+15:12:2022.11:47:43.081 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+15:12:2022.11:47:43.082 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+15:12:2022.11:47:43.082 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+15:12:2022.11:48:17.872 QR ('127.0.0.1', 59784) 
+15:12:2022.11:48:17.872 RP ('127.0.0.1', 59784) 
+15:12:2022.11:48:17.873 ZT ('127.0.0.1', 59784) SP 0.00023436546325683594 418
+15:12:2022.11:48:45.160 QR ('127.0.0.1', 59786) 
+15:12:2022.11:48:45.160 RP ('127.0.0.1', 59786) 
+15:12:2022.11:48:45.160 ZT ('127.0.0.1', 59786) SP 0.00017499923706054688 418
+15:12:2022.11:48:49.114 QR ('127.0.0.1', 59788) 
+15:12:2022.11:48:49.114 RP ('127.0.0.1', 59788) 
+15:12:2022.11:48:49.114 ZT ('127.0.0.1', 59788) SP 0.0002105236053466797 418
+15:12:2022.11:49:52.759 QR ('127.0.0.1', 59790) 
+15:12:2022.11:49:52.759 RP ('127.0.0.1', 59790) 
+15:12:2022.11:49:52.760 ZT ('127.0.0.1', 59790) SP 0.0005955696105957031 418
+15:12:2022.11:51:24.582 QR ('127.0.0.1', 59792) 
+15:12:2022.11:51:24.582 RP ('127.0.0.1', 59792) 
+15:12:2022.11:51:24.582 ZT ('127.0.0.1', 59792) SP 0.0001957416534423828 418
+# Log File for DNS server/resolver
+15:12:2022.12:09:41.679 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+15:12:2022.12:09:41.679 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+15:12:2022.12:09:41.679 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+15:12:2022.12:12:14.763 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+15:12:2022.12:12:14.763 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+15:12:2022.12:12:14.763 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+15:12:2022.12:13:00.676 QR ('127.0.0.1', 59794) 
+15:12:2022.12:13:00.677 RP ('127.0.0.1', 59794) 
+15:12:2022.12:13:00.677 ZT ('127.0.0.1', 59794) SP 0.00027251243591308594 418
+# Log File for DNS server/resolver
+15:12:2022.12:24:36.718 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+15:12:2022.12:24:36.718 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+15:12:2022.12:24:36.718 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+15:12:2022.12:24:38.769 QR ('127.0.0.1', 59796) 
+15:12:2022.12:24:38.770 RP ('127.0.0.1', 59796) 
+15:12:2022.12:24:38.770 ZT ('127.0.0.1', 59796) SP 0.00021719932556152344 418
+15:12:2022.12:25:38.276 QR ('127.0.0.1', 50160) elefante.dumac MX
+15:12:2022.12:25:38.277 RR ('127.0.0.1', 50160) elefante.dumac MX
+# Log File for DNS server/resolver
+15:12:2022.12:50:24.187 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+15:12:2022.12:50:24.187 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+15:12:2022.12:50:24.187 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+15:12:2022.12:50:26.675 QR ('127.0.0.1', 59798) 
+15:12:2022.12:50:26.675 RP ('127.0.0.1', 59798) 
+15:12:2022.12:50:26.675 ZT ('127.0.0.1', 59798) SP 0.0002014636993408203 418
+15:12:2022.12:52:59.605 QR ('127.0.0.1', 40085) elefante.dumac MX
+15:12:2022.12:52:59.606 RR ('127.0.0.1', 40085) elefante.dumac MX
+# Log File for DNS server/resolver
+15:12:2022.19:20:09.962 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+15:12:2022.19:20:09.962 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+15:12:2022.19:20:09.962 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+15:12:2022.19:21:02.852 QR ('127.0.0.1', 59374) 
+15:12:2022.19:21:02.853 RP ('127.0.0.1', 59374) 
+15:12:2022.19:21:02.853 ZT ('127.0.0.1', 59374) SP 0.00024056434631347656 418
+# Log File for DNS server/resolver
+16:12:2022.00:13:19.927 EV 127.0.0.1 conf-file-read ../entradaLocalHost/dumac.txt
+16:12:2022.00:13:19.928 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+# Log File for DNS server/resolver
+16:12:2022.00:13:46.444 EV 127.0.0.1 conf-file-read ../entradaLocalHost/dumac.txt
+16:12:2022.00:13:46.444 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+# Log File for DNS server/resolver
+16:12:2022.00:15:55.045 EV 127.0.0.1 conf-file-read ../entradaLocalHost/dumac.txt
+16:12:2022.00:15:55.045 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+# Log File for DNS server/resolver
+16:12:2022.00:17:08.250 EV 127.0.0.1 conf-file-read ../entradaLocalHost/dumac.txt
+16:12:2022.00:17:08.250 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+16:12:2022.00:17:08.251 EV 127.0.0.1 database-file-read ../entradaLocalHost/dumacDB.txt
+16:12:2022.00:17:58.463 QR ('127.0.0.1', 41278) 
+16:12:2022.00:17:58.463 RP ('127.0.0.1', 41278) 
+16:12:2022.00:17:58.464 ZT ('127.0.0.1', 41278) SP 0.0003826618194580078 574
+# Log File for DNS server/resolver
+16:12:2022.00:18:25.471 EV 127.0.0.1 conf-file-read ../entradaLocalHost/dumac.txt
+16:12:2022.00:18:25.471 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+16:12:2022.00:18:25.472 EV 127.0.0.1 database-file-read ../entradaLocalHost/dumacDB.txt
+16:12:2022.00:18:27.096 QR ('127.0.0.1', 41280) 
+16:12:2022.00:18:27.097 RP ('127.0.0.1', 41280) 
+16:12:2022.00:18:27.097 ZT ('127.0.0.1', 41280) SP 0.00035381317138671875 574
+16:12:2022.00:20:14.111 QR ('127.0.0.1', 53230) dumac MX
+16:12:2022.00:20:14.111 RR ('127.0.0.1', 53230) dumac MX
+16:12:2022.00:20:28.745 QR ('127.0.0.1', 37267) dumac A
+16:12:2022.00:20:28.745 RR ('127.0.0.1', 37267) dumac A
+# Log File for DNS server/resolver
+16:12:2022.00:23:21.132 EV 127.0.0.1 conf-file-read ../entradaLocalHost/dumac.txt
+16:12:2022.00:23:21.132 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+16:12:2022.00:23:21.132 EV 127.0.0.1 database-file-read ../entradaLocalHost/dumacDB.txt
+16:12:2022.00:23:24.079 QR ('127.0.0.1', 41282) 
+16:12:2022.00:23:24.079 RP ('127.0.0.1', 41282) 
+16:12:2022.00:23:24.080 ZT ('127.0.0.1', 41282) SP 0.00034737586975097656 574
+# Log File for DNS server/resolver
+16:12:2022.00:23:37.595 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+16:12:2022.00:23:37.596 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+16:12:2022.00:23:37.596 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+# Log File for DNS server/resolver
+16:12:2022.00:23:41.230 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+16:12:2022.00:23:41.230 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+16:12:2022.00:23:41.230 EV 127.0.0.1 database-file-read ../entrada/dumacDB.txt
+16:12:2022.00:23:45.857 QR ('127.0.0.1', 41284) 
+16:12:2022.00:23:45.857 RP ('127.0.0.1', 41284) 
+16:12:2022.00:23:45.857 ZT ('127.0.0.1', 41284) SP 0.00026297569274902344 418
+16:12:2022.00:23:56.624 QR ('127.0.0.1', 55697) dumac A
+16:12:2022.00:23:56.625 RR ('127.0.0.1', 55697) dumac A
+16:12:2022.00:24:43.723 QR ('127.0.0.1', 51691) dumac MX
+16:12:2022.00:24:43.723 RR ('127.0.0.1', 51691) dumac MX
+16:12:2022.00:25:22.348 QR ('127.0.0.1', 39564) dumac MX
+16:12:2022.00:25:22.348 RR ('127.0.0.1', 39564) dumac MX
+16:12:2022.00:25:34.650 QR ('127.0.0.1', 52670) dumac A
+16:12:2022.00:25:34.650 RR ('127.0.0.1', 52670) dumac A

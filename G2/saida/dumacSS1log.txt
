@@ -1,0 +1,309 @@
+# Log File for DNS server/resolver
+24:11:2022.23:42:00.346 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+24:11:2022.23:42:00.346 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+24:11:2022.23:42:00.346 QE ['127.0.0.1', '23000'] dumac
+24:11:2022.23:42:00.346 RR ['127.0.0.1', '23000'] dumac
+24:11:2022.23:42:00.347 ZT ['127.0.0.1', '23000'] SS 0.0004298686981201172 399
+24:11:2022.23:42:00.347 EV 127.0.0.1 end-of-connection
+# Log File for DNS server/resolver
+24:11:2022.23:51:46.517 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+24:11:2022.23:51:46.517 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+24:11:2022.23:51:46.517 QE ['127.0.0.1', '23000'] dumac
+24:11:2022.23:51:46.517 RR ['127.0.0.1', '23000'] dumac
+24:11:2022.23:51:46.518 ZT ['127.0.0.1', '23000'] SS 0.00033164024353027344 399
+24:11:2022.23:51:46.524 EV 127.0.0.1 end-of-connection
+# Log File for DNS server/resolver
+03:12:2022.00:19:24.002 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+03:12:2022.00:19:24.002 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+# Log File for DNS server/resolver
+03:12:2022.00:23:16.142 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+03:12:2022.00:23:16.142 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+03:12:2022.00:23:16.142 QE ['127.0.0.1', '2300'] dumac
+03:12:2022.00:23:16.142 RR ['127.0.0.1', '2300'] dumac
+03:12:2022.00:23:16.143 ZT ['127.0.0.1', '2300'] SS 0.00033473968505859375 399
+03:12:2022.00:23:16.143 EV 127.0.0.1 end-of-connection
+# Log File for DNS server/resolver
+03:12:2022.00:24:04.857 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+03:12:2022.00:24:04.857 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+03:12:2022.00:24:04.857 QE ['127.0.0.1', '2300'] dumac
+03:12:2022.00:24:04.857 RR ['127.0.0.1', '2300'] dumac
+03:12:2022.00:24:04.858 ZT ['127.0.0.1', '2300'] SS 0.00030875205993652344 399
+03:12:2022.00:24:04.858 EV 127.0.0.1 end-of-connection
+# Log File for DNS server/resolver
+03:12:2022.00:25:57.805 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+03:12:2022.00:25:57.805 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+# Log File for DNS server/resolver
+03:12:2022.00:26:04.675 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+03:12:2022.00:26:04.675 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+# Log File for DNS server/resolver
+03:12:2022.00:26:29.049 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+03:12:2022.00:26:29.049 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+03:12:2022.00:26:29.049 QE ['127.0.0.1', '2300'] dumac
+03:12:2022.00:26:29.049 RR ['127.0.0.1', '2300'] dumac
+03:12:2022.00:26:29.050 ZT ['127.0.0.1', '2300'] SS 0.00033736228942871094 399
+03:12:2022.00:26:29.050 EV 127.0.0.1 end-of-connection
+# Log File for DNS server/resolver
+03:12:2022.00:35:27.830 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+03:12:2022.00:35:27.830 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+03:12:2022.00:35:27.830 QE ['127.0.0.1', '2300'] dumac
+03:12:2022.00:35:27.831 RR ['127.0.0.1', '2300'] dumac
+03:12:2022.00:35:27.831 ZT ['127.0.0.1', '2300'] SS 0.00035572052001953125 399
+03:12:2022.00:35:27.831 EV 127.0.0.1 end-of-connection
+# Log File for DNS server/resolver
+03:12:2022.00:35:45.981 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+03:12:2022.00:35:45.981 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+# Log File for DNS server/resolver
+03:12:2022.00:37:10.345 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+03:12:2022.00:37:10.345 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+# Log File for DNS server/resolver
+03:12:2022.00:37:59.297 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+03:12:2022.00:37:59.298 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+03:12:2022.00:37:59.298 QE ['127.0.0.1', '2300'] dumac
+03:12:2022.00:37:59.298 RR ['127.0.0.1', '2300'] dumac
+03:12:2022.00:37:59.299 ZT ['127.0.0.1', '2300'] SS 0.0003924369812011719 399
+03:12:2022.00:37:59.299 EV 127.0.0.1 end-of-connection
+# Log File for DNS server/resolver
+03:12:2022.00:38:35.427 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+03:12:2022.00:38:35.427 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+03:12:2022.00:38:35.427 QE ['127.0.0.1', '2300'] dumac
+03:12:2022.00:38:35.428 RR ['127.0.0.1', '2300'] dumac
+03:12:2022.00:38:35.428 ZT ['127.0.0.1', '2300'] SS 0.00034809112548828125 399
+03:12:2022.00:38:35.428 EV 127.0.0.1 end-of-connection
+# Log File for DNS server/resolver
+03:12:2022.00:39:51.166 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+03:12:2022.00:39:51.166 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+03:12:2022.00:39:51.166 QE ['127.0.0.1', '2300'] dumac
+03:12:2022.00:39:51.166 RR ['127.0.0.1', '2300'] dumac
+03:12:2022.00:39:51.167 ZT ['127.0.0.1', '2300'] SS 0.00036454200744628906 399
+03:12:2022.00:39:51.167 EV 127.0.0.1 end-of-connection
+03:12:2022.00:39:55.244 QR ('127.0.0.1', 41420) dumac. MX
+# Log File for DNS server/resolver
+03:12:2022.00:40:35.807 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+03:12:2022.00:40:35.807 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+03:12:2022.00:40:35.815 QE ['127.0.0.1', '2300'] dumac
+03:12:2022.00:40:35.815 RR ['127.0.0.1', '2300'] dumac
+03:12:2022.00:40:35.816 ZT ['127.0.0.1', '2300'] SS 0.0002968311309814453 399
+03:12:2022.00:40:35.816 EV 127.0.0.1 end-of-connection
+03:12:2022.00:40:39.249 QR ('127.0.0.1', 33086) dumac. MX
+03:12:2022.00:40:39.249 RR ('127.0.0.1', 33086) dumac. MX
+# Log File for DNS server/resolver
+03:12:2022.12:22:56.595 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+03:12:2022.12:22:56.595 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+# Log File for DNS server/resolver
+03:12:2022.12:23:04.845 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+03:12:2022.12:23:04.845 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+03:12:2022.12:23:04.846 QE ['127.0.0.1', '2300'] dumac
+03:12:2022.12:23:04.846 RR ['127.0.0.1', '2300'] dumac
+03:12:2022.12:23:04.846 ZT ['127.0.0.1', '2300'] SS 0.0003161430358886719 399
+03:12:2022.12:23:04.846 EV 127.0.0.1 end-of-connection
+03:12:2022.12:23:15.893 QR ('127.0.0.1', 54598) dumac. MX
+03:12:2022.12:23:15.893 RR ('127.0.0.1', 54598) dumac. MX
+# Log File for DNS server/resolver
+03:12:2022.12:24:17.214 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+03:12:2022.12:24:17.214 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+03:12:2022.12:24:17.214 QE ['127.0.0.1', '2300'] dumac
+03:12:2022.12:24:17.215 RR ['127.0.0.1', '2300'] dumac
+03:12:2022.12:24:17.215 ZT ['127.0.0.1', '2300'] SS 0.0004532337188720703 399
+03:12:2022.12:24:17.215 EV 127.0.0.1 end-of-connection
+03:12:2022.12:24:20.808 QR ('127.0.0.1', 57765) dumac. MX
+03:12:2022.12:24:20.808 RR ('127.0.0.1', 57765) dumac. MX
+# Log File for DNS server/resolver
+11:12:2022.17:48:59.468 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+11:12:2022.17:48:59.468 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+11:12:2022.17:48:59.469 QE ['127.0.0.1', '2300'] dumac
+11:12:2022.17:48:59.469 RR ['127.0.0.1', '2300'] dumac
+11:12:2022.17:48:59.469 ZT ['127.0.0.1', '2300'] SS 0.0003762245178222656 686
+11:12:2022.17:48:59.469 EV 127.0.0.1 end-of-connection
+# Log File for DNS server/resolver
+13:12:2022.02:16:28.534 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+13:12:2022.02:16:28.534 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+# Log File for DNS server/resolver
+13:12:2022.02:16:34.124 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+13:12:2022.02:16:34.124 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+# Log File for DNS server/resolver
+13:12:2022.02:16:38.111 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+13:12:2022.02:16:38.111 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+# Log File for DNS server/resolver
+13:12:2022.02:17:41.235 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+13:12:2022.02:17:41.235 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+# Log File for DNS server/resolver
+13:12:2022.02:17:56.095 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+13:12:2022.02:17:56.095 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+# Log File for DNS server/resolver
+13:12:2022.02:31:08.270 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+13:12:2022.02:31:08.270 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+# Log File for DNS server/resolver
+13:12:2022.02:31:24.545 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+13:12:2022.02:31:24.545 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+# Log File for DNS server/resolver
+13:12:2022.02:31:50.311 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+13:12:2022.02:31:50.311 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+# Log File for DNS server/resolver
+15:12:2022.11:48:17.871 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+15:12:2022.11:48:17.871 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+15:12:2022.11:48:17.872 QE ['127.0.0.1', '2300'] dumac
+15:12:2022.11:48:17.872 RR ['127.0.0.1', '2300'] dumac
+15:12:2022.11:48:17.873 ZT ['127.0.0.1', '2300'] SS 0.0003383159637451172 399
+15:12:2022.11:48:17.873 EV 127.0.0.1 end-of-connection
+# Log File for DNS server/resolver
+15:12:2022.11:48:45.159 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+15:12:2022.11:48:45.159 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+15:12:2022.11:48:45.159 QE ['127.0.0.1', '2300'] dumac
+15:12:2022.11:48:45.160 RR ['127.0.0.1', '2300'] dumac
+15:12:2022.11:48:45.160 ZT ['127.0.0.1', '2300'] SS 0.0004813671112060547 399
+15:12:2022.11:48:45.160 EV 127.0.0.1 end-of-connection
+# Log File for DNS server/resolver
+15:12:2022.11:48:49.113 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+15:12:2022.11:48:49.113 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+15:12:2022.11:48:49.114 QE ['127.0.0.1', '2300'] dumac
+15:12:2022.11:48:49.114 RR ['127.0.0.1', '2300'] dumac
+15:12:2022.11:48:49.114 ZT ['127.0.0.1', '2300'] SS 0.0002970695495605469 399
+15:12:2022.11:48:49.114 EV 127.0.0.1 end-of-connection
+# Log File for DNS server/resolver
+15:12:2022.11:49:52.759 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+15:12:2022.11:49:52.759 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+15:12:2022.11:49:52.759 QE ['127.0.0.1', '2300'] dumac
+15:12:2022.11:49:52.759 RR ['127.0.0.1', '2300'] dumac
+15:12:2022.11:49:52.760 ZT ['127.0.0.1', '2300'] SS 0.0008714199066162109 399
+15:12:2022.11:49:52.760 EV 127.0.0.1 end-of-connection
+# Log File for DNS server/resolver
+15:12:2022.11:50:47.504 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+15:12:2022.11:50:47.504 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+# Log File for DNS server/resolver
+15:12:2022.11:51:02.735 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+15:12:2022.11:51:02.735 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+# Log File for DNS server/resolver
+15:12:2022.11:51:24.581 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+15:12:2022.11:51:24.581 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+15:12:2022.11:51:24.582 QE ['127.0.0.1', '2300'] dumac
+15:12:2022.11:51:24.582 RR ['127.0.0.1', '2300'] dumac
+15:12:2022.11:51:24.582 ZT ['127.0.0.1', '2300'] SS 0.00033926963806152344 399
+15:12:2022.11:51:24.582 EV 127.0.0.1 end-of-connection
+# Log File for DNS server/resolver
+15:12:2022.11:51:53.520 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+15:12:2022.11:51:53.520 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+# Log File for DNS server/resolver
+15:12:2022.12:09:44.901 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+15:12:2022.12:09:44.901 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+# Log File for DNS server/resolver
+15:12:2022.12:09:57.499 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+15:12:2022.12:09:57.499 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+# Log File for DNS server/resolver
+15:12:2022.12:10:33.036 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+15:12:2022.12:10:33.036 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+# Log File for DNS server/resolver
+15:12:2022.12:11:54.723 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+15:12:2022.12:11:54.723 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+# Log File for DNS server/resolver
+15:12:2022.12:12:18.104 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+15:12:2022.12:12:18.104 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+# Log File for DNS server/resolver
+15:12:2022.12:13:00.676 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+15:12:2022.12:13:00.676 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+15:12:2022.12:13:00.676 QE ['127.0.0.1', '2300'] dumac
+15:12:2022.12:13:00.677 RR ['127.0.0.1', '2300'] dumac
+15:12:2022.12:13:00.677 ZT ['127.0.0.1', '2300'] SS 0.0004100799560546875 399
+15:12:2022.12:13:00.677 EV 127.0.0.1 end-of-connection
+# Log File for DNS server/resolver
+15:12:2022.12:24:38.769 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+15:12:2022.12:24:38.769 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+15:12:2022.12:24:38.769 QE ['127.0.0.1', '2300'] dumac
+15:12:2022.12:24:38.770 RR ['127.0.0.1', '2300'] dumac
+15:12:2022.12:24:38.770 ZT ['127.0.0.1', '2300'] SS 0.0003743171691894531 399
+15:12:2022.12:24:38.770 EV 127.0.0.1 end-of-connection
+15:12:2022.12:26:08.055 QR ('127.0.0.1', 43804) elefante.dumac MX
+15:12:2022.12:26:08.055 RR ('127.0.0.1', 43804) elefante.dumac MX
+# Log File for DNS server/resolver
+15:12:2022.12:50:26.675 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+15:12:2022.12:50:26.675 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+15:12:2022.12:50:26.675 QE ['127.0.0.1', '2300'] dumac
+15:12:2022.12:50:26.675 RR ['127.0.0.1', '2300'] dumac
+15:12:2022.12:50:26.676 ZT ['127.0.0.1', '2300'] SS 0.0003409385681152344 399
+15:12:2022.12:50:26.676 EV 127.0.0.1 end-of-connection
+15:12:2022.12:53:44.988 QR ('127.0.0.1', 57037) elefante.dumac MX
+15:12:2022.12:53:44.988 RR ('127.0.0.1', 57037) elefante.dumac MX
+15:12:2022.12:54:21.667 QR ('127.0.0.1', 34746) elefante.dumac A
+15:12:2022.12:54:21.667 RR ('127.0.0.1', 34746) elefante.dumac A
+# Log File for DNS server/resolver
+15:12:2022.19:21:02.852 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+15:12:2022.19:21:02.852 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+15:12:2022.19:21:02.852 QE ['127.0.0.1', '2330'] dumac
+15:12:2022.19:21:02.853 RR ['127.0.0.1', '2330'] dumac
+15:12:2022.19:21:02.853 ZT ['127.0.0.1', '2330'] SS 0.00037097930908203125 399
+15:12:2022.19:21:02.853 EV 127.0.0.1 end-of-connection
+# Log File for DNS server/resolver
+16:12:2022.00:17:58.462 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+16:12:2022.00:17:58.462 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+16:12:2022.00:17:58.463 QE ['127.0.0.1', '2330'] dumac
+16:12:2022.00:17:58.463 RR ['127.0.0.1', '2330'] dumac
+16:12:2022.00:17:58.464 ZT ['127.0.0.1', '2330'] SS 0.0006992816925048828 548
+16:12:2022.00:17:58.464 EV 127.0.0.1 end-of-connection
+# Log File for DNS server/resolver
+16:12:2022.00:18:27.096 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+16:12:2022.00:18:27.096 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+16:12:2022.00:18:27.096 QE ['127.0.0.1', '2330'] dumac
+16:12:2022.00:18:27.097 RR ['127.0.0.1', '2330'] dumac
+16:12:2022.00:18:27.097 ZT ['127.0.0.1', '2330'] SS 0.0005536079406738281 548
+16:12:2022.00:18:27.097 EV 127.0.0.1 end-of-connection
+# Log File for DNS server/resolver
+16:12:2022.00:23:24.079 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+16:12:2022.00:23:24.079 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+16:12:2022.00:23:24.079 QE ['127.0.0.1', '2330'] dumac
+16:12:2022.00:23:24.079 RR ['127.0.0.1', '2330'] dumac
+16:12:2022.00:23:24.080 ZT ['127.0.0.1', '2330'] SS 0.00048470497131347656 548
+16:12:2022.00:23:24.080 EV 127.0.0.1 end-of-connection
+# Log File for DNS server/resolver
+16:12:2022.00:23:45.856 EV 127.0.0.1 conf-file-read ../entrada/dumacSS1.txt
+16:12:2022.00:23:45.856 EV 127.0.0.1 log-file-create ../saida/dumacSS1log.txt
+
+16:12:2022.00:23:45.857 QE ['127.0.0.1', '2330'] dumac
+16:12:2022.00:23:45.857 RR ['127.0.0.1', '2330'] dumac
+16:12:2022.00:23:45.857 ZT ['127.0.0.1', '2330'] SS 0.0005581378936767578 399
+16:12:2022.00:23:45.858 EV 127.0.0.1 end-of-connection

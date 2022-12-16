@@ -1,0 +1,7 @@
+# Configuration file for primary server for dumac
+dumac DB ../entradaLocalHost/dumacDB.txt 
+dumac SS 127.0.0.1:2300
+dumac SS 127.0.0.1:2350
+dumac LG ../saida/dumaclog.txt
+all LG ../saida/logs.txt
+root ST ../entrada/listaST.txt

@@ -1,0 +1,26 @@
+24:11:2022.11:48:18:278 EV 127.0.0.1 conf-file-read  -  /CC/G2/entrada/configDomA.txt
+24:11:2022.11:48:18:278 EV 127.0.0.1 logs-file - /home/rogan/Desktop/CC/trabalho/CC/G2/saida/SP - elefalante.dumac.txt
+24:11:2022.11:48:18:279 EV 127.0.0.1 database-file-read  - CC/G2/entrada/modeloDB.txt
+24:11:2022.11:49:16:304 EV 127.0.0.1 conf-file-read  -  /CC/G2/entrada/configDomA.txt
+24:11:2022.11:49:16:304 EV 127.0.0.1 logs-file - /home/rogan/Desktop/CC/trabalho/CC/G2/saida/SP - elefalante.dumac.txt
+24:11:2022.11:49:16:304 EV 127.0.0.1 database-file-read  - CC/G2/entrada/modeloDB.txt
+24:11:2022.11:49:19:159 QR ('127.0.0.1', 55755) 3874 Q+Rexample.com. MX
+24:11:2022.11:49:19:159 RP ('127.0.0.1', 55755) 3874 Q+Rexample.com. MX
+24:11:2022.15:25:8:643 EV 127.0.0.1 conf-file-read  -  /CC/G2/entrada/configDomA.txt
+24:11:2022.15:25:8:643 EV 127.0.0.1 logs-file - /home/rogan/Desktop/CC/trabalho/CC/G2/saida/SP - elefalante.dumac.txt
+24:11:2022.15:25:8:643 EV 127.0.0.1 database-file-read  - CC/G2/entrada/modeloDB.txt
+24:11:2022.15:27:13:691 EV 127.0.0.1 conf-file-read  -  /CC/G2/entrada/configDomA.txt
+24:11:2022.15:27:13:691 EV 127.0.0.1 logs-file - /home/rogan/Desktop/CC/trabalho/CC/G2/saida/SP - elefalante.dumac.txt
+24:11:2022.15:27:13:691 EV 127.0.0.1 database-file-read  - CC/G2/entrada/modeloDB.txt
+24:11:2022.15:49:22:383 EV 127.0.0.1 conf-file-read  -  /CC/G2/entrada/configDomA.txt
+24:11:2022.15:49:22:383 EV 127.0.0.1 logs-file - /home/rogan/Desktop/CC/trabalho/CC/G2/saida/SP - elefalante.dumac.txt
+24:11:2022.15:49:22:383 EV 127.0.0.1 database-file-read  - CC/G2/entrada/modeloDB.txt
+24:11:2022.15:56:1:802 EV 127.0.0.1 conf-file-read  -  /CC/G2/entrada/configDomA.txt
+24:11:2022.15:56:1:802 EV 127.0.0.1 logs-file - /home/rogan/Desktop/CC/trabalho/CC/G2/saida/SP - elefalante.dumac.txt
+24:11:2022.15:56:1:803 EV 127.0.0.1 database-file-read  - CC/G2/entrada/modeloDB.txt
+24:11:2022.15:57:52:185 EV 127.0.0.1 conf-file-read  -  /CC/G2/entrada/configDomA.txt
+24:11:2022.15:57:52:185 EV 127.0.0.1 logs-file - /home/rogan/Desktop/CC/trabalho/CC/G2/saida/SP - elefalante.dumac.txt
+24:11:2022.15:57:52:185 EV 127.0.0.1 database-file-read  - CC/G2/entrada/modeloDB.txt
+24:11:2022.16:12:8:779 EV 127.0.0.1 conf-file-read  -  /CC/G2/entrada/configDomA.txt
+24:11:2022.16:12:8:779 EV 127.0.0.1 logs-file - /home/rogan/Desktop/CC/trabalho/CC/G2/saida/SP - elefalante.dumac.txt
+24:11:2022.16:12:8:779 EV 127.0.0.1 database-file-read  - CC/G2/entrada/modeloDB.txt

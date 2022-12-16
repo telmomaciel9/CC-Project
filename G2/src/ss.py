@@ -81,7 +81,7 @@ class SS:
     def conecta_cliente(self):
         print("[SERVER UDP MODE] - STARTING...")
         serverUDP = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
-        serverUDP.bind((self.ip, 2001))
+        serverUDP.bind((self.ip, 2350))
 
         print("[SERVER UDP MODE] - LISTENING...")
 
@@ -112,4 +112,4 @@ if __name__ == "__main__":
     t1.run()
     t2.start()
 
-    print(ss.ssCache)
+    #print(ss.ssCache)

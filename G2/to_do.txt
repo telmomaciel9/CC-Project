@@ -4,22 +4,23 @@ FEITO:
     - Parse dos ficheiros config
         -» falta escrever para lá
         
-    - Queries 
+    
     
 EM PROGRESSO:
 - Escrever para os ficheiros logs
-    -» falta escrever os ficheiros na estrutura dada no exemplo
-        -» formatacão da data esta feita
+    -» falta fazer para o ss
         
 - Transferencia de zona 
-    -» so temos a comunicação tcp, a enviar as linhas, mas estamos a ter provlemas com o buf no receiv, e falta aquelas condiçoes da pica
+    -» falta aquelas condiçoes da pica
 
 - Sistema de cache 
     -» falta os utlimos pontos - em principio ja esta
 
 - Funcionamento do cl
     -» So temos o parse do command line
-
+    
+- Queries 
+    -» Corrigir as flags de resposta 
 
 POR FAZER
 topologia 
@@ -35,3 +36,17 @@ as ultimas linhas, como é suposto?
 transferencia de zona, para saber se o sp é mais recente que o ss porque aqueles dois valores?
 pedir para explicar de forma resumida o Funcionamento cl
 (socket.gethostbyname(socket.gethostname())
+
+
+
+2ª FASE:
+
+─ Corrigir os ficheiros de entrada:
+    ─ Nos Config colocar os IPs dos SS para posteriormente verificar se é servidor autoritativo para a transferencia de zona 
+    ─ Em vez de darmos o ip do sp e do SS, guardamos no ficheiro config e damos so a porta
+
+─ Por o CL em modo debug
+
+─ Por os ST, SDT e SR 
+
+─ Corrigir o SS sobre o facto de responder a query sem ser com o dominio dele

@@ -114,6 +114,8 @@ class Cache:
     #    return (tabulate(self.mat, headers = header, tablefmt = "grid"))
     
     
+    
+    
     def __str__(self):
         out = ""
         for list in self.mat:

@@ -50,3 +50,7 @@ pedir para explicar de forma resumida o Funcionamento cl
 ─ Por os ST, SDT e SR 
 
 ─ Corrigir o SS sobre o facto de responder a query sem ser com o dominio dele
+
+
+Feito nesta segunda FASE
+corrigi a cache, agora ja esta a registar novas entradas

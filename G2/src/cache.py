@@ -30,38 +30,63 @@ class Cache:
                 
       
     #função pedida no enunciado      
-    def reg_atualiza_cache(self, name, tipo, value, ttl, order,origin, status): 
+    def reg_atualiza_cache(self, name, tipo, value, ttl, order,origin): 
         current_time = datetime.datetime.now()
         time_stamp = current_time.timestamp()
         
         if(origin == "SP" or origin == "FILE"):
+            flag=1
             for list in self.mat:
                 if(list[8]=="FREE"):
-                    novaPos = list[7]-1
-                    self.mat[novaPos][0]=name
-                    self.mat[novaPos][1]=tipo
-                    self.mat[novaPos][2]=value
-                    self.mat[novaPos][3]=ttl
-                    self.mat[novaPos][4]=order
-                    self.mat[novaPos][5]=origin
-                    self.mat[novaPos][6]=time_stamp
-                    self.mat[novaPos][8]=status
-                    break           
-        flag1 = 1
-        flag2 = 1      
+                    list[0]=name
+                    list[1]=tipo
+                    list[2]=value
+                    list[3]=ttl
+                    list[4]=order
+                    list[5]=origin
+                    list[6]=time_stamp
+                    list[8]="VALID"
+                    flag=0
+                    break
+            if flag:
+                self.mat.append([name, type, value, ttl, order, origin, time_stamp, len(self.mat)+1, "VALID"])
+             
+        
         if(origin == "OTHERS"):
+            flag1 = 1
+            flag2 = 1
+            flag3 = 1
+            
             for list in self.mat:
                 if(list[0]== name and list[1]==type and list[2]== value and list[4]== order and (list[5]=="SP" or list[5]=="FILE")):
                     flag1 = 0
+                    flag2 = 0
+                    flag3 = 0
+            
             if(flag1):
                 for list in self.mat:
-                    if(list[0]== name and list[1]==type and list[2]== value and list[4]== order and list[5]=="OTHERS" ):
+                    if(list[0]== name and list[1]==type and list[2]== value and list[4]== order and list[5]==origin ):
                         list[6]=time_stamp
                         list[8] = "VALID"
                         flag2=0
+                        flag3 =0
                         break            
             if(flag2):
-                self.mat.append([name, type, value, ttl, order, origin,time_stamp, len(self.mat)+1, "FREE"])
+                for list in self.mat:
+                    if list[8] == "FREE":
+                        list[0]=name
+                        list[1]=tipo
+                        list[2]=value
+                        list[3]=ttl
+                        list[4]=order
+                        list[5]=origin
+                        list[6]=time_stamp
+                        list[8]="VALID"
+                        break     
+                flag3=0
+                
+            if flag3:
+                self.mat.append([name, type, value, ttl, order, origin,time_stamp, len(self.mat)+1, "VALID"])
 
     #função que regista na cache quando recebe uma linha (era para usar quando o ss recebe uma linha so, mas nao vai ser usada)
     """
@@ -99,22 +124,19 @@ class Cache:
                 ttl = palavra[2].replace("\n","")
             if((palavra[0]=="@" or palavra[0].__contains__("@")) and len(palavra)<=4):
                 string = palavra[0].replace("@", dominio)
-                self.reg_atualiza_cache(string, palavra[1].replace("\n",""), palavra[2].replace("\n",""), ttl, "","FILE","VALID")
+                self.reg_atualiza_cache(string, palavra[1].replace("\n",""), palavra[2].replace("\n",""), ttl, "","FILE")
             if((palavra[0]=="@" or palavra[0].__contains__("@")) and len(palavra)>4):
                 string = palavra[0].replace("@", dominio)
-                self.reg_atualiza_cache(string, palavra[1].replace("\n",""), palavra[2].replace("\n",""), ttl, palavra[4].replace("\n",""),"FILE","VALID")
+                self.reg_atualiza_cache(string, palavra[1].replace("\n",""), palavra[2].replace("\n",""), ttl, palavra[4].replace("\n",""),"FILE")
             if(not(palavra[0].__contains__("@")) and len(palavra)>4):
-                self.reg_atualiza_cache(palavra[0], palavra[1].replace("\n",""), palavra[2].replace("\n",""), ttl, palavra[4].replace("\n",""),"FILE","VALID")
+                self.reg_atualiza_cache(palavra[0], palavra[1].replace("\n",""), palavra[2].replace("\n",""), ttl, palavra[4].replace("\n",""),"FILE")
             if(not(palavra[0].__contains__("@")) and len(palavra)<=4):
-                self.reg_atualiza_cache(palavra[0].replace("\n",""), palavra[1].replace("\n",""), palavra[2].replace("\n",""), ttl, "","FILE","VALID")
+                self.reg_atualiza_cache(palavra[0].replace("\n",""), palavra[1].replace("\n",""), palavra[2].replace("\n",""), ttl, "","FILE")
             
     
     #def __str__(self):
     #    header = ["Name", "Type", "Value", "TTL", "Order", "Origin", "TimeStamp", "Index", "Status"]
     #    return (tabulate(self.mat, headers = header, tablefmt = "grid"))
-    
-    
-    
     
     def __str__(self):
         out = ""

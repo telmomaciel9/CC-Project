@@ -7,10 +7,10 @@ class Query:
     def __init__(self):
         self.message_id = ""
         self.flags = ""
-        self.response_code = ""
-        self.num_values = ""
-        self.num_authorities = ""
-        self.num_extra_value = ""
+        self.response_code = "0"
+        self.num_values = "0"
+        self.num_authorities = "0"
+        self.num_extra_value = "0"
         self.query_info_name = ""
         self.query_info_type = ""
        
@@ -60,8 +60,6 @@ class Query:
     def le_linha (self, diretoria):
         with open(diretoria, "r") as f:                                    
             return f.readline()
-            
-    
 
     def __str__(self):
         out = ""

@@ -55,7 +55,7 @@ class Query:
                 for i in range(5):            
                     eval = eval + str(list[i]) + " "
                 eval = eval + "\n"         
-        return mensagem+"\n"+rval+aval+eval    
+        return (mensagem+"\n"+rval+aval+eval)    
     
     def le_linha (self, diretoria):
         with open(diretoria, "r") as f:                                    

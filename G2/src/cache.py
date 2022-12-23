@@ -49,7 +49,7 @@ class Cache:
                     flag=0
                     break
             if flag:
-                self.mat.append([name, type, value, ttl, order, origin, time_stamp, len(self.mat)+1, "VALID"])
+                self.mat.append([name, tipo, value, ttl, order, origin, time_stamp, len(self.mat)+1, "VALID"])
              
         
         if(origin == "OTHERS"):

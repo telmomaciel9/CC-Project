@@ -42,6 +42,10 @@ class Query:
         aval = ""
         eval = ""
         for list in cache.mat:
+            
+        
+        
+        
             if((str(list[1]) == str(query.query_info_type)) and (str(list[0]) == str(query.query_info_name))):
                 for i in range(5):            
                     rval = rval + str(list[i]) + " "
@@ -55,7 +59,7 @@ class Query:
                 for i in range(5):            
                     eval = eval + str(list[i]) + " "
                 eval = eval + "\n"         
-        return (mensagem+"\n"+rval+aval+eval)    
+        return ("\n"+mensagem+"\n"+rval+aval+eval)    
     
     def le_linha (self, diretoria):
         with open(diretoria, "r") as f:                                    

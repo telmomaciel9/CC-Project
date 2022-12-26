@@ -1,0 +1,29 @@
+# DNS database file for domain root
+
+@ DEFAULT .
+TTL DEFAULT 86400
+
+@ SOASP ns1. TTL
+@ SOAADMIN dns\.admin. TTL
+@ SOASERIAL 0117102022 TTL
+@ SOAREFRESH 14400 TTL
+@ SOARETRY 3600 TTL
+@ SOAEXPIRE 604800 TTL
+
+teldu.colo.@ NS sp.teldu.colo.
+teldu.colo.@ NS ss1.teldu.colo.
+teldu.colo.@ NS ss2.teldu.colo.
+
+dumac.colo.@ NS sp.dumac.colo.
+dumac.colo.@ NS ss1.dumac.colo.
+dumac.colo.@ NS ss2.dumac.colo.
+
+sp.teldu.colo A 10.0.6.10 TTL
+ss1.teldu.colo A 10.0.7.10 TTL
+ss2.teldu.colo A 10.0.8.10 TTL
+
+sp.dumac.colo A 10.0.9.10 TTL
+ss1.dumac.colo A 10.0.10.10 TTL
+ss2.dumac.colo A 10.0.11.10 TTL
+
+

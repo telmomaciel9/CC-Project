@@ -5,4 +5,4 @@ dumac.colo SS 10.0.8.10
 dumac.colo DD 10.0.15.11
 dumac.colo LG ../saida/dumaccololog.txt
 all LG ../saida/logs.txt
-root ST ../entrada/listaST.txt #corrigir
+root ST ../entrada/listaST.txt 

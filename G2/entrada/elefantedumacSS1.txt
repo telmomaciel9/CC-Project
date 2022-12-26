@@ -1,4 +1,4 @@
-# Configuration file for primary server for elefalante.dumac 
+# Configuration file for first secundary server for elefalante.dumac 
 elefalante.dumac SP 10.0.17.10
 elefalante.dumac SS 10.0.19.10
 elefalante.dumac LG ../saida/elefalantedumacSS1log.txt

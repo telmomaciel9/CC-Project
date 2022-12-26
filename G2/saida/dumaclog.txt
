@@ -614,3 +614,20 @@
 23:12:2022.03:30:31.085 EV 127.0.0.1 database-file-read ../entrada/dumacDBTeste.txt
 23:12:2022.03:30:35.172 QR ('127.0.0.1', 45678) dumac MX
 23:12:2022.03:30:35.172 RR ('127.0.0.1', 45678) dumac MX
+# Log File for DNS server/resolver
+23:12:2022.03:34:11.804 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+23:12:2022.03:34:11.804 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+23:12:2022.03:34:11.804 EV 127.0.0.1 database-file-read ../entrada/dumacDBTeste.txt
+23:12:2022.03:34:20.171 QR ('127.0.0.1', 60803) dumac www
+23:12:2022.03:34:20.171 RR ('127.0.0.1', 60803) dumac www
+# Log File for DNS server/resolver
+26:12:2022.17:32:02.943 EV 127.0.0.1 conf-file-read ../entrada/dumac.txt
+26:12:2022.17:32:02.943 EV 127.0.0.1 log-file-create ../saida/dumaclog.txt
+
+26:12:2022.17:32:02.944 EV 127.0.0.1 database-file-read ../entrada/dumacDBTeste.txt
+26:12:2022.17:38:05.334 QR ('127.0.0.1', 60112) 
+26:12:2022.17:38:05.334 RP ('127.0.0.1', 60112) 
+26:12:2022.17:38:05.335 ZT ('127.0.0.1', 60112) SP 0.00032448768615722656 574
+26:12:2022.17:39:06.215 QR ('127.0.0.1', 42191) dumac MX
+26:12:2022.17:39:06.215 RR ('127.0.0.1', 42191) dumac MX

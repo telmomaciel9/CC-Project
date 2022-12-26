@@ -1,4 +1,4 @@
-# Configuration file for primary server for elefalante.dumac.colo
+# Configuration file for second secundary server for elefalante.dumac.colo
 elefalante.dumac.colo SP 10.0.17.10
 elefalante.dumac.colo SS 10.0.18.10
 elefalante.dumac.colo DD 10.0.15.11

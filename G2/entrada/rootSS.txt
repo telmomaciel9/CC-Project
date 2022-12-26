@@ -1,4 +1,4 @@
-# Configuration file for root server 
+# Configuration file for secundary root server 
 root SP 10.0.24.10
 root DD 10.0.15.11
 root LG ../saida/rootSSlog.txt

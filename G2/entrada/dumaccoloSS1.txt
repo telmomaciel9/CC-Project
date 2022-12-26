@@ -1,4 +1,4 @@
-# Configuration file for primary server for dumac.colo
+# Configuration file for first secundary server for dumac.colo
 dumac.colo SP 10.0.6.10
 dumac.colo SS 10.0.11.10
 dumac.colo LG ../saida/dumaccoloSS1log.txt

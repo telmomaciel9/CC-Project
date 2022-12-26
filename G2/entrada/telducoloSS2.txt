@@ -1,4 +1,4 @@
-# Configuration file for primary server for teldu.colo 
+# Configuration file for second secundary server for teldu.colo 
 teldu.colo SP 10.0.6.10
 teldu.colo SS 10.0.7.10
 teldu.colo DD 10.0.15.11

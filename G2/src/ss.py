@@ -116,7 +116,7 @@ if __name__ == "__main__":
     
     t1 = threading.Thread(target = ss.conecta_sp)
     t2 = threading.Thread(target = ss.conecta_cliente)
-    t1.run()
+    t1.start()
     t2.start()
 
     #print(ss.ssCache)

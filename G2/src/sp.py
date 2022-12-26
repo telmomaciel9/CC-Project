@@ -33,7 +33,7 @@ class SP:
         self.srvBD.parse_db(self.srvCache)
         self.logs.EV("database-file-read", self.srvConfig.dir_bd)
         self.srvST_list = Parser_ST(self.srvConfig.dir_ST)
-        self.query = Query()
+        
 
     def cliente(self):
         print("[SERVER UDP MODE] - STARTING...")
@@ -43,13 +43,14 @@ class SP:
         print("[SERVER UDP MODE] - LISTENING...")
         
         while True:
+            query = Query()
             (msg,add) = serverUDP.recvfrom(1024)
-            self.query.parse_message_condense(msg.decode('utf-8'))
-            self.logs.QR_QE(True, str(add), self.query.query_info_name + " " + self.query.query_info_type)
+            query.parse_message_condense(msg.decode('utf-8'))
+            self.logs.QR_QE(True, str(add), query.query_info_name + " " + query.query_info_type)
             
             clientMsg = "Message from Client:\n -> {}  ".format(msg.decode('utf-8'))
             
-            bytesToSend = str.encode(self.query.origina_resposta(self.srvCache,self.query,clientMsg))
+            bytesToSend = str.encode(query.origina_resposta(self.srvCache,query))
             
             clientIP  = "Client IP Address: {}".format(add)
             
@@ -58,7 +59,7 @@ class SP:
     
             # Sending a reply to client
             serverUDP.sendto(bytesToSend, add)
-            self.logs.RP_RR(True,str(add),  self.query.query_info_name + " " + self.query.query_info_type)
+            self.logs.RP_RR(True,str(add),  query.query_info_name + " " + query.query_info_type)
 
     def ss(self):
         print("[SERVER TCP MODE] - STARTING...")
@@ -68,7 +69,7 @@ class SP:
         
         serverTCP.listen()
         print("[SERVER TCP MODE] - LISTENING...")
-        
+            
         while True:
             conn, addr = serverTCP.accept()
             print(f"[NEW CONNETION] {addr} CONNECTED.")
@@ -105,7 +106,7 @@ class SP:
         
 if __name__ == "__main__":
     srv = SP()
-    print(srv.srvCache)
+    #print(srv.srvCache)
     t1 = threading.Thread(target = srv.ss)
     t2 = threading.Thread(target = srv.cliente)
         

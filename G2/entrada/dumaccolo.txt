@@ -1,5 +1,5 @@
 # Configuration file for primary server for dumac.colo
-dumac.colo DB ../entrada/dumaccoloDBTeste.txt 
+dumac.colo DB ../entrada/dumaccoloDB.txt 
 dumac.colo SS 10.0.7.10
 dumac.colo SS 10.0.8.10
 dumac.colo DD 10.0.15.11

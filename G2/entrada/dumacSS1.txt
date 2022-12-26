@@ -1,6 +1,0 @@
-# Configuration file for first secondary server for dumac
-dumac SP 10.0.6.10
-dumac SS 10.0.11.10
-dumac LG ../saida/dumacSS1log.txt
-all LG ../saida/logs.txt
-root ST ../entrada/listaST.txt

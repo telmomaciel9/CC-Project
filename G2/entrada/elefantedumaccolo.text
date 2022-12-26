@@ -1,0 +1,8 @@
+# Configuration file for primary server for elefalante.dumac.colo
+elefalante.dumac.colo DB ../entrada/elefalantedumaccoloDB.txt
+elefalante.dumac.colo SS 10.0.18.10
+elefalante.dumac.colo SS 10.0.19.10
+elefalante.dumac.colo DD 10.0.15.11
+elefalante.dumac.colo LG ../saida/elefalantedumaccololog.txt
+all LG ../saida/logs.txt
+root ST ../entrada/listaST.txt

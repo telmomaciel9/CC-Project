@@ -7,10 +7,12 @@ class Cache:
     def __init__(self): #n é o num de linhas max
         n = 10
         self.mat = [[0 for _ in range(9)] for _ in range(n)]
-        #cada lista pequena correstponde a uma coluna   
+        """
+        cada lista pequena correstponde a uma coluna   
         #[    0,    1,     2,   3,     4,      5,         6,     7,      8]    
         # [Name, Type, Value, TTL, Order, Origin, TimeStamp, Index, Status]
         #                            (FILE, SP, OTHERS)     (1...N) (FREE, VALID)
+        """
         i=0
         while i<n:
             self.mat [i][7] = i+1

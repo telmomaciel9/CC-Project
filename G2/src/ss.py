@@ -28,6 +28,8 @@ class SS:
         self.ssCache = Cache()
         self.query = Query()
         
+        #self.conter;
+        
     def conecta_sp(self):
         print("[SERVER TCP MODE] - STARTING...")
         ss = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -36,46 +38,51 @@ class SS:
         
         conecta = True
         while conecta:
-            #manda a mensagem do dominio
-            msg = self.ssConfig.dominio
-            print(f"[SS] - SENDING THIS MESSAGE:\n -> {msg}")
-            ss.send(msg.encode('utf-8'))
-            self.logs.QR_QE(False, str(self.ipPorta), self.ssConfig.dominio )
-            
-            #recebe a mensagem do sp (a dizer o numero de linhas)
-            msg = ss.recv(1024).decode('utf-8')
-            nLinhas = int(msg)
-            print(f"[SS] - RECEIVED THIS MESSAGE:\n -> {msg}")
-            self.logs.RP_RR(True,str(self.ipPorta), self.ssConfig.dominio)
-            ficheiro = []
-            start = time.time()
-            bytesReceived = 0
-            if nLinhas < 40 :
-            #envia mensagem ao sp a dizer que aceita
-                msg = "ACCEPT"
+            try:
+                #manda a mensagem do dominio
+                msg = self.ssConfig.dominio
                 print(f"[SS] - SENDING THIS MESSAGE:\n -> {msg}")
                 ss.send(msg.encode('utf-8'))
+                self.logs.QR_QE(False, str(self.ipPorta), self.ssConfig.dominio )
                 
-                flag = True
-                while flag:
-                    msg = ss.recv(1024).decode('utf-8')
-                    lista_div = msg.split('\n')
-                    for palavra in lista_div:
-                        if palavra != "" and not("#" in palavra):
-                            ficheiro.append(palavra)
-                            bytesReceived+=len(palavra)
-                            
-                    if(len(ficheiro)==nLinhas):
-                        flag= False
-            self.ssCache.reg_cache3(ficheiro)
-            end = time.time()
-            self.logs.ZT(str(self.ipPorta),"SS", str(float(end-start)),str(bytesReceived))
-            msg = "DISCONNECT"
-            print(f"[SS] - SENDING THIS MESSAGE:\n -> {msg}")
-            ss.send(msg.encode('utf-8'))
-            ss.close()
+                #recebe a mensagem do sp (a dizer o numero de linhas)
+                msg = ss.recv(1024).decode('utf-8')
+                nLinhas = int(msg)
+                print(f"[SS] - RECEIVED THIS MESSAGE:\n -> {msg}")
+                self.logs.RP_RR(True,str(self.ipPorta), self.ssConfig.dominio)
+                ficheiro = []
+                start = time.time()
+                bytesReceived = 0
+                if nLinhas < 40 :
+                #envia mensagem ao sp a dizer que aceita
+                    msg = "ACCEPT"
+                    print(f"[SS] - SENDING THIS MESSAGE:\n -> {msg}")
+                    ss.send(msg.encode('utf-8'))
+                    
+                    flag = True
+                    while flag:
+                        msg = ss.recv(1024).decode('utf-8')
+                        lista_div = msg.split('\n')
+                        for palavra in lista_div:
+                            if palavra != "" and not("#" in palavra):
+                                ficheiro.append(palavra)
+                                bytesReceived+=len(palavra)
+                                
+                        if(len(ficheiro)==nLinhas):
+                            flag= False
+                self.ssCache.reg_cache3(ficheiro)
+                end = time.time()
+                self.logs.ZT(str(self.ipPorta),"SS", str(float(end-start)),str(bytesReceived))
+                msg = "DISCONNECT"
+                print(f"[SS] - SENDING THIS MESSAGE:\n -> {msg}")
+                ss.send(msg.encode('utf-8'))
+                ss.close()
+                self.logs.EV("end-of-connection")
+            except:
+                self.conecta_sp()
+                
             conecta = False
-        self.logs.EV("end-of-connection")
+        
         
         
     def conecta_cliente(self):

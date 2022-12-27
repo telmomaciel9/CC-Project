@@ -39,6 +39,7 @@ class Parser_Config:
                         self.dir_logAll = linha[2]
                     if(linha[1] == "LG" and linha[0]!="all"):
                         self.dir_logLocal = linha[2]
+        f.close()
                         
     def __str__(self):
         #print(self.linhas)

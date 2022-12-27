@@ -100,8 +100,9 @@ class SP:
             msg = conn.recv(1024).decode('utf-8')
             print(f"[SP] - Message receive:\n -> {msg}")
             if(msg.upper() == "DISCONNECT"):
-               False
-            conn.close()       
+               i = 0
+            conn.close()  
+            
         self.logs.EV("end-of-connection")
         
 if __name__ == "__main__":

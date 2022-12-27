@@ -36,13 +36,11 @@ class SS:
                 
         
     def conecta_sp(self):
-        print("[SERVER TCP MODE] - STARTING...")
-        ss = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        ss.connect((self.ip , self.porta))
-        print(f"[SS] - SERVER CONNECTED")
-        i = 0
-        
         while True:
+            print("[SERVER TCP MODE] - STARTING...")
+            ss = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            ss.connect((self.ip , self.porta))
+            print(f"[SS] - SERVER CONNECTED")
             #manda a mensagem do dominio
             msg = self.ssConfig.dominio
             print(f"[SS] - SENDING THIS MESSAGE:\n -> {msg}")
@@ -83,8 +81,7 @@ class SS:
             self.setRefresh()
             ss.close()
             self.logs.EV("end-of-connection")
-            i=i+1
-            print(i)
+            
             time.sleep(self.conter)
             
                 

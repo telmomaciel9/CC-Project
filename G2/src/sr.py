@@ -72,34 +72,9 @@ class SR:
         while True:
             conn, addr = serverTCP.accept()
             print(f"[NEW CONNETION] {addr} CONNECTED.")
-            msg = conn.recv(1024).decode('utf-8')
-            print(f"[SP] - Message receive:\n -> {msg}")
-            self.logs.QR_QE(True, addr)
-            if msg == self.srvConfig.dominio:
-                print("ola")
-                msg = str(len(self.srvBD.linhas))
-                conn.send(msg.encode('utf-8'))
-                self.logs.RP_RR(False, str(addr))
-            msg = conn.recv(1024).decode('utf-8')
-            print(f"[SP] - Message receive:\n -> {msg}")
+           
             
-            
-            bytesSent = 0
-            if msg == "ACCEPT":
-                
-                start = time.time()
-                for i in range(len(self.srvBD.linhas)):
-                    print(i+1)
-                    msg = self.srvBD.linhas[i]
-                    print(f"[SP] - SENDING MESSAGE:\n -> {msg}")
-                    conn.send(bytes(msg,'utf-8'))
-                    bytesSent+=len(msg)
-                end =time.time()
-                self.logs.ZT(str(addr),"SP", str(float(end-start)),str(bytesSent))     
-            msg = conn.recv(1024).decode('utf-8')
-            print(f"[SP] - Message receive:\n -> {msg}")
-            if(msg.upper() == "DISCONNECT"):
-               False
+           
             conn.close()       
         self.logs.EV("end-of-connection")
         

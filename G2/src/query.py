@@ -41,27 +41,36 @@ class Query:
         rval = ""
         aval = ""
         eval = ""
+        
+    
         for list in cache.mat:
-            #response
-            if((str(list[1]) == str(query.query_info_type)) and (str(list[0]) == str(query.query_info_name))):
-                self.num_values=self.num_values+1
-                for i in range(5):            
-                    rval = rval + str(list[i]) + " "
-                rval = rval + "\n"
-            
-            #autoritativas
-            if(str(list[0]) == query.query_info_name and str(list[1]) == "NS"):
-                self.num_authorities=self.num_authorities+1
-                for i in range(5):            
-                    aval = aval + str(list[i]) + " "
-                aval = aval + "\n"
-            
-            #extra
-            if((str(list[1]) == "A" and "NS".lower() in list[0]) or (str(list[1]) == "A" and query.query_info_type.lower() in list[0])):
-                self.num_extra_value= self.num_extra_value+1
-                for i in range(5):            
-                    eval = eval + str(list[i]) + " "
-                eval = eval + "\n"         
+            if str(list[0]) == query.query_info_name:
+                self.response_code = 2
+                break
+            elif str(list[0]) == query.query_info_name:
+                #response
+                if((str(list[1]) == str(query.query_info_type)) and (str(list[0]) == str(query.query_info_name))):
+                    self.num_values=self.num_values+1
+                    for i in range(5):            
+                        rval = rval + str(list[i]) + " "
+                    rval = rval + "\n"
+                elif ((str(list[1]) != str(query.query_info_type)) and (str(list[0]) == str(query.query_info_name))):
+                    self.response_code = 2  
+                    
+                #autoritativas
+                if(str(list[0]) == query.query_info_name and str(list[1]) == "NS"):
+                    self.num_authorities=self.num_authorities+1
+                    for i in range(5):            
+                        aval = aval + str(list[i]) + " "
+                    aval = aval + "\n"
+                
+                #extra
+                if((str(list[1]) == "A" and "NS".lower() in list[0]) or (str(list[1]) == "A" and query.query_info_type.lower() in list[0])):
+                    self.num_extra_value= self.num_extra_value+1
+                    for i in range(5):            
+                        eval = eval + str(list[i]) + " "
+                    eval = eval + "\n"
+        
                 
         msg="\n"+self.message_id+","+self.flags+","+str(self.response_code)+","+str(self.num_values)+","+str(self.num_authorities)+","+str(self.num_extra_value)+";"+self.query_info_name+","+self.query_info_type+";"
         

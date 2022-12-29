@@ -107,7 +107,7 @@ class SP:
         
 if __name__ == "__main__":
     srv = SP()
-    #print(srv.srvCache)
+    print(srv.srvCache)
     t1 = threading.Thread(target = srv.ss)
     t2 = threading.Thread(target = srv.cliente)
         

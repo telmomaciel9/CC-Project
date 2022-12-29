@@ -1,7 +1,7 @@
 # Configuration file for second secundary server for elefalante.dumac.
-elefalante.dumac. SP 10.0.17.10
-elefalante.dumac. SS 10.0.18.10
-elefalante.dumac. DD 10.0.15.11
-elefalante.dumac. LG ../saida/elefalantedumacSS2log.txt
+elefante.dumac. SP 10.0.17.10
+elefante.dumac. SS 10.0.18.10
+elefante.dumac. DD 10.0.15.11
+elefante.dumac. LG ../saida/elefantedumacSS2log.txt
 all LG ../saida/logs.txt
 root ST ../entrada/listaST.txt

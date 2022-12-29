@@ -1,23 +1,23 @@
-# DNS database file for domain teldu.colo
+# DNS database file for domain teldu.
 
-@ DEFAULT teldu.colo.
+@ DEFAULT teldu.
 TTL DEFAULT 86400
 
-@ SOASP ns1.teldu.colo. TTL
-@ SOAADMIN dns\.admin.teldu.colo. TTL
+@ SOASP ns1.teldu. TTL
+@ SOAADMIN dns\.admin.teldu. TTL
 @ SOASERIAL 0117102022 TTL
 @ SOAREFRESH 14400 TTL
 @ SOARETRY 3600 TTL
 @ SOAEXPIRE 604800 TTL
 
-@ NS ns1.teldu.colo. TTL
-@ NS ns2.teldu.colo. TTL
-@ NS ns3.teldu.colo. TTL
+@ NS ns1.teldu. TTL
+@ NS ns2.teldu. TTL
+@ NS ns3.teldu. TTL
 
-lospeneiros.@ NS sp.lospeneiros.teldu.colo.
+lospeneiros.@ NS sp.lospeneiros.teldu.
 
-@ MX mx1.teldu.colo TTL 10
-@ MX mx2.teldu.colo TTL 20
+@ MX mx1.teldu. TTL 10
+@ MX mx2.teldu. TTL 20
 
 ns1 A 10.0.6.10 TTL
 ns2 A 10.0.7.10 TTL

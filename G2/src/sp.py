@@ -78,7 +78,7 @@ class SP:
             msg = conn.recv(1024).decode('utf-8')
             print(f"[SP] - Message receive:\n -> {msg}")
             self.logs.QR_QE(True, addr)
-            if msg == self.srvConfig.dominio and nTransDone <:
+            if msg == self.srvConfig.dominio:
                 msg = str(len(self.srvBD.linhas))
                 conn.send(msg.encode('utf-8'))
                 self.logs.RP_RR(False, str(addr))

@@ -1,21 +1,21 @@
-# DNS database file for subdomain lospeneiros.teldu.colo
+# DNS database file for subdomain lospeneiros.teldu.
 
-@ DEFAULT lospeneiros.teldu.colo.
+@ DEFAULT lospeneiros.teldu.
 TTL DEFAULT 86400
 
-@ SOASP ns1.lospeneiros.teldu.colo. TTL
-@ SOAADMIN dns\.admin.lospeneiros.teldu.colo. TTL
+@ SOASP ns1.lospeneiros.teldu. TTL
+@ SOAADMIN dns\.admin.lospeneiros.teldu. TTL
 @ SOASERIAL 0117102022 TTL
 @ SOAREFRESH 14400 TTL
 @ SOARETRY 3600 TTL
 @ SOAEXPIRE 604800 TTL
 
-@ NS ns1.lospeneiros.teldu.colo. TTL
-@ NS ns2.lospeneiros.teldu.colo. TTL
-@ NS ns3.lospeneiros.teldu.colo. TTL
+@ NS ns1.lospeneiros.teldu. TTL
+@ NS ns2.lospeneiros.teldu. TTL
+@ NS ns3.lospeneiros.teldu. TTL
 
-@ MX mx1.lospeneiros.teldu.colo TTL 10
-@ MX mx2.lospeneiros.teldu.colo TTL 20
+@ MX mx1.lospeneiros.teldu. TTL 10
+@ MX mx2.lospeneiros.teldu. TTL 20
 
 ns1 A 10.0.14.10 TTL
 ns2 A 10.0.15.10 TTL

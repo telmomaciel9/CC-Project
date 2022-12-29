@@ -1,23 +1,23 @@
-# DNS database file for domain dumac.colo
+# DNS database file for domain dumac.
 
 @ DEFAULT dumac.colo.
 TTL DEFAULT 86400
 
-@ SOASP ns1.dumac.colo. TTL
-@ SOAADMIN dns\.admin.dumac.colo. TTL
+@ SOASP ns1.dumac. TTL
+@ SOAADMIN dns\.admin.dumac. TTL
 @ SOASERIAL 0117102022 TTL
 @ SOAREFRESH 10 TTL
 @ SOARETRY 3600 TTL
 @ SOAEXPIRE 604800 TTL
 
-@ NS ns1.dumac.colo. TTL
-@ NS ns2.dumac.colo. TTL
-@ NS ns3.dumac.colo. TTL
+@ NS ns1.dumac. TTL
+@ NS ns2.dumac. TTL
+@ NS ns3.dumac. TTL
 
-elefante.@ NS sp.elefante.dumac.colo.
+elefante.@ NS sp.elefante.dumac.
 
-@ MX mx1.dumac.colo TTL 10
-@ MX mx2.dumac.colo TTL 20
+@ MX mx1.dumac. TTL 10
+@ MX mx2.dumac. TTL 20
 
 ns1 A 10.0.9.10 TTL
 ns2 A 10.0.10.10 TTL

@@ -1,0 +1,7 @@
+# Configuration file for first secundary server for subdomain elefalante.dumac.
+elefalante.dumac. SP 10.0.17.10
+elefalante.dumac. SS 10.0.19.10
+elefalante.dumac. DD 10.0.15.11
+elefalante.dumac. LG ../saida/elefalantedumacSS1log.txt
+all LG ../saida/logs.txt
+root ST ../entrada/listaST.txt

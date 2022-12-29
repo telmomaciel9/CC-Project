@@ -1,0 +1,8 @@
+# Configuration file for primary server for subdomain - elefalante.dumac.
+elefalante.dumac. DB ../entrada/elefalantedumacDB.txt
+elefalante.dumac. SS 10.0.18.10
+elefalante.dumac. SS 10.0.19.10
+elefalante.dumac. DD 10.0.15.11
+elefalante.dumac. LG ../saida/elefalantedumaclog.txt
+all LG ../saida/logs.txt
+root ST ../entrada/listaST.txt

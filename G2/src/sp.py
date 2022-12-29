@@ -69,21 +69,21 @@ class SP:
         
         serverTCP.listen()
         print("[SERVER TCP MODE] - LISTENING...")
-            
+                    
+        nTransDone = 0
+                    
         while True:
             conn, addr = serverTCP.accept()
             print(f"[NEW CONNETION] {addr} CONNECTED.")
             msg = conn.recv(1024).decode('utf-8')
             print(f"[SP] - Message receive:\n -> {msg}")
             self.logs.QR_QE(True, addr)
-            if msg == self.srvConfig.dominio:
-                print("ola")
+            if msg == self.srvConfig.dominio and nTransDone <:
                 msg = str(len(self.srvBD.linhas))
                 conn.send(msg.encode('utf-8'))
                 self.logs.RP_RR(False, str(addr))
             msg = conn.recv(1024).decode('utf-8')
             print(f"[SP] - Message receive:\n -> {msg}")
-            
             
             bytesSent = 0
             if msg == "ACCEPT":
@@ -100,8 +100,8 @@ class SP:
             msg = conn.recv(1024).decode('utf-8')
             print(f"[SP] - Message receive:\n -> {msg}")
             if(msg.upper() == "DISCONNECT"):
-               i = 0
-            conn.close()  
+                nTransDone = nTransDone + 1
+                conn.close()  
             
         self.logs.EV("end-of-connection")
         

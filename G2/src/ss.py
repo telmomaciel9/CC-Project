@@ -27,13 +27,25 @@ class SS:
         self.logs.EV("log-file-create", self.ssConfig.dir_logLocal)
         self.ssCache = Cache()
         self.query = Query()
-        self.conter=0;
-    
-    def setRefresh(self):
+        self.refresh = 0;
+        self.retry = 0;
+        self.expire = 0;
+        
+        
+    def getRefresh(self):
         for coluna in self.ssCache.mat:
             if coluna[1] == "SOAREFRESH":
-                self.conter = int(coluna[2])
+                self.refresh = int(coluna[2])
                 
+    def getRetry(self):
+        for coluna in self.ssCache.mat:
+            if coluna[1] == "SOARETRY":
+                self.retry = int(coluna[2])
+                
+    def getExpire(self):
+        for coluna in self.ssCache.mat:
+            if coluna[1] == "SOAEXPIRE":
+                self.expire = int(coluna[2])
         
     def conecta_sp(self):
         while True:
@@ -78,11 +90,11 @@ class SS:
             msg = "DISCONNECT"
             print(f"[SS] - SENDING THIS MESSAGE:\n -> {msg}")
             ss.send(msg.encode('utf-8'))
-            self.setRefresh()
+            self.getRetry()
             ss.close()
             self.logs.EV("end-of-connection")
             
-            time.sleep(self.conter)
+            time.sleep(self.retry)
             
                 
             #conecta = False

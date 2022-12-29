@@ -1,7 +1,0 @@
-# Configuration file for second secundary server for dumac.colo
-dumac.colo SS 10.0.9.10
-dumac.colo SS 10.0.10.10
-dumac.colo LG ../saida/dumaccoloSS2log.txt
-dumac.colo DD 10.0.15.11
-all LG ../saida/logs.txt
-root ST ../entrada/listaST.txt

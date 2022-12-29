@@ -1,7 +1,0 @@
-# Configuration file for second secundary server for teldu.colo 
-teldu.colo SP 10.0.6.10
-teldu.colo SS 10.0.7.10
-teldu.colo DD 10.0.15.11
-teldu.colo LG ../saida/telducoloSS2log.txt
-all LG ../saida/logs.txt
-root ST ../entrada/listaST.txt

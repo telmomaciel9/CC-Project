@@ -9,6 +9,9 @@ import socket
 import os
 import sys
 import time
+import queue
+import re
+import pickle
 
 
 class SR:
@@ -33,7 +36,10 @@ class SR:
         self.srvBD.parse_db(self.srvCache)
         self.logs.EV("database-file-read", self.srvConfig.dir_bd)
         self.srvST_list = Parser_ST(self.srvConfig.dir_ST)
-        self.query = Query()
+
+        self.queue= queue.Queue()
+
+
 
     def cliente(self):
         print("[SERVER UDP MODE] - STARTING...")
@@ -43,47 +49,76 @@ class SR:
         print("[SERVER UDP MODE] - LISTENING...")
         
         while True:
+            query = Query()
+            bytesToSend = "".encode('utf-8')
+            
             (msg,add) = serverUDP.recvfrom(1024)
-            self.query.parse_message_condense(msg.decode('utf-8'))
-            self.logs.QR_QE(True, str(add), self.query.query_info_name + " " + self.query.query_info_type)
-            
-            clientMsg = "Message from Client:\n -> {}  ".format(msg.decode('utf-8'))
-            
-            bytesToSend = str.encode(self.query.origina_resposta(self.srvCache,self.query,clientMsg))
+            query.parse_message_condense(msg.decode('utf-8'))
+            self.logs.QR_QE(True, str(add), query.query_info_name + " " + query.query_info_type)
             
             clientIP  = "Client IP Address: {}".format(add)
+            clientMsg = "Message from Client:\n -> {}  ".format(msg.decode('utf-8'))
             
-            print(clientMsg)
             print(clientIP)
-    
-            # Sending a reply to client
-            serverUDP.sendto(bytesToSend, add)
-            self.logs.RP_RR(True,str(add),  self.query.query_info_name + " " + self.query.query_info_type)
-
-    def con_servidor(self):
-        print("[SERVER TCP MODE] - STARTING...")
-        serverTCP = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        
-        serverTCP.bind((self.ip,self.porta))
-        
-        serverTCP.listen()
-        print("[SERVER TCP MODE] - LISTENING...")
-        
-        while True:
-            conn, addr = serverTCP.accept()
-            print(f"[NEW CONNETION] {addr} CONNECTED.")
-           
+            print(clientMsg)
             
-           
-            conn.close()       
-        self.logs.EV("end-of-connection")
+            resposta = query.origina_resposta(self.srvCache,query)
+            print(resposta)
+            if query.response_code==0:
+                bytesToSend = resposta.encode('utf-8')
+            
+            elif query.response_code==1 or query.response_code==2:
+                #fazer primeiro para o dd
+                
+                #fazer para o st
+                ipPorta = self.srvST_list.sts[0].split(":")
+
+                if len(ipPorta)== 2:
+                    ip = ipPorta[0]
+                    porta = int(ipPorta[1])
+                elif len(ipPorta)==1:
+                    porta = int(ipPorta[1])
+                
+                tST = threading.Thread(target=self.conectaServidor(ip,porta,msg.decode('utf-8'),self.queue))
+                tST.start()
+                
+                stMsg=self.queue.get()
+                
+                primeiraLinha = re.split(";|,| ",stMsg)
+                
+                if(primeiraLinha[2]==0 or primeiraLinha[2]==2):
+                    bytesToSend = str.encode(msg)
+                    
+                elif(primeiraLinha[2]==str(1)):
+                    print(stMsg)
+        
+
+    
+            #Sending a reply to client
+            serverUDP.sendto(bytesToSend, add)
+            self.logs.RP_RR(True,str(add),  query.query_info_name + " " + query.query_info_type)
+
+    
+    def conectaServidor(self, ip, porta,query,q):
+        srUDP = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        srUDP.connect((ip, porta))
+        print(f"[CONNECTED] Connected")
+        
+        srUDP.sendto(query.encode('utf-8'),(ip,porta))
+        print(f"[MESSAGE SENT]\n{query}")
+        msg = srUDP.recv(1024).decode('utf-8')
+        q.put(msg)
+        print(f"[MESSAGE RECEIVED FROM SERVER]\n{msg}")
+        srUDP.close()
+        
+        
         
 if __name__ == "__main__":
     srv = SR()
-    #print(srv.srvCache)
-    t1 = threading.Thread(target = srv.con_servidor)
+    print(srv.srvCache)
+   # t1 = threading.Thread(target = srv.ss)
     t2 = threading.Thread(target = srv.cliente)
         
     
-    t1.start()
+    #t1.start()
     t2.start()

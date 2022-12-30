@@ -32,7 +32,7 @@ class Parser_Config:
                         self.dominio = linha[0]
                         self.ip_DD.append(linha[2])
                     if(linha[1] == "ST" and linha[0] == "root"):
-                        self.ip_ST = linha[2]
+                        self.dir_ST = linha[2]
                     if(linha[1] == "SP"):
                         self.ip_SP = linha[2]
                     if(linha[1] == "LG" and linha[0]=="all"):

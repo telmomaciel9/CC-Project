@@ -1,3 +1,6 @@
 # Configuration file for server resolver
+sr DB ../entrada/srDB.txt 
+teldu. DD 127.0.0.1
+sr LG ../saida/srlog.txt
 all LG ../saida/logs.txt
-root ST ../entrada/listaST.txt
+root ST ../entrada/listaSTteste.txt 

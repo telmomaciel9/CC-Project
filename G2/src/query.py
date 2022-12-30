@@ -7,7 +7,7 @@ class Query:
     def __init__(self):
         self.message_id = ""
         self.flags = ""
-        self.response_code = 0
+        self.response_code = 2
         self.num_values = 0
         self.num_authorities = 0
         self.num_extra_value = 0
@@ -21,9 +21,6 @@ class Query:
         if(linha[0]!='#'):
             self.message_id = linha[0]
             l = linha[1].split("+")
-            #if(l[0]=="Q"):
-            #    self.flags=l[1]
-            #else:
             self.flags = linha[1]
             self.query_info_name = linha[6]
             self.query_info_type = linha[7] 
@@ -32,7 +29,7 @@ class Query:
     def gera_queryInterna(self):
         out = ""
         if self.flags =="":
-            out = str(self.message_id) + ",Q,"+str(self.response_code) +","+str(self.num_values)+","+str(self.num_authorities)+","+str(self.num_extra_value)+";"+str(self.query_info_name) + "," + str(self.query_info_type)
+            out = str(self.message_id) + ",Q,0,"+str(self.num_values)+","+str(self.num_authorities)+","+str(self.num_extra_value)+";"+str(self.query_info_name) + "," + str(self.query_info_type)
         if self.flags != "":
             out = str(self.message_id) + ",Q+"+str(self.flags)+ ",0,0,0,0," + str(self.query_info_name) + "," + str(self.query_info_type)
         return out
@@ -44,35 +41,34 @@ class Query:
         
     
         for list in cache.mat:
-            if str(list[0]) == query.query_info_name:
-                self.response_code = 2
-                break
-            elif str(list[0]) == query.query_info_name:
+            if list[0] == query.query_info_name  or (str(list[0]) in str(query.query_info_name)) or (str(query.query_info_name) in str(list[0])):
                 #response
-                if((str(list[1]) == str(query.query_info_type)) and (str(list[0]) == str(query.query_info_name))):
+                if list[0] == query.query_info_name and list[1] == query.query_info_type:
+                    self.response_code = 0
                     self.num_values=self.num_values+1
                     for i in range(5):            
                         rval = rval + str(list[i]) + " "
                     rval = rval + "\n"
-                elif ((str(list[1]) != str(query.query_info_type)) and (str(list[0]) == str(query.query_info_name))):
-                    self.response_code = 2  
+                elif (list[0] != query.query_info_name or (str(list[0]) in str(query.query_info_name)) or (str(query.query_info_name) in str(list[0]))) and (list[1] == query.query_info_type or list[1] == "NS"):
+                    self.response_code = 1
                     
                 #autoritativas
-                if(str(list[0]) == query.query_info_name and str(list[1]) == "NS"):
+                if (list[0] == query.query_info_name or (str(list[0]) in (query.query_info_name)) or (str(query.query_info_name) in str(list[0]))) and list[1] == "NS":
                     self.num_authorities=self.num_authorities+1
                     for i in range(5):            
                         aval = aval + str(list[i]) + " "
                     aval = aval + "\n"
                 
                 #extra
-                if((str(list[1]) == "A" and "NS".lower() in list[0]) or (str(list[1]) == "A" and query.query_info_type.lower() in list[0])):
+                if((str(list[1]) == "A" and "ns" in str(list[0])) or (str(list[1]) == "A" and query.query_info_type.lower() in list[0])):
                     self.num_extra_value= self.num_extra_value+1
                     for i in range(5):            
                         eval = eval + str(list[i]) + " "
                     eval = eval + "\n"
-        
+            
+            
                 
-        msg="\n"+self.message_id+","+self.flags+","+str(self.response_code)+","+str(self.num_values)+","+str(self.num_authorities)+","+str(self.num_extra_value)+";"+self.query_info_name+","+self.query_info_type+";"
+        msg=self.message_id+","+self.flags+","+str(self.response_code)+","+str(self.num_values)+","+str(self.num_authorities)+","+str(self.num_extra_value)+";"+self.query_info_name+","+self.query_info_type+";"
         
         return (msg+"\n"+rval+aval+eval)    
     

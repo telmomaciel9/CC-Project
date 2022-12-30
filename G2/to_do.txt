@@ -54,3 +54,8 @@ pedir para explicar de forma resumida o Funcionamento cl
 
 Feito nesta segunda FASE
 corrigi a cache, agora ja esta a registar novas entradas
+Corrigi a query
+
+fizemos o st, rs
+
+ha uma coisa que nao esta bem no st que sao os extra

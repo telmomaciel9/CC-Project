@@ -1,4 +1,4 @@
 # Configuration file for primary server for sonso
-. DB entrada/stDB.txt
-. LG ../saida/st/home/core/dns/logs/STlog.txtlogs.txt
+. DB ../entrada/stDB.txt 
+. LG ../saida/stlog.txt
 all LG ../saida/logs.txt

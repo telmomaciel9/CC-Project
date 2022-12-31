@@ -10,7 +10,7 @@ class Parser_Config:
         self.dir_bd = ""
         self.ip_SS = []
         self.ip_SP = ""
-        self.ip_DD = []
+        self.ip_DD = dict()
         self.dir_ST = ""
         
     def parse_Config(self):
@@ -30,7 +30,8 @@ class Parser_Config:
                         self.ip_SS.append(linha[2])
                     if(linha[1] == "DD"):
                         self.dominio = linha[0]
-                        self.ip_DD.append(linha[2])
+                        #self.ip_DD.append(linha[2])
+                        self.ip_DD[linha[0]] = linha[2]
                     if(linha[1] == "ST" and linha[0] == "root"):
                         self.dir_ST = linha[2]
                     if(linha[1] == "SP"):

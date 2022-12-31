@@ -38,8 +38,6 @@ class SR:
         self.srvST_list = Parser_ST(self.srvConfig.dir_ST)
         self.queue= queue.Queue()
 
-
-
     def cliente(self):
         print("[SERVER UDP MODE] - STARTING...")
         serverUDP = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
@@ -68,70 +66,10 @@ class SR:
             
             elif query.response_code==1 or query.response_code==2:
                 #fazer primeiro para o dd
-                
-                #fazer para o st
-                ipPorta = self.srvST_list.sts[0].split(":")
-
-                if len(ipPorta)== 2:
-                    ip = ipPorta[0]
-                    porta = int(ipPorta[1])
-                elif len(ipPorta)==1:
-                    porta = int(ipPorta[1])
-                
-                tST = threading.Thread(target=self.conectaServidor(ip,porta,msg.decode('utf-8'),self.queue))
-                tST.start()
-                
-                stMsg=self.queue.get()
-                
-                primeiraLinhaAux = stMsg.split("\n")
-                primeiraLinha= re.split(";|,| ",primeiraLinhaAux[0])
-
-                if(primeiraLinha[2]==str(0) or primeiraLinha[2]==str(2)):
-                    bytesToSend = str.encode(msg)
-                    
-                elif(primeiraLinha[2]==str(1)):
-                    #faz para o sdt
-                    listaIPs =[]
-                    for i in range (len(primeiraLinhaAux)-1):
-                        frase = re.split(";|,| ",primeiraLinhaAux[i])
-                        if "ns" in frase[0]:
-                            listaIPs.append(frase[2])
-                    
-                    i=0
-                    flag = True
-                    #while i<len(listaIPs):
-                    ipPorta = listaIPs[i].split(":")
-                    if len(ipPorta)== 2:
-                        ip = ipPorta[0]
-                        porta = int(ipPorta[1])
-                    elif len(ipPorta)==1:
-                        porta = int(ipPorta[1])
-                    
-                    tST = threading.Thread(target=self.conectaServidor(ip,porta,msg.decode('utf-8'),self.queue))
-                    tST.start()
-                    
-                    stMsg=self.queue.get()
-            
-                    primeiraLinhaAux = stMsg.split("\n")
-                    primeiraLinha= re.split(";|,| ",primeiraLinhaAux[0])
-    
-                    if(primeiraLinha[2]==str(0) or primeiraLinha[2]==str(2)):
-                        bytesToSend = str.encode(msg)
-                        flag = 0
-                    elif(primeiraLinha[2]==str(1)):
-                        #faz para o sub
-                        #i=i+1
-                        ##faz para o sdt
-                        listaIPs =[]
-                        for i in range (len(primeiraLinhaAux)-1):
-                            frase = re.split(";|,| ",primeiraLinhaAux[i])
-                            if "ns" in frase[0]:
-                                listaIPs.append(frase[2])
-                        
-                        i=0
-                        flag2 = True
-                        #while i<len(listaIPs):
-                        ipPorta = listaIPs[i].split(":")
+                f=1
+                while f:
+                    if query.query_info_name in self.srvConfig.ip_DD:
+                        ipPorta = self.srvConfig.ip_DD[query.query_info_name].split(":")
                         if len(ipPorta)== 2:
                             ip = ipPorta[0]
                             porta = int(ipPorta[1])
@@ -142,34 +80,165 @@ class SR:
                         tST.start()
                         
                         stMsg=self.queue.get()
-                        print(stMsg)
-                        primeiraLinhaAux = stMsg.split("\n")
-                        primeiraLinha= re.split(";|,| ",primeiraLinhaAux[0])
-        
-                        if(primeiraLinha[2]==str(0) or primeiraLinha[2]==str(2)):
-                            bytesToSend = str.encode(str(stMsg))
-                            flag2 = 0
-
-                        flag = 0
+                        if(stMsg!=0):
+                            primeiraLinhaAux = stMsg.split("\n")
+                            primeiraLinha= re.split(";|,| ",primeiraLinhaAux[0])
+            
+                            if(primeiraLinha[2]==str(0) or primeiraLinha[2]==str(2)):
+                                bytesToSend = str.encode(msg)
+                            elif(primeiraLinha[2]==str(1)):
+                                ##faz para o sdt
+                                listaIPs =[]
+                                for i in range (len(primeiraLinhaAux)-1):
+                                    frase = re.split(";|,| ",primeiraLinhaAux[i])
+                                    if "ns" in frase[0]:
+                                        listaIPs.append(frase[2])
+                                
+                                e=0
+                                flag2 = True
+                                while e<len(listaIPs) and flag2:
+                                    ipPorta = listaIPs[e].split(":")
+                                    if len(ipPorta)== 2:
+                                        ip = ipPorta[0]
+                                        porta = int(ipPorta[1])
+                                    elif len(ipPorta)==1:
+                                        porta = int(ipPorta[1])
+                                    
+                                    tST = threading.Thread(target=self.conectaServidor(ip,porta,msg.decode('utf-8'),self.queue))
+                                    tST.start()
+                                    tST.join()
+                                    stMsg=self.queue.get()
+                                    if(stMsg!=0):
+                                        print(stMsg)
+                                        primeiraLinhaAux = stMsg.split("\n")
+                                        primeiraLinha= re.split(";|,| ",primeiraLinhaAux[0])
+                        
+                                        if(primeiraLinha[2]==str(0) or primeiraLinha[2]==str(2)):
+                                            bytesToSend = str.encode(str(stMsg))
+                                            flag2 = 0
+                                    elif(stMsg==0):
+                                        e=e+1
+                        else:
+                            f=0
+                    else:
+                        f=0
+                        
+                        
+                #fazer para o st
+                else:   
+                    flag=True
+                    a = 0
+                    while a < len(self.srvST_list.sts) and flag:
+                        ipPorta = self.srvST_list.sts[a].split(":")
+                        if len(ipPorta)== 2:
+                            ip = ipPorta[0]
+                            porta = int(ipPorta[1])
+                        elif len(ipPorta)==1:
+                            porta = int(ipPorta[1])
+                        
+                        tST = threading.Thread(target=self.conectaServidor(ip,porta,msg.decode('utf-8'),self.queue))
+                        tST.start()
+                
+                        stMsg=self.queue.get()        
+                        if(stMsg!=0):
+                            primeiraLinhaAux = stMsg.split("\n")
+                            primeiraLinha= re.split(";|,| ",primeiraLinhaAux[0])
+            
+                            if(primeiraLinha[2]==str(0) or primeiraLinha[2]==str(2)):
+                                bytesToSend = str.encode(msg)
+                                flag = False
+                                
+                            elif(primeiraLinha[2]==str(1)):
+                                #faz para o sdt
+                                listaIPs =[]
+                                for i in range (len(primeiraLinhaAux)-1):
+                                    frase = re.split(";|,| ",primeiraLinhaAux[i])
+                                    if "ns" in frase[0]:
+                                        listaIPs.append(frase[2])
+                                
+                                i=0
+                                flag1 = True
+                                while i<len(listaIPs) and flag1:
+                                    ipPorta = listaIPs[i].split(":")
+                                    if len(ipPorta)== 2:
+                                        ip = ipPorta[0]
+                                        porta = int(ipPorta[1])
+                                    elif len(ipPorta)==1:
+                                        porta = int(ipPorta[1])
+                                    
+                                    tST = threading.Thread(target=self.conectaServidor(ip,porta,msg.decode('utf-8'),self.queue))
+                                    tST.start()
+                                    
+                                    stMsg=self.queue.get()
+                                    if(stMsg!=0):
+                                        primeiraLinhaAux = stMsg.split("\n")
+                                        primeiraLinha= re.split(";|,| ",primeiraLinhaAux[0])
+                        
+                                        if(primeiraLinha[2]==str(0) or primeiraLinha[2]==str(2)):
+                                            bytesToSend = str.encode(msg)
+                                            flag1 = 0
+                                        elif(primeiraLinha[2]==str(1)):
+                                            ##faz para o sdt
+                                            listaIPs =[]
+                                            for i in range (len(primeiraLinhaAux)-1):
+                                                frase = re.split(";|,| ",primeiraLinhaAux[i])
+                                                if "ns" in frase[0]:
+                                                    listaIPs.append(frase[2])
+                                            
+                                            e=0
+                                            flag2 = True
+                                            while e<len(listaIPs) and flag2:
+                                                ipPorta = listaIPs[e].split(":")
+                                                if len(ipPorta)== 2:
+                                                    ip = ipPorta[0]
+                                                    porta = int(ipPorta[1])
+                                                elif len(ipPorta)==1:
+                                                    porta = int(ipPorta[1])
+                                                
+                                                tST = threading.Thread(target=self.conectaServidor(ip,porta,msg.decode('utf-8'),self.queue))
+                                                tST.start()
+                                                tST.join()
+                                                stMsg=self.queue.get()
+                                                if(stMsg!=0):
+                                                    print(stMsg)
+                                                    primeiraLinhaAux = stMsg.split("\n")
+                                                    primeiraLinha= re.split(";|,| ",primeiraLinhaAux[0])
+                                    
+                                                    if(primeiraLinha[2]==str(0) or primeiraLinha[2]==str(2)):
+                                                        bytesToSend = str.encode(str(stMsg))
+                                                        flag2 = 0
+                                                        flag1 = 0
+                                                        flag = 0
+                                                elif(stMsg==0):
+                                                    e=e+1
+                    
+                                            flag1 = 0
+                                    elif(stMsg==0):
+                                        i=i+1
+                        elif a==0:
+                            a=a+1
                             
     
             #Sending a reply to client
             serverUDP.sendto(bytesToSend, add)
             self.logs.RP_RR(True,str(add),  query.query_info_name + " " + query.query_info_type)
-
+    
     
     def conectaServidor(self, ip, porta,query,q):
-        srUDP = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        srUDP.connect((ip, porta))
-        print(f"[CONNECTED] Connected to {ip}:{porta}")
-        
-        srUDP.sendto(query.encode('utf-8'),(ip,porta))
-        print(f"[MESSAGE SENT]\n{query}")
-        msg = srUDP.recv(1024).decode('utf-8')
-        q.put(msg)
-        print(f"[MESSAGE RECEIVED FROM SERVER]\n{msg}")
-        srUDP.close()
-        
+        try:
+            srUDP = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            srUDP.connect((ip, porta))
+            print(f"[CONNECTED] Connected to {ip}:{porta}")
+            
+            srUDP.sendto(query.encode('utf-8'),(ip,porta))
+            print(f"[MESSAGE SENT]\n{query}")
+            msg = srUDP.recv(1024).decode('utf-8')
+            q.put(msg)
+            print(f"[MESSAGE RECEIVED FROM SERVER]\n{msg}")
+            srUDP.close()
+        except socket.error as exc:
+            print("Caught exception socket.error: %s" %exc)
+            q.put(0)
 
         
         

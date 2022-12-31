@@ -37,6 +37,11 @@ class Parser_BD:
                         self.soaretry = linha[2]
                     if(linha[0] == "@" and linha[1]=="SOAEXPIRE"):
                         self.soaretry = linha[2]
+                    if(linha[1] == "A"):
+                        if(self.dominio == "."):
+                            linha[0]=linha[0]+self.dominio
+                        elif(self.dominio != "."):
+                            linha[0]=linha[0]+"."+self.dominio
                         
         cache.reg_cache3(self.linhas)
         

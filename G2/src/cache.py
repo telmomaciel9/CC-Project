@@ -119,7 +119,7 @@ class Cache:
         ttl = ""
         #print(lista)
         for frase in lista:
-            palavra=frase.split(" ")    
+            palavra=frase.split(" ")   
             if(palavra[0]=="@" and palavra[1]=="DEFAULT"):
                 dominio = palavra[2].replace("\n","")
             if(palavra[0]=="TTL" and palavra[1]=="DEFAULT"):
@@ -131,11 +131,20 @@ class Cache:
                 string = palavra[0].replace("@", dominio)
                 self.reg_atualiza_cache(string, palavra[1].replace("\n",""), palavra[2].replace("\n",""), ttl, palavra[4].replace("\n",""),"FILE")
             if(not(palavra[0].__contains__("@")) and len(palavra)>4):
+                if(palavra[1] == "A"):
+                    if(dominio != "."):
+                        palavra[0]=palavra[0]+"."+dominio
+                    elif dominio == ".":
+                        palavra[0]=palavra[0]+dominio
                 self.reg_atualiza_cache(palavra[0], palavra[1].replace("\n",""), palavra[2].replace("\n",""), ttl, palavra[4].replace("\n",""),"FILE")
             if(not(palavra[0].__contains__("@")) and len(palavra)<=4):
+                if(palavra[1] == "A"):
+                    if(dominio != "."):
+                        palavra[0]=palavra[0]+"."+dominio
+                    elif dominio == ".":
+                        palavra[0]=palavra[0]+dominio
                 self.reg_atualiza_cache(palavra[0].replace("\n",""), palavra[1].replace("\n",""), palavra[2].replace("\n",""), ttl, "","FILE")
-            
-    
+
     #def __str__(self):
     #    header = ["Name", "Type", "Value", "TTL", "Order", "Origin", "TimeStamp", "Index", "Status"]
     #    return (tabulate(self.mat, headers = header, tablefmt = "grid"))

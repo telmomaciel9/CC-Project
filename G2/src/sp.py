@@ -49,14 +49,16 @@ class SP:
             self.logs.QR_QE(True, str(add), query.query_info_name + " " + query.query_info_type)
             
             clientMsg = "Message from Client:\n -> {}  ".format(msg.decode('utf-8'))
-            
-            bytesToSend = str.encode(query.origina_resposta(self.srvCache,query))
+            res=query.origina_resposta(self.srvCache,query)
+            bytesToSend = str.encode(res)
             
             clientIP  = "Client IP Address: {}".format(add)
             
             print(clientMsg)
             print(clientIP)
-    
+            
+            print(res)
+            
             # Sending a reply to client
             serverUDP.sendto(bytesToSend, add)
             self.logs.RP_RR(True,str(add),  query.query_info_name + " " + query.query_info_type)
@@ -107,7 +109,7 @@ class SP:
         
 if __name__ == "__main__":
     srv = SP()
-    print(srv.srvCache)
+    #print(srv.srvCache)
     t1 = threading.Thread(target = srv.ss)
     t2 = threading.Thread(target = srv.cliente)
         

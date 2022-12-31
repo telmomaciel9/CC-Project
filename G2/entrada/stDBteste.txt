@@ -1,0 +1,20 @@
+# DNS database file for ST
+
+@ DEFAULT .
+TTL DEFAULT 86400
+
+@ SOASERIAL 0112112022 TTL
+
+dumac. NS ns1.dumac. TTL
+dumac. NS ns2.dumac. TTL
+dumac. NS ns3.dumac. TTL
+teldu. NS ns1.teldu. TTL
+teldu. NS ns2.teldu. TTL
+teldu. NS ns3.teldu. TTL
+
+ns1.dumac A 127.0.0.1:2500 TTL
+ns2.dumac A 127.0.0.1:2550 TTL
+ns3.dumac A 127.0.0.1:2600 TTL
+ns1.teldu A 127.0.0.1:2700 TTL
+ns2.teldu A 127.0.0.1:2750 TTL
+ns3.teldu A 127.0.0.1:2800 TTL

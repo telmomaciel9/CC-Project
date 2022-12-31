@@ -69,12 +69,10 @@ class ST:
             
             self.logs.RP_RR(True,str(add),q.query_info_name + " " + q.query_info_type)
             
-            
-            
-        
+
 if __name__ == "__main__":
     srv = ST()
-    print(srv.srvCache)
+    #print(srv.srvCache)
     t1 = threading.Thread(target = srv.con_servidor)
     
     t1.start()

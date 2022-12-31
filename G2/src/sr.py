@@ -36,7 +36,6 @@ class SR:
         self.srvBD.parse_db(self.srvCache)
         self.logs.EV("database-file-read", self.srvConfig.dir_bd)
         self.srvST_list = Parser_ST(self.srvConfig.dir_ST)
-
         self.queue= queue.Queue()
 
 
@@ -84,15 +83,75 @@ class SR:
                 
                 stMsg=self.queue.get()
                 
-                primeiraLinha = re.split(";|,| ",stMsg)
-                
-                if(primeiraLinha[2]==0 or primeiraLinha[2]==2):
+                primeiraLinhaAux = stMsg.split("\n")
+                primeiraLinha= re.split(";|,| ",primeiraLinhaAux[0])
+
+                if(primeiraLinha[2]==str(0) or primeiraLinha[2]==str(2)):
                     bytesToSend = str.encode(msg)
                     
                 elif(primeiraLinha[2]==str(1)):
-                    print(stMsg)
+                    #faz para o sdt
+                    listaIPs =[]
+                    for i in range (len(primeiraLinhaAux)-1):
+                        frase = re.split(";|,| ",primeiraLinhaAux[i])
+                        if "ns" in frase[0]:
+                            listaIPs.append(frase[2])
+                    
+                    i=0
+                    flag = True
+                    #while i<len(listaIPs):
+                    ipPorta = listaIPs[i].split(":")
+                    if len(ipPorta)== 2:
+                        ip = ipPorta[0]
+                        porta = int(ipPorta[1])
+                    elif len(ipPorta)==1:
+                        porta = int(ipPorta[1])
+                    
+                    tST = threading.Thread(target=self.conectaServidor(ip,porta,msg.decode('utf-8'),self.queue))
+                    tST.start()
+                    
+                    stMsg=self.queue.get()
+            
+                    primeiraLinhaAux = stMsg.split("\n")
+                    primeiraLinha= re.split(";|,| ",primeiraLinhaAux[0])
+    
+                    if(primeiraLinha[2]==str(0) or primeiraLinha[2]==str(2)):
+                        bytesToSend = str.encode(msg)
+                        flag = 0
+                    elif(primeiraLinha[2]==str(1)):
+                        #faz para o sub
+                        #i=i+1
+                        ##faz para o sdt
+                        listaIPs =[]
+                        for i in range (len(primeiraLinhaAux)-1):
+                            frase = re.split(";|,| ",primeiraLinhaAux[i])
+                            if "ns" in frase[0]:
+                                listaIPs.append(frase[2])
+                        
+                        i=0
+                        flag2 = True
+                        #while i<len(listaIPs):
+                        ipPorta = listaIPs[i].split(":")
+                        if len(ipPorta)== 2:
+                            ip = ipPorta[0]
+                            porta = int(ipPorta[1])
+                        elif len(ipPorta)==1:
+                            porta = int(ipPorta[1])
+                        
+                        tST = threading.Thread(target=self.conectaServidor(ip,porta,msg.decode('utf-8'),self.queue))
+                        tST.start()
+                        
+                        stMsg=self.queue.get()
+                        print(stMsg)
+                        primeiraLinhaAux = stMsg.split("\n")
+                        primeiraLinha= re.split(";|,| ",primeiraLinhaAux[0])
         
+                        if(primeiraLinha[2]==str(0) or primeiraLinha[2]==str(2)):
+                            bytesToSend = str.encode(str(stMsg))
+                            flag2 = 0
 
+                        flag = 0
+                            
     
             #Sending a reply to client
             serverUDP.sendto(bytesToSend, add)
@@ -102,7 +161,7 @@ class SR:
     def conectaServidor(self, ip, porta,query,q):
         srUDP = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         srUDP.connect((ip, porta))
-        print(f"[CONNECTED] Connected")
+        print(f"[CONNECTED] Connected to {ip}:{porta}")
         
         srUDP.sendto(query.encode('utf-8'),(ip,porta))
         print(f"[MESSAGE SENT]\n{query}")
@@ -111,14 +170,11 @@ class SR:
         print(f"[MESSAGE RECEIVED FROM SERVER]\n{msg}")
         srUDP.close()
         
+
         
         
 if __name__ == "__main__":
     srv = SR()
-    print(srv.srvCache)
-   # t1 = threading.Thread(target = srv.ss)
     t2 = threading.Thread(target = srv.cliente)
-        
-    
-    #t1.start()
+
     t2.start()

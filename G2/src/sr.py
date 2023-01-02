@@ -117,6 +117,7 @@ class SR:
                                         if(primeiraLinha[2]==str(0) or primeiraLinha[2]==str(2)):
                                             bytesToSend = str.encode(str(stMsg))
                                             flag2 = 0
+                                            f=0
                                     elif(stMsg==0):
                                         e=e+1
                         else:
@@ -178,6 +179,7 @@ class SR:
                                         if(primeiraLinha[2]==str(0) or primeiraLinha[2]==str(2)):
                                             bytesToSend = str.encode(str(stMsg))
                                             flag1 = 0
+                                            flag = 0 
                                         elif(primeiraLinha[2]==str(1)):
                                             ##faz para o sdt
                                             listaIPs =[]

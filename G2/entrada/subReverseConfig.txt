@@ -1,0 +1,5 @@
+# Configuration file for primary server for 0.10.inaddr.reverse
+reverse. DB ../entrada/subReverseDB.txt
+reverse. LG ../saida/subReverselog.txt
+all LG ../saida/logs.txt
+root ST ../entrada/listaST.txt

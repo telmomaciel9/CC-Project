@@ -25,5 +25,3 @@ ss2.teldu.colo. A 10.0.8.10 TTL
 sp.dumac.colo A 10.0.9.10 TTL
 ss1.dumac.colo A 10.0.10.10 TTL
 ss2.dumac.colo A 10.0.11.10 TTL
-
-

@@ -35,8 +35,6 @@ class SR:
         self.logs.EV("log-file-create", self.srvConfig.dir_logLocal)
         self.srvCache = Cache()
         self.srvBD = Parser_BD(self.srvConfig.dir_bd)
-        self.srvBD.parse_db(self.srvCache)
-        self.logs.EV("database-file-read", self.srvConfig.dir_bd)
         self.srvST_list = Parser_ST(self.srvConfig.dir_ST)
         self.queue= queue.Queue()
 

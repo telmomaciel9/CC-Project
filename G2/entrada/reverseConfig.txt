@@ -1,0 +1,5 @@
+# Configuration file for primary server for reverse
+reverse. DB ../entrada/reverseDB.txt
+reverse. LG ../saida/reverselog.txt
+all LG ../saida/logs.txt
+root ST ../entrada/listaST.txt

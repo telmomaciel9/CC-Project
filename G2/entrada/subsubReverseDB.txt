@@ -1,0 +1,37 @@
+@ DEFAULT subreverse.reverse. 
+TTL DEFAULT 23494
+
+@ SOASP ns1.subreverse.reverse TTL
+@ SOAADMIN dns\.admin.subreverse.reverse. TTL
+@ SOASERIAL 1 TTL
+@ SOAREFRESH 14400 TTL
+@ SOARETRY 3600 TTL
+@ SOAEXPIRE 604800 TTL
+
+@ NS ns1.in-adr.reverse TTL
+
+10.@ NS ns1.10.in-addr.reverse. TTL 
+
+10.0.6.10 PTR ns1.teldu. TTL 
+10.0.7.10 PTR ns2.teldu. TTL
+10.0.8.10 PTR ns3.teldu. TTL
+10.0.7.10 PTR mx1.teldu. TTL
+10.0.8.11 PTR mx2.teldu. TTL
+
+10.0.14.20 PTR ns1.lospeneiros.teldu. TTL
+10.0.15.10 PTR ns2.lospeneiros.teldu. TTL
+10.0.16.10 PTR ns3.lospeneiros.teldu. TTL
+10.0.15.12 PTR mx1.lospeneiros.teldu. TTL
+10.0.16.11 PTR mx2.lospeneiros.teldu. TTL
+
+10.0.9.10 PTR ns1.dumac. TTL
+10.0.10.10 PTR ns2.dumac. TTL
+10.0.11.10 PTR ns3.dumac. TTL
+10.0.10.11 PTR mx1.dumac. TTL
+10.0.10.11 PTR mx2.dumac. TTL
+
+10.0.17.10 PTR ns1.elefante.dumac. TTL
+10.0.19.10 PTR ns2.elefante.dumac. TTL
+10.0.18.10 PTR ns3.elefante.dumac. TTL
+10.0.18.11 PTR mx1.elefante.dumac. TTL
+10.0.19.11 PTR mx2.elefante.dumac. TTL

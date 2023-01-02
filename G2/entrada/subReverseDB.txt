@@ -1,0 +1,19 @@
+
+# DNS database for 0.10.inaddr.reverse domain
+
+@ DEFAULT 0.10.inaddr.reverse.
+TTL DEFAULT 86400
+
+@ SOASP ns1-subreverse TTL
+@ SOAADMIN dns\.admin.0.10.inaddr.reverse. TTL
+@ SOASERIAL 1 TTL
+@ SOAREFRESH 14400 TTL
+@ SOARETRY 3600 TTL
+@ SOAEXPIRE 604800 TTL
+
+@ NS ns1.in-adr.reverse TTL
+
+10.@ NS ns1.10.in-addr.reverse. TTL 
+
+ns1 A 10.432.4234.234. TTL
+ns1.10 A 193.0.20.10 TTL

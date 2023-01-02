@@ -1,5 +1,5 @@
 # Configuration file for primary server for teldu.
-teldu. DB ../entrada/telduDBteste.txt 
+teldu. DB ../entrada/telduDB.txt 
 teldu. SS 10.0.7.10
 teldu. SS 10.0.8.10
 teldu. DD 10.0.15.11

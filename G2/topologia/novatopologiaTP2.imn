@@ -165,7 +165,7 @@ node n5 {
     type router
     model PC
     network-config {
-	hostname Cliente
+	hostname Clienteteldu
 	!
 	interface eth0
 	 ip address 10.0.6.20/24
@@ -173,8 +173,8 @@ node n5 {
 	!
     }
     canvas c1
-    iconcoords {115.0 98.0}
-    labelcoords {115.0 130.0}
+    iconcoords {105.0 102.0}
+    labelcoords {105.0 134.0}
     interface-peer {eth0 n7}
 }
 
@@ -182,7 +182,7 @@ node n6 {
     type router
     model host
     network-config {
-	hostname SP
+	hostname SPteldu
 	!
 	interface eth0
 	 ip address 10.0.6.10/24
@@ -190,8 +190,8 @@ node n6 {
 	!
     }
     canvas c1
-    iconcoords {52.0 173.0}
-    labelcoords {52.0 205.0}
+    iconcoords {44.0 161.0}
+    labelcoords {44.0 193.0}
     interface-peer {eth0 n7}
 }
 
@@ -241,7 +241,7 @@ node n10 {
     type router
     model host
     network-config {
-	hostname SS1
+	hostname SS1teldu
 	!
 	interface eth0
 	 ip address 10.0.7.10/24
@@ -249,8 +249,8 @@ node n10 {
 	!
     }
     canvas c1
-    iconcoords {52.0 229.0}
-    labelcoords {52.0 261.0}
+    iconcoords {49.0 229.0}
+    labelcoords {49.0 261.0}
     interface-peer {eth0 n8}
 }
 
@@ -258,7 +258,7 @@ node n13 {
     type router
     model host
     network-config {
-	hostname SS2
+	hostname SS2teldu
 	!
 	interface eth0
 	 ip address 10.0.8.10/24
@@ -275,7 +275,7 @@ node n17 {
     type router
     model host
     network-config {
-	hostname SP
+	hostname SP2dumac
 	!
 	interface eth0
 	 ip address 10.0.9.10/24
@@ -334,7 +334,7 @@ node n21 {
     type router
     model host
     network-config {
-	hostname SS1
+	hostname SS1dumac
 	!
 	interface eth0
 	 ip address 10.0.10.10/24
@@ -351,7 +351,7 @@ node n24 {
     type router
     model host
     network-config {
-	hostname SS2
+	hostname SS2dumac
 	!
 	interface eth0
 	 ip address 10.0.11.10/24
@@ -359,8 +359,8 @@ node n24 {
 	!
     }
     canvas c1
-    iconcoords {893.0 359.0}
-    labelcoords {893.0 391.0}
+    iconcoords {891.0 360.0}
+    labelcoords {891.0 392.0}
     interface-peer {eth0 n20}
 }
 
@@ -402,7 +402,7 @@ node n30 {
     type router
     model host
     network-config {
-	hostname SP
+	hostname SPlp
 	!
 	interface eth0
 	 ip address 10.0.14.10/24
@@ -410,8 +410,8 @@ node n30 {
 	!
     }
     canvas c1
-    iconcoords {70.0 545.0}
-    labelcoords {70.0 577.0}
+    iconcoords {76.0 552.0}
+    labelcoords {76.0 584.0}
     interface-peer {eth0 n31}
 }
 
@@ -462,7 +462,7 @@ node n34 {
     type router
     model host
     network-config {
-	hostname SS1
+	hostname SS1lp
 	!
 	interface eth0
 	 ip address 10.0.15.10/24
@@ -479,7 +479,7 @@ node n37 {
     type router
     model host
     network-config {
-	hostname SS2
+	hostname SS2lp
 	!
 	interface eth0
 	 ip address 10.0.16.10/24
@@ -487,8 +487,8 @@ node n37 {
 	!
     }
     canvas c1
-    iconcoords {275.0 678.0}
-    labelcoords {275.0 710.0}
+    iconcoords {274.0 677.0}
+    labelcoords {274.0 709.0}
     interface-peer {eth0 n33}
 }
 
@@ -496,7 +496,7 @@ node n41 {
     type router
     model host
     network-config {
-	hostname SP
+	hostname SPelefante
 	!
 	interface eth0
 	 ip address 10.0.17.10/24
@@ -555,7 +555,7 @@ node n45 {
     type router
     model host
     network-config {
-	hostname SS1
+	hostname SS1elefante
 	!
 	interface eth0
 	 ip address 10.0.18.10/24
@@ -563,8 +563,8 @@ node n45 {
 	!
     }
     canvas c1
-    iconcoords {649.0 674.0}
-    labelcoords {649.0 706.0}
+    iconcoords {648.0 672.0}
+    labelcoords {648.0 704.0}
     interface-peer {eth0 n43}
 }
 
@@ -572,7 +572,7 @@ node n48 {
     type router
     model host
     network-config {
-	hostname SS2
+	hostname SS2elefante
 	!
 	interface eth0
 	 ip address 10.0.19.10/24
@@ -597,8 +597,8 @@ node n51 {
 	!
     }
     canvas c1
-    iconcoords {314.0 108.0}
-    labelcoords {314.0 140.0}
+    iconcoords {342.0 91.0}
+    labelcoords {342.0 123.0}
     interface-peer {eth0 n1}
 }
 
@@ -722,7 +722,7 @@ node n15 {
     type router
     model PC
     network-config {
-	hostname Cliente2
+	hostname Clientedumac
 	!
 	interface eth0
 	 ip address 10.0.9.20/24
@@ -739,7 +739,7 @@ node n16 {
     type router
     model PC
     network-config {
-	hostname Cliente3
+	hostname Clientelp
 	!
 	interface eth0
 	 ip address 10.0.14.20/24
@@ -747,8 +747,8 @@ node n16 {
 	!
     }
     canvas c1
-    iconcoords {44.0 502.0}
-    labelcoords {44.0 534.0}
+    iconcoords {79.0 488.0}
+    labelcoords {79.0 520.0}
     interface-peer {eth0 n31}
 }
 
@@ -756,7 +756,7 @@ node n22 {
     type router
     model PC
     network-config {
-	hostname Cliente4
+	hostname Clienteelefante
 	!
 	interface eth0
 	 ip address 10.0.17.20/24
@@ -790,7 +790,7 @@ node n25 {
     type router
     model host
     network-config {
-	hostname MX1
+	hostname MX1teldu
 	!
 	interface eth0
 	 ip address 10.0.7.11/24
@@ -807,7 +807,7 @@ node n26 {
     type router
     model host
     network-config {
-	hostname MX2
+	hostname MX2teldu
 	!
 	interface eth0
 	 ip address 10.0.8.11/24
@@ -815,8 +815,8 @@ node n26 {
 	!
     }
     canvas c1
-    iconcoords {49.0 415.0}
-    labelcoords {49.0 447.0}
+    iconcoords {51.0 413.0}
+    labelcoords {51.0 445.0}
     interface-peer {eth0 n9}
 }
 
@@ -824,7 +824,7 @@ node n29 {
     type router
     model host
     network-config {
-	hostname MX1
+	hostname MX1lp
 	!
 	interface eth0
 	 ip address 10.0.15.12/24
@@ -841,7 +841,7 @@ node n35 {
     type router
     model host
     network-config {
-	hostname MX2
+	hostname MX2lp
 	!
 	interface eth0
 	 ip address 10.0.16.11/24
@@ -858,7 +858,7 @@ node n36 {
     type router
     model host
     network-config {
-	hostname MX1
+	hostname MX1elefante
 	!
 	interface eth0
 	 ip address 10.0.18.11/24
@@ -875,7 +875,7 @@ node n38 {
     type router
     model host
     network-config {
-	hostname MX2
+	hostname MX2elefante
 	!
 	interface eth0
 	 ip address 10.0.19.11/24
@@ -892,7 +892,7 @@ node n39 {
     type router
     model host
     network-config {
-	hostname MX2
+	hostname MX2dumac
 	!
 	interface eth0
 	 ip address 10.0.11.11/24
@@ -909,7 +909,7 @@ node n40 {
     type router
     model host
     network-config {
-	hostname MX1
+	hostname MX1dumac
 	!
 	interface eth0
 	 ip address 10.0.10.11/24
@@ -1210,7 +1210,7 @@ annotation a2 {
 }
 
 annotation a3 {
-    iconcoords {498.0 490.0 959.0 738.0}
+    iconcoords {490 484 955 736}
     type rectangle
     label {}
     labelcolor black
@@ -1282,7 +1282,7 @@ annotation a7 {
 annotation a8 {
     iconcoords {792.0 32.0}
     type text
-    label {Dominio dumac.colo}
+    label {Dominio dumac}
     labelcolor black
     fontfamily {Arial}
     fontsize 12
@@ -1291,9 +1291,9 @@ annotation a8 {
 }
 
 annotation a9 {
-    iconcoords {44.0 52.0}
+    iconcoords {44.0 51.0}
     type text
-    label {Dominio teldu.colo}
+    label {Dominio teldu}
     labelcolor black
     fontfamily {Arial}
     fontsize 12
@@ -1318,7 +1318,7 @@ annotation a11 {
 annotation a12 {
     iconcoords {36.0 726.0}
     type text
-    label {Subdominio lospeneiros.teldu.colo}
+    label {Subdominio lospeneiros.teldu}
     labelcolor black
     fontfamily {Arial}
     fontsize 12
@@ -1336,7 +1336,7 @@ annotation a13 {
 annotation a14 {
     iconcoords {671.0 719.0}
     type text
-    label {Subdominio elefalante.dumac.colo}
+    label {Subdominio elefalante.dumac}
     labelcolor black
     fontfamily {Arial}
     fontsize 12

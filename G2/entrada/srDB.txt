@@ -1,1 +1,2 @@
-root ST ../entrada/listaSTteste.txt
+#root ST ../entrada/listaSTteste.txt
+root ST ../entrada/listaST.txt

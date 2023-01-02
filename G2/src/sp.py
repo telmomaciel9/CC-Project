@@ -38,8 +38,8 @@ class SP:
     def cliente(self):
         print("[SERVER UDP MODE] - STARTING...")
         serverUDP = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
-        serverUDP.bind((self.ip, self.porta))
-            
+        serverUDP.bind((self.ip, self.porta))		
+	
         print("[SERVER UDP MODE] - LISTENING...")
         
         while True:

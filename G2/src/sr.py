@@ -85,7 +85,8 @@ class SR:
                             primeiraLinha= re.split(";|,| ",primeiraLinhaAux[0])
             
                             if(primeiraLinha[2]==str(0) or primeiraLinha[2]==str(2)):
-                                bytesToSend = str.encode(msg)
+                                bytesToSend = str.encode(str(stMsg))
+                                f=0
                             elif(primeiraLinha[2]==str(1)):
                                 ##faz para o sdt
                                 listaIPs =[]
@@ -145,7 +146,7 @@ class SR:
                             primeiraLinha= re.split(";|,| ",primeiraLinhaAux[0])
             
                             if(primeiraLinha[2]==str(0) or primeiraLinha[2]==str(2)):
-                                bytesToSend = str.encode(msg)
+                                bytesToSend = str.encode(str(stMsg))
                                 flag = False
                                 
                             elif(primeiraLinha[2]==str(1)):
@@ -175,7 +176,7 @@ class SR:
                                         primeiraLinha= re.split(";|,| ",primeiraLinhaAux[0])
                         
                                         if(primeiraLinha[2]==str(0) or primeiraLinha[2]==str(2)):
-                                            bytesToSend = str.encode(msg)
+                                            bytesToSend = str.encode(str(stMsg))
                                             flag1 = 0
                                         elif(primeiraLinha[2]==str(1)):
                                             ##faz para o sdt

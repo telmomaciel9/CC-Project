@@ -12,9 +12,9 @@ teldu. NS ns1.teldu. TTL
 teldu. NS ns2.teldu. TTL
 teldu. NS ns3.teldu. TTL
 
-ns1.dumac A 10.0.17.10:5555 TTL
-ns2.dumac A 10.0.18.12 TTL
-ns3.dumac A 10.0.19.11 TTL
-ns1.teldu A 10.0.20.10:5555 TTL
-ns2.teldu A 10.0.15.12 TTL
-ns3.teldu A 10.0.21.11 TTL
+ns1.dumac A 10.0.9.10:53 TTL
+ns2.dumac A 10.0.10.10:53 TTL
+ns3.dumac A 10.0.11.10:53 TTL
+ns1.teldu A 10.0.6.10:53 TTL
+ns2.teldu A 10.0.7.10:53 TTL
+ns3.teldu A 10.0.8.10:53 TTL

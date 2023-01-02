@@ -19,12 +19,12 @@ lospeneiros.@ NS sp.lospeneiros.teldu.
 @ MX mx1.teldu. TTL 10
 @ MX mx2.teldu. TTL 20
 
-ns1 A 10.0.6.10 TTL
-ns2 A 10.0.7.10 TTL
-ns3 A 10.0.8.10 TTL
-sp.lospeneiros A 10.0.14.10 TTL
-mx1 A 10.0.7.11 TTL
-mx2 A 10.0.8.11 TTL
+ns1 A 10.0.6.10:53 TTL
+ns2 A 10.0.7.10:53 TTL
+ns3 A 10.0.8.10:53 TTL
+sp.lospeneiros A 10.0.14.10:53 TTL
+mx1 A 10.0.7.11:53 TTL
+mx2 A 10.0.8.11:53 TTL
 
 sp CNAME ns1 TTL
 ss1 CNAME ns2 TTL

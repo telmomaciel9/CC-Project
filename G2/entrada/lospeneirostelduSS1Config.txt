@@ -1,7 +1,7 @@
-# Configuration file for first secundary server for lospeneiros.teldu.colo
-lospeneiros.teldu.colo SP 10.0.14.10
-lospeneiros.teldu.colo SS 10.0.16.10
-lospeneiros.teldu.colo DD 10.0.15.11
-lospeneiros.teldu.colo LG ../saida/lospeneirostelducoloSS1log.txt
+# Configuration file for first secundary server for lospeneiros.teldu.
+lospeneiros.teldu. SP 10.0.14.10
+lospeneiros.teldu. SS 10.0.16.10
+lospeneiros.teldu. DD 10.0.15.11
+lospeneiros.teldu. LG ../saida/lospeneirostelduSS1log.txt
 all LG ../saida/logs.txt
 root ST ../entrada/listaST.txt

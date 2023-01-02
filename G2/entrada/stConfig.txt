@@ -1,4 +1,5 @@
-# Configuration file for primary server for sonso
-. DB ../entrada/stDBteste.txt 
+# Configuration file for primary server for .
+#. DB ../entrada/stDBteste.txt
+. DB ../entrada/stDB.txt 
 . LG ../saida/stlog.txt
 all LG ../saida/logs.txt

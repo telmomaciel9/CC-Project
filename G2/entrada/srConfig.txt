@@ -1,7 +1,8 @@
 # Configuration file for server resolver
 sr DB ../entrada/srDB.txt 
-teldu. DD 127.0.0.1:2700
-lospeneiros.teldu. DD 127.0.0.1:3000
+teldu. DD 10.0.6.10:53
+lospeneiros.teldu. DD 10.0.14.10:53
 sr LG ../saida/srlog.txt
 all LG ../saida/logs.txt
-root ST ../entrada/listaSTteste.txt 
+#root ST ../entrada/listaSTteste.txt 
+root ST ../entrada/listaST.txt 

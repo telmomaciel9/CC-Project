@@ -19,6 +19,8 @@ class SS:
             self.debug = sys.argv[4]
         if(len(sys.argv)==4):
             self.debug = sys.argv[3]
+        if(len(sys.argv)==3):
+            self.debug = ""
         self.ssConfig = Parser_Config(self.dirConfig)    
         self.ssConfig.parse_Config()
         self.logs = Logs(self.ssConfig.dir_logLocal,self.ssConfig.dir_logAll,self.debug)    
@@ -104,7 +106,7 @@ class SS:
     def conecta_cliente(self):
         print("[SERVER UDP MODE] - STARTING...")
         serverUDP = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
-        serverUDP.bind((self.ip, 2350))
+        serverUDP.bind((self.ip, self.porta))
 
         print("[SERVER UDP MODE] - LISTENING...")
 

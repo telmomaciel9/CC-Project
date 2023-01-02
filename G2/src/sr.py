@@ -26,6 +26,8 @@ class SR:
             self.debug = sys.argv[4]
         if(len(sys.argv)==4):
             self.debug = sys.argv[3]
+        if(len(sys.argv)==3):
+            self.debug = ""
         self.srvConfig = Parser_Config(self.dirConfig)
         self.srvConfig.parse_Config()
         self.logs = Logs(self.srvConfig.dir_logLocal,self.srvConfig.dir_logAll, self.debug)
@@ -47,7 +49,7 @@ class SR:
         
         while True:
             query = Query()
-            bytesToSend = "".encode('utf-8')
+            bytesToSend = "ERROR - NO QUERY RESPONSE FOUND".encode('utf-8')
             
             (msg,add) = serverUDP.recvfrom(1024)
             query.parse_message_condense(msg.decode('utf-8'))
@@ -66,9 +68,10 @@ class SR:
             
             elif query.response_code==1 or query.response_code==2:
                 #fazer primeiro para o dd
-                f=1
-                while f:
-                    if query.query_info_name in self.srvConfig.ip_DD:
+                entraST=1
+                if query.query_info_name in self.srvConfig.ip_DD:
+                    f=1
+                    while f:
                         ipPorta = self.srvConfig.ip_DD[query.query_info_name].split(":")
                         if len(ipPorta)== 2:
                             ip = ipPorta[0]
@@ -87,6 +90,7 @@ class SR:
                             if(primeiraLinha[2]==str(0) or primeiraLinha[2]==str(2)):
                                 bytesToSend = str.encode(str(stMsg))
                                 f=0
+                                entraST=0
                             elif(primeiraLinha[2]==str(1)):
                                 ##faz para o sdt
                                 listaIPs =[]
@@ -118,16 +122,15 @@ class SR:
                                             bytesToSend = str.encode(str(stMsg))
                                             flag2 = 0
                                             f=0
+                                            entraST=0
                                     elif(stMsg==0):
                                         e=e+1
                         else:
                             f=0
-                    else:
-                        f=0
-                        
                         
                 #fazer para o st
-                else:   
+                if entraST:   
+                    print(len(self.srvST_list.sts))
                     flag=True
                     a = 0
                     while a < len(self.srvST_list.sts) and flag:
@@ -218,7 +221,11 @@ class SR:
                                             flag1 = 0
                                     elif(stMsg==0):
                                         i=i+1
-                        elif a==0:
+                                    else:
+                                        flag1=0
+                                else:
+                                    flag=0 
+                        elif stMsg==0:
                             a=a+1
                             
     
@@ -237,7 +244,7 @@ class SR:
             print(f"[MESSAGE SENT]\n{query}")
             msg = srUDP.recv(1024).decode('utf-8')
             q.put(msg)
-            print(f"[MESSAGE RECEIVED FROM SERVER]\n{msg}")
+            print(f"[MESSAGE RECEIVED FROM SERVER {ip}:{porta}]\n{msg}")
             srUDP.close()
         except socket.error as exc:
             print("Caught exception socket.error: %s" %exc)

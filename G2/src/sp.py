@@ -23,6 +23,8 @@ class SP:
             self.debug = sys.argv[4]
         if(len(sys.argv)==4):
             self.debug = sys.argv[3]
+        if(len(sys.argv)==3):
+            self.debug = ""
         self.srvConfig = Parser_Config(self.dirConfig)
         self.srvConfig.parse_Config()
         self.logs = Logs(self.srvConfig.dir_logLocal,self.srvConfig.dir_logAll, self.debug)

@@ -3,7 +3,7 @@ import re
 class Logs:
     # O modo é se estamos a correr um servidor em modo debug ou shy
     # No modo debug, todos os logs também são mandados para o standard output
-     def __init__(self, fileLogsLocal = '', fileLogsAll = '', modo = ''):
+     def __init__(self, fileLogsLocal = '', fileLogsAll = '', modo = ""):
           primeiraLinha = "# Log File for DNS server/resolver\n"
           self.fileLogsLocal = fileLogsLocal
           self.fileLogsAll = fileLogsAll

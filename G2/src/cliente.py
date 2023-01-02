@@ -18,17 +18,20 @@ class Cliente_UDP:
         
 
     def iniciaCom(self):
+        try:
     #serverAddressPort = ((socket.gethostbyname(socket.gethostname()), 20001))
-        client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        client.connect((self.ip, self.porta))
-        print(f"[CONNECTED] Cliente connected")
-        
-        
-        msg = self.query.gera_queryInterna()
+            client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            client.connect((self.ip, self.porta))
+            print(f"[CONNECTED] Cliente connected")
             
-        client.send(msg.encode('utf-8'))
-        msg = client.recv(1024).decode('utf-8')
-        print(f"[MESSAGE RECEIVED FROM SERVER]\n{msg}")
+            
+            msg = self.query.gera_queryInterna()
+                
+            client.send(msg.encode('utf-8'))
+            msg = client.recv(1024).decode('utf-8')
+            print(f"[MESSAGE RECEIVED FROM SERVER {self.ip}:{self.porta}]\n{msg}")
+        except socket.error as exc:
+            print("\nCaught exception socket.error: %s" %exc)
 
 if __name__ == "__main__":
     c = Cliente_UDP()
